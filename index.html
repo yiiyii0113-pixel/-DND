@@ -92,20 +92,24 @@
         <div class="menu-group">
             <div class="menu-title">⚔️ 近战军械</div>
             <ul class="menu-items">
-                <!-- 主武器仓库 -->
-                <li class="nav-btn" data-target="wpn-main-hub">⚔️ 主武器仓库 (规则分配页)</li>
+                <li class="nav-btn" data-target="wpn-main-hub">⚔️ 主武器仓库</li>
             </ul>
             <ul class="sub-menu-items">
-                <li class="nav-btn" data-target="wpn-light">└─ 轻型主武器 (29种)</li>
-                <li class="nav-btn" data-target="wpn-medium">└─ 中型主武器 (30种)</li>
-                <li class="nav-btn" data-target="wpn-heavy">└─ 重型主武器 (15种)</li>
-                <li class="nav-btn" data-target="wpn-special">└─ 特殊主武器 (10种)</li>
-                <li class="nav-btn" data-target="wpn-custom">└─ 罕见/自制武器 (15种)</li>
+                <li class="nav-btn" data-target="wpn-light">└─ 轻型主武器</li>
+                <li class="nav-btn" data-target="wpn-medium">└─ 中型主武器</li>
+                <li class="nav-btn" data-target="wpn-heavy">└─ 重型主武器</li>
+                <li class="nav-btn" data-target="wpn-special">└─ 特殊主武器</li>
+                <li class="nav-btn" data-target="wpn-custom">└─ 罕见/自制武器</li>
             </ul>
             
             <ul class="menu-items" style="margin-top: 10px;">
-                <!-- 核心新增：与主武器完全并列的副武器仓库 -->
-                <li class="nav-btn" data-target="wpn-sub-hub">🗡️ 副武器仓库 (规则与清单)</li>
+                <li class="nav-btn" data-target="wpn-sub-hub">🗡️ 副武器仓库</li>
+            </ul>
+            <ul class="sub-menu-items">
+                <li class="nav-btn" data-target="sub-wpn-light">└─ 常规轻型副武</li>
+                <li class="nav-btn" data-target="sub-wpn-tool">└─ 工具与隐蔽副武</li>
+                <li class="nav-btn" data-target="sub-wpn-special">└─ 特殊与异国副武</li>
+                <li class="nav-btn" data-target="sub-wpn-hidden">└─ 极隐秘暗杀副武</li>
             </ul>
             
             <ul class="menu-items" style="margin-top: 10px;">
@@ -420,7 +424,7 @@
             <p><b>说明：</b>副武器为轻型、便携、灵活的战斗工具，通常作为主武器的补充或在特定场合使用。部分副武器兼具工具或隐蔽功能。</p>
             
             <h3>一、据点随机生成规则</h3>
-            <h4>副武器总件数计算公式（据点库存随机生成）</h4>
+            <h4>副武器总件数计算公式</h4>
             <div class="brass-box" style="border-left-color: #70e28c; background: rgba(112, 226, 140, 0.05); padding: 15px; border-left: 4px solid #70e28c; margin-bottom: 15px;">
                 <p style="font-size: 15px; font-weight: bold; text-align: center; color: #70e28c; margin-bottom: 10px;">
                     总件数 S = (团队总槽位数 + 3d4) + (玩家数量 + 2d4) + (3d6 + 1d4) + 基础库存值
@@ -449,71 +453,99 @@
                     <tr><td><b>17 - 20 级</b></td><td><span class="highlight" style="color: #ffca28; font-weight: bold;">5 件</span></td><td>无限制，可包含魔法武器</td></tr>
                 </tbody>
             </table>
+            <p style="margin-top: 20px; color: var(--text-muted); font-style: italic;">💡 请从左侧菜单的分支栏位查看具体类别的副武器详细列表。</p>
+        </div>
 
-            <h3>三、副武器详细列表</h3>
+        <div id="sub-wpn-light" class="content-section">
+            <h2>🗡️ 副武器库 - 常规轻型副武</h2>
             <table>
                 <thead>
-                    <tr>
-                        <th style="width: 15%;">武器名称</th>
-                        <th style="width: 12%;">伤害</th>
-                        <th style="width: 18%;">属性</th>
-                        <th style="width: 39%;">特殊效果</th>
-                        <th style="width: 8%;">重量</th>
-                        <th style="width: 8%;">最大耐久</th>
-                    </tr>
+                    <tr><th style="width: 15%;">武器名称</th><th style="width: 12%;">伤害</th><th style="width: 18%;">属性</th><th style="width: 39%;">特殊效果</th><th style="width: 8%;">重量</th><th style="width: 8%;">最大耐久</th></tr>
                 </thead>
                 <tbody>
                     <tr><td><b>标准匕首</b></td><td class="dmg-dice">1d4 穿刺</td><td>轻型，灵巧，投掷(20/60)</td><td>可投掷；若目标未察觉你，伤害骰取优势</td><td>轻</td><td class="durability">6</td></tr>
-                    <tr><td><b>猎刀</b></td><td class="dmg-dice">1d4 挥砍</td><td>轻型，灵巧</td><td>对野兽额外+1伤害；可作为工具使用</td><td>轻</td><td class="durability">8</td></tr>
-                    <tr><td><b>弹簧刀</b></td><td class="dmg-dice">1d4 穿刺</td><td>轻型，灵巧</td><td>突袭时先攻+2；极隐蔽，不易被发现</td><td>轻</td><td class="durability">6</td></tr>
                     <tr><td><b>双刃匕首</b></td><td class="dmg-dice">1d4 穿刺</td><td>轻型，灵巧</td><td>快速连刺：可用附赠动作进行第二次攻击（伤害-2）</td><td>轻</td><td class="durability">6</td></tr>
                     <tr><td><b>锯齿匕首</b></td><td class="dmg-dice">1d4 穿刺</td><td>轻型，灵巧</td><td>命中后流血效果+1轮；触发时每轮1d4</td><td>轻</td><td class="durability">7</td></tr>
                     <tr><td><b>拳刃</b></td><td class="dmg-dice">1d4 穿刺</td><td>轻型，灵巧</td><td>不占手，可同时持用其他武器或盾牌</td><td>轻</td><td class="durability">8</td></tr>
                     <tr><td><b>三棱刺</b></td><td class="dmg-dice">1d4+1 穿刺</td><td>轻型</td><td>命中后DC12体质豁免，失败则流血（每轮1d4，持续1d3轮）</td><td>轻</td><td class="durability">6</td></tr>
+                    <tr><td><b>新月刃</b></td><td class="dmg-dice">1d4 挥砍</td><td>轻型，灵巧</td><td>弧形刃口，割裂伤口难以愈合；流血效果触发时每轮1d6</td><td>轻</td><td class="durability">7</td></tr>
+                    <tr><td><b>指虎匕首</b></td><td class="dmg-dice">1d4 穿刺</td><td>轻型，灵巧</td><td>指虎与匕首结合；不占手；徒手攻击时额外造成1d4穿刺</td><td>轻</td><td class="durability">7</td></tr>
+                    <tr><td><b>钢爪</b></td><td class="dmg-dice">1d4 挥砍</td><td>轻型</td><td>攀爬检定+1d4；擒抱时额外造成1d4伤害</td><td>轻</td><td class="durability">8</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="sub-wpn-tool" class="content-section">
+            <h2>🗡️ 副武器库 - 工具与隐蔽副武</h2>
+            <table>
+                <thead>
+                    <tr><th style="width: 15%;">武器名称</th><th style="width: 12%;">伤害</th><th style="width: 18%;">属性</th><th style="width: 39%;">特殊效果</th><th style="width: 8%;">重量</th><th style="width: 8%;">最大耐久</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><b>猎刀</b></td><td class="dmg-dice">1d4 挥砍</td><td>轻型，灵巧</td><td>对野兽额外+1伤害；可作为工具使用</td><td>轻</td><td class="durability">8</td></tr>
                     <tr><td><b>拆信刀</b></td><td class="dmg-dice">1d3 穿刺</td><td>轻型，灵巧</td><td>极隐蔽，可作为书写工具；社交场合不引人注意</td><td>轻</td><td class="durability">5</td></tr>
-                    <tr><td><b>靴刀</b></td><td class="dmg-dice">1d4 穿刺</td><td>轻型，灵巧</td><td>隐蔽携带；倒地时也可使用（无劣势）</td><td>轻</td><td class="durability">6</td></tr>
-                    <tr><td><b>颈刀</b></td><td class="dmg-dice">1d3 穿刺</td><td>轻型，灵巧</td><td>极快拔出（可用反应动作拔出）；隐蔽携带</td><td>轻</td><td class="durability">4</td></tr>
                     <tr><td><b>铜指虎</b></td><td class="dmg-dice">1d4 钝击</td><td>轻型</td><td>不占手；徒手攻击增强；可进行连环掌（附赠攻击额外一次，-2伤）</td><td>轻</td><td class="durability">8</td></tr>
                     <tr><td><b>铁手套</b></td><td class="dmg-dice">1d4 钝击</td><td>轻型</td><td>不占手；可抓握刀刃而不受伤；格挡刀刃时伤害减免+2</td><td>轻</td><td class="durability">10</td></tr>
-                    <tr><td><b>怀表链</b></td><td class="dmg-dice">1d3 钝击</td><td>灵巧</td><td>极隐蔽；可缠绕敌人手臂（力量对抗，成功则束缚1轮）</td><td>轻</td><td class="durability">6</td></tr>
+                    <tr><td><b>多用途工具刀</b></td><td class="dmg-dice">1d3 穿刺</td><td>轻型，灵巧</td><td>可作为多种工具使用（开瓶器、螺丝刀、小刀等）；相关检定+1d4</td><td>轻</td><td class="durability">12</td></tr>
+                    <tr><td><b>伞剑（短）</b></td><td class="dmg-dice">1d4 穿刺</td><td>轻型，灵巧</td><td>隐蔽；雨天可用伞面干扰视线，获得半身掩护（AC+2）</td><td>轻</td><td class="durability">8</td></tr>
+                    <tr><td><b>手杖匕首</b></td><td class="dmg-dice">1d4 穿刺</td><td>轻型，灵巧</td><td>隐蔽；可作为手杖不引人注意；突袭时攻击具有优势</td><td>轻</td><td class="durability">9</td></tr>
+                    <tr><td><b>拐杖剑</b></td><td class="dmg-dice">1d6 穿刺</td><td>灵巧</td><td>外观为拐杖；突袭时攻击具有优势；可作为手杖</td><td>轻</td><td class="durability">10</td></tr>
+                    <tr><td><b>铁扇（实战型）</b></td><td class="dmg-dice">1d4 钝击/1d6挥砍</td><td>轻型，灵巧</td><td>可作为礼仪用品；横扫两目标（第二次劣势）；隐蔽携带</td><td>轻</td><td class="durability">10</td></tr>
+                    <tr><td><b>铁笔</b></td><td class="dmg-dice">1d3 穿刺</td><td>轻型，灵巧</td><td>极隐蔽；可作为书写工具；暗杀时伤害骰取优势</td><td>轻</td><td class="durability">5</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="sub-wpn-special" class="content-section">
+            <h2>🗡️ 副武器库 - 特殊与异国副武</h2>
+            <table>
+                <thead>
+                    <tr><th style="width: 15%;">武器名称</th><th style="width: 12%;">伤害</th><th style="width: 18%;">属性</th><th style="width: 39%;">特殊效果</th><th style="width: 8%;">重量</th><th style="width: 8%;">最大耐久</th></tr>
+                </thead>
+                <tbody>
                     <tr><td><b>鞭子</b></td><td class="dmg-dice">1d4 挥砍</td><td>灵巧，触及10尺</td><td>可进行缠绕缴械（附赠动作，力量对抗）或绊足（命中DC11敏捷豁免，失败倒地）</td><td>轻</td><td class="durability">8</td></tr>
                     <tr><td><b>绳镖</b></td><td class="dmg-dice">1d4 穿刺</td><td>灵巧，触及15尺</td><td>可投掷并收回（射程20/60）；可缠绕敌人</td><td>轻</td><td class="durability">5</td></tr>
                     <tr><td><b>飞爪</b></td><td class="dmg-dice">1d4 穿刺</td><td>灵巧，触及15尺</td><td>可攀爬（攀爬检定+1d4）；可抓取远处小物品</td><td>轻</td><td class="durability">6</td></tr>
+                    <tr><td><b>镀银匕首</b></td><td class="dmg-dice">1d4 穿刺</td><td>轻型，灵巧</td><td>对畏银生物（狼人、吸血鬼等）视为魔法武器，额外+1d4光耀伤害</td><td>轻</td><td class="durability">8</td></tr>
+                    <tr><td><b>仪式匕首</b></td><td class="dmg-dice">1d4+1 穿刺</td><td>轻型，灵巧</td><td>对召唤物、恶魔额外+1d4伤害；可作为施法法器</td><td>轻</td><td class="durability">6</td></tr>
+                    <tr><td><b>骨柄短刀</b></td><td class="dmg-dice">1d4 挥砍</td><td>轻型</td><td>原始风格；对不死生物额外+1d4伤害；坚固耐用</td><td>轻</td><td class="durability">10</td></tr>
+                    <tr><td><b>手里剑</b></td><td class="dmg-dice">1d4 挥砍</td><td>灵巧，投掷(20/60)</td><td>东方风格；可同时投掷两枚（第二次攻击具有劣势）；隐蔽携带</td><td>轻</td><td class="durability">4</td></tr>
+                    <tr><td><b>牙刃</b></td><td class="dmg-dice">1d4 穿刺</td><td>轻型，灵巧</td><td>野兽牙齿制成；对野兽、怪物额外+1d4伤害；恐吓检定+1d4</td><td>轻</td><td class="durability">5</td></tr>
+                    <tr><td><b>绳镖（双头）</b></td><td class="dmg-dice">1d4 穿刺</td><td>灵巧，触及15尺</td><td>两头皆有镖头；可投掷并收回；可缠绕并造成持续伤害（每轮1d4）</td><td>轻</td><td class="durability">6</td></tr>
+                    <tr><td><b>链锤（微型）</b></td><td class="dmg-dice">1d4 钝击</td><td>灵巧，触及10尺</td><td>小型链球锤；命中后可用附赠动作缴械（力量对抗）</td><td>轻</td><td class="durability">6</td></tr>
+                    <tr><td><b>骨匕</b></td><td class="dmg-dice">1d4 挥砍</td><td>轻型</td><td>动物骨骼制成；对不死生物额外+1d4伤害；原始风格</td><td>轻</td><td class="durability">6</td></tr>
+                    <tr><td><b>蛇鞭</b></td><td class="dmg-dice">1d4 挥砍</td><td>灵巧，触及10尺</td><td>命中后DC11敏捷豁免，失败则被束缚1轮；可缴械（优势）</td><td>轻</td><td class="durability">7</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="sub-wpn-hidden" class="content-section">
+            <h2>🗡️ 副武器库 - 极隐秘暗杀副武</h2>
+            <table>
+                <thead>
+                    <tr><th style="width: 15%;">武器名称</th><th style="width: 12%;">伤害</th><th style="width: 18%;">属性</th><th style="width: 39%;">特殊效果</th><th style="width: 8%;">重量</th><th style="width: 8%;">最大耐久</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><b>弹簧刀</b></td><td class="dmg-dice">1d4 穿刺</td><td>轻型，灵巧</td><td>突袭时先攻+2；极隐蔽，不易被发现</td><td>轻</td><td class="durability">6</td></tr>
+                    <tr><td><b>靴刀</b></td><td class="dmg-dice">1d4 穿刺</td><td>轻型，灵巧</td><td>隐蔽携带；倒地时也可使用（无劣势）</td><td>轻</td><td class="durability">6</td></tr>
+                    <tr><td><b>颈刀</b></td><td class="dmg-dice">1d3 穿刺</td><td>轻型，灵巧</td><td>极快拔出（可用反应动作拔出）；隐蔽携带</td><td>轻</td><td class="durability">4</td></tr>
+                    <tr><td><b>怀表链</b></td><td class="dmg-dice">1d3 钝击</td><td>灵巧</td><td>极隐蔽；可缠绕敌人手臂（力量对抗，成功则束缚1轮）</td><td>轻</td><td class="durability">6</td></tr>
                     <tr><td><b>吹箭</b></td><td class="dmg-dice">1d3 穿刺</td><td>远程(20/60)</td><td>无声；可淬毒（需另备毒药）；目标DC12体质豁免，失败则中毒1分钟</td><td>轻</td><td class="durability">4</td></tr>
                     <tr><td><b>指刺</b></td><td class="dmg-dice">1d3 穿刺</td><td>轻型，灵巧</td><td>极隐蔽；可涂毒；偷袭时攻击具有优势</td><td>轻</td><td class="durability">5</td></tr>
                     <tr><td><b>腕刃</b></td><td class="dmg-dice">1d4 穿刺</td><td>轻型，灵巧</td><td>隐蔽；擒抱时攻击具有优势；不占手</td><td>轻</td><td class="durability">4</td></tr>
                     <tr><td><b>毒针戒指</b></td><td class="dmg-dice">1d1 穿刺</td><td>轻型，灵巧</td><td>极隐蔽；可涂毒；近身接触时自动命中（无需攻击检定）</td><td>轻</td><td class="durability">2</td></tr>
                     <tr><td><b>钢笔枪</b></td><td class="dmg-dice">1d6 穿刺</td><td>远程(10/30)</td><td>极隐蔽；装填需1分钟（10轮）；每次发射后进行DC10幸运检定，失败则耐久-1</td><td>轻</td><td class="durability">4</td></tr>
-                    <tr><td><b>伞剑（短）</b></td><td class="dmg-dice">1d4 穿刺</td><td>轻型，灵巧</td><td>隐蔽；雨天可用伞面干扰视线，获得半身掩护（AC+2）</td><td>轻</td><td class="durability">8</td></tr>
-                    <tr><td><b>手杖匕首</b></td><td class="dmg-dice">1d4 穿刺</td><td>轻型，灵巧</td><td>隐蔽；可作为手杖不引人注意；突袭时攻击具有优势</td><td>轻</td><td class="durability">9</td></tr>
-                    <tr><td><b>镀银匕首</b></td><td class="dmg-dice">1d4 穿刺</td><td>轻型，灵巧</td><td>对畏银生物（狼人、吸血鬼等）视为魔法武器，额外+1d4光耀伤害</td><td>轻</td><td class="durability">8</td></tr>
-                    <tr><td><b>仪式匕首</b></td><td class="dmg-dice">1d4+1 穿刺</td><td>轻型，灵巧</td><td>对召唤物、恶魔额外+1d4伤害；可作为施法法器</td><td>轻</td><td class="durability">6</td></tr>
-                    <tr><td><b>多用途工具刀</b></td><td class="dmg-dice">1d3 穿刺</td><td>轻型，灵巧</td><td>可作为多种工具使用（开瓶器、螺丝刀、小刀等）；相关检定+1d4</td><td>轻</td><td class="durability">12</td></tr>
-                    <tr><td><b>新月刃</b></td><td class="dmg-dice">1d4 挥砍</td><td>轻型，灵巧</td><td>弧形刃口，割裂伤口难以愈合；流血效果触发时每轮1d6</td><td>轻</td><td class="durability">7</td></tr>
                     <tr><td><b>蝎尾刺</b></td><td class="dmg-dice">1d4 穿刺</td><td>轻型，灵巧</td><td>命中后DC13体质豁免，失败则中毒（每轮1d4，持续1d3轮）</td><td>轻</td><td class="durability">6</td></tr>
-                    <tr><td><b>骨柄短刀</b></td><td class="dmg-dice">1d4 挥砍</td><td>轻型</td><td>原始风格；对不死生物额外+1d4伤害；坚固耐用</td><td>轻</td><td class="durability">10</td></tr>
                     <tr><td><b>袖箭</b></td><td class="dmg-dice">1d4 穿刺</td><td>远程(15/30)</td><td>藏在袖中的小型弩箭；装填需1轮；突袭时先攻+3</td><td>轻</td><td class="durability">5</td></tr>
                     <tr><td><b>剃刀</b></td><td class="dmg-dice">1d3 挥砍</td><td>轻型，灵巧</td><td>极隐蔽；可伪装为日常用品；割喉时（目标未察觉）伤害翻倍</td><td>轻</td><td class="durability">4</td></tr>
-                    <tr><td><b>钢爪</b></td><td class="dmg-dice">1d4 挥砍</td><td>轻型</td><td>攀爬检定+1d4；擒抱时额外造成1d4伤害</td><td>轻</td><td class="durability">8</td></tr>
-                    <tr><td><b>铁笔</b></td><td class="dmg-dice">1d3 穿刺</td><td>轻型，灵巧</td><td>极隐蔽；可作为书写工具；暗杀时伤害骰取优势</td><td>轻</td><td class="durability">5</td></tr>
-                    <tr><td><b>蛇鞭</b></td><td class="dmg-dice">1d4 挥砍</td><td>灵巧，触及10尺</td><td>命中后DC11敏捷豁免，失败则被束缚1轮；可缴械（优势）</td><td>轻</td><td class="durability">7</td></tr>
                     <tr><td><b>飞镖</b></td><td class="dmg-dice">1d4 穿刺</td><td>灵巧，投掷(20/60)</td><td>可多枚携带；投掷时攻击具有优势（若目标在30尺内）</td><td>轻</td><td class="durability">4</td></tr>
-                    <tr><td><b>手里剑</b></td><td class="dmg-dice">1d4 挥砍</td><td>灵巧，投掷(20/60)</td><td>东方风格；可同时投掷两枚（第二次攻击具有劣势）；隐蔽携带</td><td>轻</td><td class="durability">4</td></tr>
-                    <tr><td><b>指虎匕首</b></td><td class="dmg-dice">1d4 穿刺</td><td>轻型，灵巧</td><td>指虎与匕首结合；不占手；徒手攻击时额外造成1d4穿刺</td><td>轻</td><td class="durability">7</td></tr>
-                    <tr><td><b>铰链刀</b></td><td class="dmg-dice">1d4 穿刺</td><td>轻型，灵巧</td><td>折叠设计；极隐蔽；展开为自由动作；突袭时攻击具有优势</td><td>轻</td><td class="durability">6</td></tr>
-                    <tr><td><b>牙刃</b></td><td class="dmg-dice">1d4 穿刺</td><td>轻型，灵巧</td><td>野兽牙齿制成；对野兽、怪物额外+1d4伤害；恐吓检定+1d4</td><td>轻</td><td class="durability">5</td></tr>
                     <tr><td><b>玻璃刺</b></td><td class="dmg-dice">1d4 穿刺</td><td>轻型，灵巧</td><td>极锋利但脆弱；暴击时额外+1d6伤害；攻击自然1时碎裂</td><td>轻</td><td class="durability">3</td></tr>
-                    <tr><td><b>绳镖（双头）</b></td><td class="dmg-dice">1d4 穿刺</td><td>灵巧，触及15尺</td><td>两头皆有镖头；可投掷并收回；可缠绕并造成持续伤害（每轮1d4）</td><td>轻</td><td class="durability">6</td></tr>
                     <tr><td><b>铁蒺藜投掷</b></td><td class="dmg-dice">1d4 穿刺</td><td>投掷(10/30)</td><td>投掷后散落为困难地形（5尺区域），通过者DC10敏捷豁免否则受1d4伤害</td><td>轻</td><td class="durability">5</td></tr>
-                    <tr><td><b>拐杖剑</b></td><td class="dmg-dice">1d6 穿刺</td><td>灵巧</td><td>外观为拐杖；突袭时攻击具有优势；可作为手杖</td><td>轻</td><td class="durability">10</td></tr>
                     <tr><td><b>腕弩（微型）</b></td><td class="dmg-dice">1d4 穿刺</td><td>远程(15/30)</td><td>绑在手腕的小型弩；装填需1轮；可用附赠动作射击</td><td>轻</td><td class="durability">5</td></tr>
                     <tr><td><b>刺环</b></td><td class="dmg-dice">1d3 穿刺</td><td>轻型，灵巧</td><td>套在手指上的尖刺环；极隐蔽；近身接触时自动命中</td><td>轻</td><td class="durability">4</td></tr>
-                    <tr><td><b>铁扇（实战型）</b></td><td class="dmg-dice">1d4 钝击/1d6挥砍</td><td>轻型，灵巧</td><td>可作为礼仪用品；横扫两目标（第二次劣势）；隐蔽携带</td><td>轻</td><td class="durability">10</td></tr>
-                    <tr><td><b>链锤（微型）</b></td><td class="dmg-dice">1d4 钝击</td><td>灵巧，触及10尺</td><td>小型链球锤；命中后可用附赠动作缴械（力量对抗)</td><td>轻</td><td class="durability">6</td></tr>
                     <tr><td><b>伸缩棍</b></td><td class="dmg-dice">1d4 钝击</td><td>轻型，灵巧</td><td>可伸缩（展开为自由动作）；隐蔽携带；突袭时攻击具有优势</td><td>轻</td><td class="durability">8</td></tr>
                     <tr><td><b>护腕刃</b></td><td class="dmg-dice">1d4 穿刺</td><td>轻型，灵巧</td><td>绑在护腕下；不占手；擒抱时攻击具有优势；极隐蔽</td><td>轻</td><td class="durability">6</td></tr>
-                    <tr><td><b>骨匕</b></td><td class="dmg-dice">1d4 挥砍</td><td>轻型</td><td>动物骨骼制成；对不死生物额外+1d4伤害；原始风格</td><td>轻</td><td class="durability">6</td></tr>
-                    <tr style="background: rgba(255,215,0,0.02); font-style: italic;"><td><b>【待补充】</b></td><td>—</td><td>—</td><td>副武器预留位：此处可后续增补更多副武器（如魔法副武器、特殊工艺武器等）。</td><td>—</td><td>—</td></tr>
+                    <tr style="background: rgba(255,215,0,0.02); font-style: italic;"><td><b>【待补充】</b></td><td>—</td><td>—</td><td>副武器预留位</td><td>—</td><td>—</td></tr>
                 </tbody>
             </table>
         </div>
