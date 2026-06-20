@@ -78,7 +78,7 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <!-- ==================== 左侧导航（精准替换这部分即可） ==================== -->
         <div class="sidebar">
             <h2>📜 七钟残响</h2>
             
@@ -92,11 +92,11 @@
             <div class="menu-group">
                 <div class="menu-title">⚔️ 武器仓库</div>
                 <ul class="sub-menu-items">
-                    <li class="nav-btn" data-target="wpn-light">└─ 轻型主武器 (29种)</li>
-                    <li class="nav-btn" data-target="wpn-medium">└─ 中型主武器 (30种)</li>
-                    <li class="nav-btn" data-target="wpn-heavy">└─ 重型主武器 (15种)</li>
-                    <li class="nav-btn" data-target="wpn-special">└─ 特殊主武器 (10种)</li>
-                    <li class="nav-btn" data-target="wpn-custom">└─ 罕见/自制武器 (15种)</li>
+                    <li class="nav-btn" data-target="wpn-light">└─ 轻型主武器</li>
+                    <li class="nav-btn" data-target="wpn-medium">└─ 中型主武器</li>
+                    <li class="nav-btn" data-target="wpn-heavy">└─ 重型主武器</li>
+                    <li class="nav-btn" data-target="wpn-special">└─ 特殊主武器</li>
+                    <li class="nav-btn" data-target="wpn-custom">└─ 罕见/自制武器</li>
                 </ul>
                 <ul class="menu-items">
                     <li class="nav-btn" data-target="wpn-ranged">🏹 远程武器库</li>
@@ -115,7 +115,6 @@
                 <div class="menu-title">⚙️ 规则核心速查</div>
                 <ul class="menu-items">
                     <li class="nav-btn" data-target="sys-durability">🔧 耐久度与修理系统</li>
-                    <li class="nav-btn" data-target="sys-level">🎖️ 角色等级分发限制</li>
                 </ul>
             </div>
 
@@ -127,209 +126,350 @@
             </div>
         </div>
         
-        <div class="main-content">
-            <div class="hero">
-                <h1>维多利亚时代警局军械库</h1>
-                <p>《七钟残响》跑团战役核心资料站 (DND 5e 改造版)</p>
-                <div class="badge">工业发条 × 维多利亚暗黑哥特 × 模块化框架</div>
-            </div>
+        <!-- ==================== 右侧主要内容区 ==================== -->
+    <div class="main-content">
 
-            <div id="home" class="content-section active">
-                <h2>一、领取与分配规则</h2>
-                <h3>1. 玩家装备槽位计算</h3>
-                <p>每个角色可携带的主武器数量由<b>力量(STR)</b>和<b>体型(SIZ)</b>共同决定：</p>
-                <div class="brass-box">
-                    <ul>
-                        <li><b>基础槽位</b>：1</li>
-                        <li><b>STR ≥ 13</b>：+1 槽位</li>
-                        <li><b>STR ≥ 17</b>：额外 +1 槽位（取代 STR≥13 的加成）</li>
-                        <li><b>体型为大型</b>：+1 槽位</li>
-                        <li><b>STR ≥ 17 且体型为大型</b>：额外 +1 槽位</li>
-                        <li><span class="highlight">单人最大携带上限</span>：4 槽位</li>
-                    </ul>
-                </div>
-
-                <h3>2. 据点库存随机生成公式</h3>
-                <p>团队返回核心据点补给点时，军械库的总件数 <span class="highlight">T</span> 采用以下公式随机生成：</p>
-                <div class="brass-box" style="border-left-color: #b58d24;">
-                    <p style="font-size: 16px; font-weight: bold; text-align: center; color: #cca43b; margin-bottom: 10px;">
-                        T = (团队总槽位数 × 2d4) + (玩家数量 × 1d6) + (2d8 - 1d4) + 基础库存值
-                    </p>
-                    <p><b>基础库存值：</b>新手 8（5级以下），标准 5（5~15级内），硬核 2（15级+）</p>
-                </div>
-
-                <h3>3. 生成与分配流程</h3>
-                <ol>
-                    <li><b>库存清点</b>：KP 计算总件数 X，准备武器池。</li>
-                    <li><b>随机抽取</b>：进行 X 次轮摆抽取，掷骰决定每种武器的具体到货数量。</li>
-                    <li><b>玩家挑选</b>：玩家根据自身的可用装备槽位自由选取。</li>
-                </ol>
-            </div>
-
-            <div id="wpn-light" class="content-section">
-                <h2>🗡️ 轻型武器（单手·灵活·防御性）</h2>
-                <table>
-                    <thead>
-                        <tr><th style="width: 15%;">武器名</th><th style="width: 12%;">伤害骰</th><th style="width: 13%;">距离属性</th><th style="width: 45%;">特殊效果</th><th style="width: 8%;">重量</th><th style="width: 7%;">耐久</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td><b>步兵刺刀</b></td><td class="dmg-dice">1d4 穿刺</td><td>近 (5尺)</td><td>可安装在弩或步枪上；精准刺击时攻击检定+1（若未移动）。</td><td>轻</td><td class="durability">10</td></tr>
-                        <tr><td><b>海军弯刀</b></td><td class="dmg-dice">1d6 挥砍</td><td>近 (5尺)</td><td>对绳索、木质障碍破坏时伤害骰取优势。</td><td>轻</td><td class="durability">8</td></tr>
-                        <tr><td><b>骑兵军刀</b></td><td class="dmg-dice">1d8 挥砍</td><td>中 (5-10尺)</td><td>骑乘且移动至少20尺时，本次攻击具有优势。</td><td>轻</td><td class="durability">9</td></tr>
-                        <tr><td><b>铁头木棒</b></td><td class="dmg-dice">1d6 钝击</td><td>近 (5尺)</td><td>命中时目标DC 11体质豁免，失败则震慑1轮。</td><td>轻</td><td class="durability">12</td></tr>
-                        <tr><td><b>手半剑</b></td><td class="dmg-dice">1d8 挥砍</td><td>中 (5-10尺)</td><td>自由切换单/双手（不消耗动作）；持此剑双手防御时AC+1。</td><td>轻</td><td class="durability">14</td></tr>
-                        <tr><td><b>细剑</b></td><td class="dmg-dice">1d8 穿刺</td><td>中 (5-10尺)</td><td>每日1次，攻击具有优势，若命中额外造成1d4穿刺伤害（毒蛇吐信）。</td><td>轻</td><td class="durability">10</td></tr>
-                        <tr><td><b>苏格兰双刃短剑</b></td><td class="dmg-dice">1d6 穿刺</td><td>近 (5尺)</td><td>双持时副手攻击不消耗附赠动作；持双剑时AC+1。</td><td>轻</td><td class="durability">8</td></tr>
-                        <tr><td><b>角柄剑</b></td><td class="dmg-dice">1d8 挥砍</td><td>中 (5-10尺)</td><td>寒冷环境中不会因手滑掉落武器；对抗缴械豁免具有优势。</td><td>轻</td><td class="durability">11</td></tr>
-                        <tr><td><b>军官佩剑</b></td><td class="dmg-dice">1d6+1 挥砍</td><td>中 (5-10尺)</td><td>与士兵、贵族交涉的魅力检定具有优势。</td><td>轻</td><td class="durability">14</td></tr>
-                        <tr><td><b>决斗剑</b></td><td class="dmg-dice">1d6+1 穿刺</td><td>中 (5-10尺)</td><td>先攻+2；与单一敌人战斗时攻击检定+1。</td><td>轻</td><td class="durability">12</td></tr>
-                        <tr><td><b>猎剑</b></td><td class="dmg-dice">1d8 挥砍</td><td>中 (5-10尺)</td><td>对野兽、怪物（非人形）额外造成1d4伤害。</td><td>轻</td><td class="durability">15</td></tr>
-                        <tr><td><b>手斧</b></td><td class="dmg-dice">1d6 挥砍</td><td>近 (5尺)</td><td>可投掷(射程20/60)；对穿戴中/重型护甲的目标忽略1点AC。</td><td>轻</td><td class="durability">12</td></tr>
-                        <tr><td><b>登山斧</b></td><td class="dmg-dice">1d6 挥砍</td><td>近 (5尺)</td><td>可作为攀爬工具使用（检定+1d4）；忽略1点AC。</td><td>轻</td><td class="durability">14</td></tr>
-                        <tr><td><b>劈柴斧（小）</b></td><td class="dmg-dice">1d8 挥砍</td><td>近 (5尺)</td><td>对木质目标（木门、木盾）额外造成2点伤害。</td><td>轻</td><td class="durability">16</td></tr>
-                        <tr><td><b>战术斧</b></td><td class="dmg-dice">1d8+1 挥砍</td><td>近 (5尺)</td><td>投掷时（射程20/60）伤害骰取优势。</td><td>轻</td><td class="durability">13</td></tr>
-                        <tr><td><b>铜指虎</b></td><td class="dmg-dice">1d4 钝击</td><td>近 (5尺)</td><td>不占手；用附赠动作攻击时可额外进行一次攻击（伤害-2）。</td><td>轻</td><td class="durability">10</td></tr>
-                        <tr><td><b>短棍</b></td><td class="dmg-dice">1d4 钝击</td><td>近 (5尺)</td><td>持此武器时AC+1；可用于缴械（力量对抗）。</td><td>轻</td><td class="durability">15</td></tr>
-                        <tr><td><b>甩棍</b></td><td class="dmg-dice">1d6 钝击</td><td>近 (5尺)</td><td>突袭时攻击具有优势；对抗缴械豁免具有优势。</td><td>轻</td><td class="durability">12</td></tr>
-                        <tr><td><b>流星锤（小）</b></td><td class="dmg-dice">1d6 钝击</td><td>中 (10尺)</td><td>命中后可用附赠动作尝试缴械（力量对抗）。</td><td>轻</td><td class="durability">10</td></tr>
-                        <tr><td><b>鞭棍</b></td><td class="dmg-dice">1d4 挥砍</td><td>中 (10尺)</td><td>命中后可用附赠动作进行缴械（力量对抗，具有优势）。</td><td>轻</td><td class="durability">9</td></tr>
-                        <tr><td><b>铁扇</b></td><td class="dmg-dice">1d4/1d6</td><td>近 (5尺)</td><td>可隐蔽；横扫时攻击5尺内两个相邻目标（第二次攻击具劣势）。</td><td>轻</td><td class="durability">10</td></tr>
-                        <tr><td><b>钉棍</b></td><td class="dmg-dice">1d6+1 钝击</td><td>近 (5尺)</td><td>命中时目标DC 11体质豁免，失败则流血（每轮1点，持续1d3轮）。</td><td>轻</td><td class="durability">14</td></tr>
-                        <tr><td><b>风切刃</b></td><td class="dmg-dice">1d6 挥砍</td><td>中 / 投掷</td><td>射程30/90；未命中飞回，需DC 10敏捷检定接住，失败则掉落。</td><td>轻</td><td class="durability">8</td></tr>
-                        <tr><td><b>锯齿匕首</b></td><td class="dmg-dice">1d4 穿刺</td><td>近 (5尺)</td><td>命中后伤口难愈，流血效果持续时间和伤害翻倍（若触发）。</td><td>轻</td><td class="durability">6</td></tr>
-                        <tr><td><b>蛛牙匕首</b></td><td class="dmg-dice">1d4 穿刺</td><td>近 (5尺)</td><td>射程20/60；每日1次淬毒（DC 12体质豁免，失败则中毒1分钟）。</td><td>轻</td><td class="durability">7</td></tr>
-                        <tr><td><b>铁骨扇</b></td><td class="dmg-dice">1d4 钝击</td><td>近 (5尺)</td><td>持用时对抗远程攻击的AC+2；可百分百隐蔽携带。</td><td>轻</td><td class="durability">12</td></tr>
-                        <tr><td><b>藤刺鞭</b></td><td class="dmg-dice">1d4 挥砍</td><td>中 (10尺)</td><td>命中时目标DC 11敏捷豁免，失败则速度减半1轮。</td><td>轻</td><td class="durability">6</td></tr>
-                        <tr><td><b>袖中剑</b></td><td class="dmg-dice">1d4 穿刺</td><td>近 (5尺)</td><td>极隐蔽，突袭时具有优势；若目标未察觉，伤害骰数量翻倍。</td><td>轻</td><td class="durability">8</td></tr>
-                        <tr><td><b>三棱刺</b></td><td class="dmg-dice">1d4+1 穿刺</td><td>近 (5尺)</td><td>命中后目标DC 12体质豁免，失败则流血（每轮1d4，持续1d3轮）。</td><td>轻</td><td class="durability">8</td></tr>
-                        <tr><td><b>腕刃</b></td><td class="dmg-dice">1d4 穿刺</td><td>近 (5尺)</td><td>不占用手部槽位；在擒抱状态下攻击具有优势。</td><td>轻</td><td class="durability">6</td></tr>
-                        <tr><td><b>石刃匕首</b></td><td class="dmg-dice">1d4 挥砍</td><td>近 (5尺)</td><td>伤口需额外1d4轮止血；攻击掷出自然1时武器彻底碎裂。</td><td>轻</td><td class="durability">4</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div id="wpn-medium" class="content-section">
-                <h2>⚔️ 中型武器（单手主力/双手灵活·均衡）</h2>
-                <table>
-                    <thead>
-                        <tr><th style="width: 15%;">武器名</th><th style="width: 12%;">伤害骰</th><th style="width: 13%;">距离属性</th><th style="width: 45%;">特殊效果</th><th style="width: 8%;">重量</th><th style="width: 7%;">耐久</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td><b>阔身砍刀</b></td><td class="dmg-dice">1d8+2 挥砍</td><td>近 (5尺)</td><td>对无甲/轻甲目标额外造成2点伤害；大失败时卡住（需动作拔出）。</td><td>中</td><td class="durability">14</td></tr>
-                        <tr><td><b>重型佩剑</b></td><td class="dmg-dice">1d8+2 挥砍</td><td>中 (5-10尺)</td><td>成功格挡后，可用反应进行一次攻击（该反击具劣势）。</td><td>中</td><td class="durability">16</td></tr>
-                        <tr><td><b>罗马短剑</b></td><td class="dmg-dice">1d8 穿刺</td><td>近 (5尺)</td><td>在5尺内攻击具有优势；持盾配合时盾牌AC额外+1。</td><td>...</td><td class="durability">14</td></tr>
-                        <tr><td><b>长剑</b></td><td class="dmg-dice">1d8+1 挥砍</td><td>中 (5-10尺)</td><td>完美平衡性。每场战斗中发起的第一次攻击检定+1。</td><td>中</td><td class="durability">14</td></tr>
-                        <tr><td><b>链枷</b></td><td class="dmg-dice">1d10 钝击</td><td>中 (5-10尺)</td><td>攻击时目标无法使用盾牌加值（AC）；大失败可能伤及自身1d4。</td><td>中</td><td class="durability">10</td></tr>
-                        <tr><td><b>戟</b></td><td class="dmg-dice">1d10/1d8</td><td>远 (10尺)</td><td>可切换伤害类型（挥砍/穿刺）；对抗冲锋时具有优势。</td><td>中</td><td class="durability">14</td></tr>
-                        <tr><td><b>晨星锤</b></td><td class="dmg-dice">1d10 钝击</td><td>近 (5尺)</td><td>忽略重型护甲2点AC；10%概率造成流血（每轮1d4）。</td><td>中</td><td class="durability">12</td></tr>
-                        <tr><td><b>八角锤</b></td><td class="dmg-dice">1d10 钝击</td><td>近 (5尺)</td><td>命中时目标DC 13体质豁免，失败则震慑1轮。</td><td>中</td><td class="durability">16</td></tr>
-                        <tr><td><b>焰舌剑</b></td><td class="dmg-dice">1d8+1d4火</td><td>中 (5-10尺)</td><td>命中额外造成1d4火焰伤害；在黑暗中可作为5尺明亮光源。</td><td>中</td><td class="durability">14</td></tr>
-                        <tr><td><b>符文战锤</b></td><td class="dmg-dice">1d10 钝击</td><td>近 (5尺)</td><td>命中时目标DC 12体质豁免，失败则震慑1轮；可作为法器。</td><td>中</td><td class="durability">18</td></tr>
-                    </tbody>
-                </table>
-                <p style="opacity: 0.5; font-style: italic; font-size: 12px;">（其余中型武器数据已完美封装，完全上线后可在表格中无缝查看）</p>
-            </div>
-
-            <div id="wpn-heavy" class="content-section">
-                <h2>🛡️ 重型武器（双手·威力巨大·需STR≥15）</h2>
-                <table>
-                    <thead>
-                        <tr><th style="width: 15%;">武器名</th><th style="width: 12%;">伤害骰</th><th style="width: 13%;">力量要求</th><th style="width: 45%;">特殊效果</th><th style="width: 8%;">重量</th><th style="width: 7%;">耐久</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td><b>双手巨剑</b></td><td class="dmg-dice">2d6 挥砍</td><td>STR≥15</td><td>大范围横扫。可同时攻击5尺内所有敌人（第二个目标起具劣势）。</td><td>重</td><td class="durability">16</td></tr>
-                        <tr><td><b>长柄战锤</b></td><td class="dmg-dice">2d6 钝击</td><td>STR≥15</td><td>破甲。忽略3点AC；成功命中后将中小型目标击退5尺。</td><td>重</td><td class="durability">16</td></tr>
-                        <tr><td><b>攻城槌</b></td><td class="dmg-dice">2d8 钝击</td><td>STR≥17</td><td>仅对建筑/门有效；使用时无法移动，携带时先攻-5且隐匿劣势。</td><td>重</td><td class="durability">12</td></tr>
-                        <tr><td><b>雷霆巨锤</b></td><td class="dmg-dice">2d8 钝击</td><td>STR≥17</td><td>命中时目标DC 13力量豁免，失败则被击退10尺并直接击倒。</td><td>重</td><td class="durability">16</td></tr>
-                        <tr><td><b>碎星锤</b></td><td class="dmg-dice">2d8 钝击</td><td>STR≥17</td><td>忽略4点AC；命中时目标DC 14体质豁免，失败则震慑1轮。</td><td>重</td><td class="durability">18</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div id="wpn-special" class="content-section">
-                <h2>✨ 特殊武器（高级批次·战役专属剧情奖励）</h2>
-                <table>
-                    <thead>
-                        <tr><th style="width: 15%;">武器名</th><th style="width: 12%;">伤害骰</th><th style="width: 13%;">专属词缀</th><th style="width: 45%;">特殊效果</th><th style="width: 8%;">重量</th><th style="width: 7%;">耐久</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td><b>时序之刃</b></td><td class="dmg-dice">1d8 力场</td><td>时空主题</td><td>命中后目标先攻-2（最多-6）；每日1次令其陷入缓慢术1轮。</td><td>轻</td><td class="durability">16</td></tr>
-                        <tr><td><b>秩序之锚</b></td><td class="dmg-dice">1d8 钝击</td><td>沃波尔主题</td><td>命中目标DC 13力量豁免失败则被束缚1轮；对构装体额外+1d4。</td><td>中</td><td class="durability">18</td></tr>
-                        <tr><td><b>哀悼之刺</b></td><td class="dmg-dice">1d6 穿刺</td><td>贝拉主题</td><td>命中目标DC 13感知豁免，失败则你共享并获得其一项技能熟练1小时。</td><td>轻</td><td class="durability">12</td></tr>
-                        <tr><td><b>雾影之刃</b></td><td class="dmg-dice">1d6 挥砍</td><td>米克主题</td><td>处于遮蔽/隐形时攻击具优势；附赠动作可变为虚无雾气1轮。</td><td>轻</td><td class="durability">10</td></tr>
-                        <tr><td><b>海潮之斧</b></td><td class="dmg-dice">1d12 挥砍</td><td>周坤主题</td><td>每日1次喷发15尺锥形水流，DC 14力量豁免失败被击退10尺并倒地。</td><td>重</td><td class="durability">16</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div id="wpn-custom" class="content-section">
-                <h2>🔧 罕见/自制武器（非制式工艺·奇门武装）</h2>
-                <table>
-                    <thead>
-                        <tr><th style="width: 15%;">武器名</th><th style="width: 12%;">伤害骰</th><th style="width: 13%;">特性</th><th style="width: 45%;">特殊效果</th><th style="width: 8%;">重量</th><th style="width: 7%;">耐久</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td><b>灌注水银的棍棒</b></td><td class="dmg-dice">1d8 钝击</td><td>炼金危险</td><td>攻击检定+1。每次用后须DC 12体质豁免否则中毒；自然1时碎裂释放5尺毒气。</td><td>中</td><td class="durability">10</td></tr>
-                        <tr><td><b>齿轮剑</b></td><td class="dmg-dice">1d8 挥砍</td><td>发条驱动</td><td>每日1次攻击具有优势；对构装体自动额外+1d4伤害。</td><td>中</td><td class="durability">16</td></tr>
-                        <tr><td><b>伞剑</b></td><td class="dmg-dice">1d6 穿刺</td><td>日常伪装</td><td>雨天撑开伞面可获得半身掩护（临时AC+2）。</td><td>轻</td><td class="durability">12</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div id="wpn-ranged" class="content-section">
-                <h2>🏹 远程武器仓库（预留扩展房间）</h2>
-                <div class="brass-box">
-                    <p>💡 <b>此处为未来追加区域：</b></p>
-                    <p>火枪、转轮手枪、发条连发弩等远程军械数据正在进行工业整备。未来无需修改全站，只需在 `id="wpn-ranged"` 的房间里直接追加表格代码即可无缝上线！</p>
-                </div>
-            </div>
-
-            <div id="armor-shop" class="content-section">
-                <h2>🛡️ 防具与防具仓库（预留扩展房间）</h2>
-                <div class="brass-box">
-                    <p>警局后勤部的防具库整备中。蒸汽动力外骨骼、特制防弹风衣、警用重盾等后勤防具数据，未来将在此处一键追加。</p>
-                </div>
-            </div>
-
-            <div id="item-shop" class="content-section">
-                <h2>🧪 炼金、药品与道具物资（预留扩展房间）</h2>
-                <div class="brass-box">
-                    <p>医疗凝胶、发条充能电池、炼金燃烧弹等消耗型战斗物资，未来将直接收纳于此独立房间中。</p>
-                </div>
-            </div>
-
-            <div id="sys-durability" class="content-section">
-                <h2>🔧 核心机制：耐久度与修理系统</h2>
-                <h3>1. 耐久百分比状态惩罚</h3>
+        <!-- 🏠 首页：作为武器仓库主界面（整合角色分发与领取分配系统） -->
+        <div id="home" class="content-section active">
+            <h2>📜 近战主武器库：维多利亚时代警局军械库 (DND 5e改造版)</h2>
+            
+            <h3>一、领取与分配规则</h3>
+            
+            <h4>1. 玩家装备槽位计算</h4>
+            <p>每个角色可携带主武器数量由<b>力量(STR)</b>和<b>体型(SIZ)</b>决定：</p>
+            <div class="brass-box">
                 <ul>
-                    <li><b>75% - 100% (完好)</b>: 正常发挥。</li>
-                    <li><b>25% - 74% (磨损)</b>: <span class="dmg-dice">使用该武器发起的攻击检定全部强制获得劣势</span>。</li>
-                    <li><b>0% - 24% (损坏)</b>: 彻底废弃，无法用于攻击和格挡，必须大修。</li>
+                    <li><b>基础槽位</b>：1</li>
+                    <li><b>STR ≥ 13</b>：+1 槽位</li>
+                    <li><b>STR ≥ 17</b>：额外 +1 槽位（取代 STR ≥ 13 的 +1）</li>
+                    <li><b>体型为大型</b>：+1 槽位</li>
+                    <li><b>STR ≥ 17 且体型为大型</b>：额外 +1 槽位</li>
+                    <li><span class="highlight">单人最大槽位</span>：4</li>
                 </ul>
-                <h3>2. 耐久损耗判定指标</h3>
-                <p>成功格挡(-1) | 格挡暴击(-2) | 命中石墙或重铠(-1d4) | 攻击检定自然1(-1d4) | 格挡魔法(-1d6)</p>
+                <p style="margin-top: 10px; font-size: 12px; color: var(--text-muted);">* 注：DND中标准玩家为中型。若因种族（如半巨人）或魔法效果为大型，则适用体型规则。</p>
             </div>
 
-            <div id="sys-level" class="content-section">
-                <h2>🎖️ 调查员等级分发限制</h2>
-                <p>根据角色的 **当前总等级**，警局军械库设定了以下列装安全门槛：</p>
+            <h4>2. 武器总件数计算公式（据点库存随机生成）</h4>
+            <div class="brass-box" style="border-left-color: var(--accent-gold);">
+                <p style="font-size: 15px; font-weight: bold; text-align: center; color: var(--accent-gold); margin-bottom: 10px;">
+                    总件数 T = (团队总槽位数 × 2d4) + (玩家数量 × 1d6) + (2d8 - 1d4) + 基础库存值
+                </p>
+                <p><b>基础库存值调节系数：</b></p>
                 <ul>
-                    <li><b>1-4级</b>: 最大携带1把，仅限轻型或中型。</li>
-                    <li><b>5-8级</b>: 最大携带2把，可包含1把重型。</li>
-                    <li><b>9-12级</b>: 最大携带2把，可包含1把特殊或罕见。</li>
-                    <li><b>13-16级以上</b>: 最大携带3把，无限制开放。</li>
+                    <li><b>新手阶段（5级以下）</b>：基础库存值 = 8</li>
+                    <li><b>标准阶段（5~15级内）</b>：基础库存值 = 5</li>
+                    <li><b>硬核阶段（15级以上）</b>：基础库存值 = 2</li>
                 </ul>
             </div>
+            <p><b>示例：</b>4人团队，槽位分别为2,2,3,1，总槽位=8。若 2d4=7 → 8×7=56；玩家数4，1d6=4 → 4×4=16；2d8=12，1d4=1 → 12-1=11；标准基础库存=5。<b>总件数 T = 56 + 16 + 11 + 5 = 88件。</b></p>
 
-            <div id="world-lore" class="content-section">
-                <h2>📜 战役世界线与核心剧情 NPC（预留扩展房间）</h2>
-                <div class="lore-card">
-                    <h3>💡 非装备类内容追加演示</h3>
-                    <p>这里未来可以随意写故事、世界观背景或者战役模组的 NPC 介绍。和上面的硬核武器完全隔离，不会发生任何代码冲突！</p>
-                </div>
+            <h4>3. 生成与分配流程</h4>
+            <ol>
+                <li>KP计算总件数 X</li>
+                <li>准备武器池</li>
+                <li>进行 X 次抽取，每次掷 d（取武器数量）决定武器种类</li>
+                <li>统计每种武器获得数量（有些武器可能多把，有些可能零把）</li>
+                <li>玩家按槽位从清单中选取</li>
+            </ol>
+            <div class="brass-box">
+                <p>💡 <b>据点补给逻辑</b>：警局是补给点，玩家每次回来可以按库存补充。武器可能耗尽，也可能有新的补给运到。KP可根据剧情需要调整基础库存值或额外 roll 几轮。</p>
             </div>
 
+            <h4>4. 分配规则（等级制）</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">角色等级</th>
+                        <th style="width: 35%;">可领取主武器数量</th>
+                        <th style="width: 40%;">备注限制</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><b>1 - 4 级</b></td><td><span class="highlight">1 把</span></td><td>仅限轻型或中型</td></tr>
+                    <tr><td><b>5 - 8 级</b></td><td><span class="highlight">2 把</span></td><td>可包括 1 把重型</td></tr>
+                    <tr><td><b>9 - 12 级</b></td><td><span class="highlight">2 把</span></td><td>可包括 1 把特殊或罕见</td></tr>
+                    <tr><td><b>13 - 16 级</b></td><td><span class="highlight">3 把</span></td><td>无限制</td></tr>
+                    <tr><td><b>17 - 20 级</b></td><td><span class="highlight">4 把</span></td><td>无限制，可包含魔法武器</td></tr>
+                </tbody>
+            </table>
         </div>
+
+        <!-- ⚔️ 轻型武器库（完整31把，绝不残缺） -->
+        <div id="wpn-light" class="content-section">
+            <h2>二、近战主武器列表 - 🗡️ 轻型武器</h2>
+            <p>单手，灵活，具防御性，适合敏捷流或副手武器。</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 15%;">武器名称</th>
+                        <th style="width: 15%;">基础伤害骰</th>
+                        <th style="width: 15%;">攻击距离</th>
+                        <th style="width: 40%;">特殊战术特效与限制</th>
+                        <th style="width: 7%;">重量</th>
+                        <th style="width: 8%;">最大耐久</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><b>步兵刺刀</b></td><td class="dmg-dice">1d4 穿刺</td><td>近(5尺)</td><td>可安装在弩或步枪上作为刺刀使用；精准刺击时攻击检定+1（若你未移动）。</td><td>轻</td><td class="durability">10</td></tr>
+                    <tr><td><b>海军弯刀</b></td><td class="dmg-dice">1d6 挥砍</td><td>近(5尺)</td><td>对绳索、木质障碍破坏时伤害骰取优势。</td><td>轻</td><td class="durability">8</td></tr>
+                    <tr><td><b>骑兵军刀</b></td><td class="dmg-dice">1d8 挥砍</td><td>中(5-10尺)</td><td>骑乘且移动至少20尺时，本次攻击具有优势。</td><td>轻</td><td class="durability">9</td></tr>
+                    <tr><td><b>铁头木棒</b></td><td class="dmg-dice">1d6 钝击</td><td>近(5尺)</td><td>高级警棍。命中时目标DC 11体质豁免，失败则震慑1轮。</td><td>轻</td><td class="durability">12</td></tr>
+                    <tr><td><b>手半剑</b></td><td class="dmg-dice">1d8 挥砍</td><td>中(5-10尺)</td><td>自由切换单/双手（不消耗动作）；持此剑防御时AC+1。</td><td>轻</td><td class="durability">14</td></tr>
+                    <tr><td><b>细剑</b></td><td class="dmg-dice">1d8 穿刺</td><td>中(5-10尺)</td><td>每日1次，攻击具有优势，若命中额外造成1d4穿刺伤害（毒蛇吐信战技）。</td><td>轻</td><td class="durability">10</td></tr>
+                    <tr><td><b>苏格兰双刃短剑</b></td><td class="dmg-dice">1d6 穿刺</td><td>近(5尺)</td><td>双持时副手攻击不消耗附赠动作；持双剑时AC+1。（每把独立）</td><td>轻</td><td class="durability">8</td></tr>
+                    <tr><td><b>角柄剑</b></td><td class="dmg-dice">1d8 挥砍</td><td>中(5-10尺)</td><td>寒冷环境中不会因手滑掉落武器；对抗缴械豁免具有优势。</td><td>轻</td><td class="durability">11</td></tr>
+                    <tr><td><b>军官佩剑</b></td><td class="dmg-dice">1d6+1 挥砍</td><td>中(5-10尺)</td><td>社交场合（与士兵、贵族交涉）的魅力检定具有优势。</td><td>轻</td><td class="durability">14</td></tr>
+                    <tr><td><b>决斗剑</b></td><td class="dmg-dice">1d6+1 穿刺</td><td>中(5-10尺)</td><td>先攻+2；与单一敌人战斗时攻击检定+1。</td><td>轻</td><td class="durability">12</td></tr>
+                    <tr><td><b>猎剑</b></td><td class="dmg-dice">1d8 挥砍</td><td>中(5-10尺)</td><td>对野兽、怪物（非人形）额外造成1d4伤害。</td><td>轻</td><td class="durability">15</td></tr>
+                    <tr><td><b>手斧</b></td><td class="dmg-dice">1d6 挥砍</td><td>近(5尺)</td><td>可投掷（射程20/60）；对穿戴中/重型护甲的目标忽略1点AC（来自护甲）。</td><td>轻</td><td class="durability">12</td></tr>
+                    <tr><td><b>登山斧</b></td><td class="dmg-dice">1d6 挥砍</td><td>近(5尺)</td><td>可作为攀爬工具使用（攀爬检定+1d4）；忽略1点AC。</td><td>轻</td><td class="durability">14</td></tr>
+                    <tr><td><b>劈柴斧（小）</b></td><td class="dmg-dice">1d8 挥砍</td><td>近(5尺)</td><td>对木质目标（木门、木盾）额外造成2点伤害。</td><td>轻</td><td class="durability">16</td></tr>
+                    <tr><td><b>战术斧</b></td><td class="dmg-dice">1d8+1 挥砍</td><td>近(5尺)</td><td>投掷时（射程20/60）伤害骰取优势。</td><td>轻</td><td class="durability">13</td></tr>
+                    <tr><td><b>铜指虎</b></td><td class="dmg-dice">1d4 钝击</td><td>近(5尺)</td><td>不占手，可同时持用其他武器；用附赠动作攻击时可额外进行一次攻击（伤害-2）。</td><td>轻</td><td class="durability">10</td></tr>
+                    <tr><td><b>短棍</b></td><td class="dmg-dice">1d4 钝击</td><td>近(5尺)</td><td>持此武器时AC+1；可用于缴械（力量对抗）。</td><td>轻</td><td class="durability">15</td></tr>
+                    <tr><td><b>甩棍</b></td><td class="dmg-dice">1d6 钝击</td><td>近(5尺)</td><td>突袭时攻击具有优势；对抗缴械豁免具有优势。</td><td>轻</td><td class="durability">12</td></tr>
+                    <tr><td><b>流星锤（小）</b></td><td class="dmg-dice">1d6 钝击</td><td>中(10尺触及)</td><td>限制中远程，补给到货极少。命中后可用附赠动作尝试缴械（力量对抗）。</td><td>轻</td><td class="durability">10</td></tr>
+                    <tr><td><b>鞭棍</b></td><td class="dmg-dice">1d4 挥砍</td><td>中(10尺触及)</td><td>命中后可用附赠动作进行缴械（力量对抗，具有优势）。</td><td>轻</td><td class="durability">9</td></tr>
+                    <tr><td><b>铁扇</b></td><td class="dmg-dice">1d4 钝击/1d6横扫</td><td>近(5尺)</td><td>可作为礼仪用品不引人注意；横扫时攻击5尺内两个相邻目标（第二次具有劣势）。</td><td>轻</td><td class="durability">10</td></tr>
+                    <tr><td><b>钉棍</b></td><td class="dmg-dice">1d6+1 钝击</td><td>近(5尺)</td><td>命中时目标DC 11体质豁免，失败则流血（每轮1点，持续1d3轮）。</td><td>轻</td><td class="durability">14</td></tr>
+                    <tr><td><b>风切刃</b></td><td class="dmg-dice">1d6 挥砍</td><td>中(5-10尺)</td><td>可投掷（射程30/90）；投掷后若未命中武器飞回（DC 10敏捷检定接住，失败则掉落）。</td><td>轻</td><td class="durability">8</td></tr>
+                    <tr><td><b>锯齿匕首</b></td><td class="dmg-dice">1d4 穿刺</td><td>近(5尺)</td><td>命中后伤口难以愈合，流血效果持续时间和伤害翻倍（若触发）。</td><td>轻</td><td class="durability">6</td></tr>
+                    <tr><td><b>蛛牙匕首</b></td><td class="dmg-dice">1d4 穿刺</td><td>近(5尺)</td><td>可投掷（射程20/60）；每日1次可淬毒（DC 12体质豁免，失败则中毒1分钟）。</td><td>轻</td><td class="durability">7</td></tr>
+                    <tr><td><b>铁骨扇</b></td><td class="dmg-dice">1d4 钝击</td><td>近(5尺)</td><td>持此武器时对抗远程攻击的AC+2；可隐蔽携带。</td><td>轻</td><td class="durability">12</td></tr>
+                    <tr><td><b>藤刺鞭</b></td><td class="dmg-dice">1d4 挥砍</td><td>中(10尺触及)</td><td>命中时目标DC 11敏捷豁免，失败则速度减半1轮。</td><td>轻</td><td class="durability">6</td></tr>
+                    <tr><td><b>袖中剑</b></td><td class="dmg-dice">1d4 穿刺</td><td>近(5尺)</td><td>极隐蔽，突袭时攻击具有优势；若目标未察觉你，伤害骰翻倍。</td><td>轻</td><td class="durability">8</td></tr>
+                    <tr><td><b>三棱刺</b></td><td class="dmg-dice">1d4+1 穿刺</td><td>近(5尺)</td><td>命中后目标DC 12体质豁免，失败则流血（每轮1d4，持续1d3轮）。</td><td>轻</td><td class="durability">8</td></tr>
+                    <tr><td><b>腕刃</b></td><td class="dmg-dice">1d4 穿刺</td><td>近(5尺)</td><td>不占用手，可同时持用其他武器或盾牌；擒抱时攻击具有优势。</td><td>轻</td><td class="durability">6</td></tr>
+                    <tr><td><b>石刃匕首</b></td><td class="dmg-dice">1d4 挥砍</td><td>近(5尺)</td><td>黑曜石打造。命中后伤口需额外1d4轮自然止血；攻击自然1时武器碎裂。</td><td>轻</td><td class="durability">4</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ⚔️ 中型武器库（完整31把，绝不残缺） -->
+        <div id="wpn-medium" class="content-section">
+            <h2>二、近战主武器列表 - ⚔️ 中型武器</h2>
+            <p>单手主力/双手灵活，属性均衡，是大多数干员的核心列装选择。</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 15%;">武器名称</th>
+                        <th style="width: 15%;">基础伤害骰</th>
+                        <th style="width: 15%;">攻击距离</th>
+                        <th style="width: 40%;">特殊战术特效与限制</th>
+                        <th style="width: 7%;">重量</th>
+                        <th style="width: 8%;">最大耐久</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><b>阔身砍刀</b></td><td class="dmg-dice">1d8+2 挥砍</td><td>近(5尺)</td><td>对未穿护甲或仅穿轻甲的目标额外造成2点伤害；大失败时武器可能卡住（需动作拔出）。</td><td>中</td><td class="durability">14</td></tr>
+                    <tr><td><b>重型佩剑</b></td><td class="dmg-dice">1d8+2 挥砍</td><td>中(5-10尺)</td><td>若用此武器成功格挡，可用反应进行一次攻击（具有劣势）。</td><td>中</td><td class="durability">16</td></tr>
+                    <tr><td><b>罗马短剑</b></td><td class="dmg-dice">1d8 穿刺</td><td>近(5尺)</td><td>在5尺内攻击具有优势；持盾时AC+1。</td><td>中</td><td class="durability">14</td></tr>
+                    <tr><td><b>弯刀（中型）</b></td><td class="dmg-dice">1d8+1 挥砍</td><td>中(5-10尺)</td><td>骑乘且移动至少20尺时，伤害+1d4。</td><td>中</td><td class="durability">13</td></tr>
+                    <tr><td><b>马刀</b></td><td class="dmg-dice">1d8+2 挥砍</td><td>中(5-10尺)</td><td>若在本回合移动至少20尺，本次攻击具有优势。</td><td>中</td><td class="durability">14</td></tr>
+                    <tr><td><b>苏格兰阔剑</b></td><td class="dmg-dice">1d10 挥砍</td><td>中(5-10尺)</td><td>双手使用时伤害+2；每日1次，攻击5尺内所有敌人（每个目标独立检定）。</td><td>中</td><td class="durability">16</td></tr>
+                    <tr><td><b>德国双手剑</b></td><td class="dmg-dice">1d10 挥砍</td><td>中(5-10尺)</td><td>单手可用。切换单/双手为自由动作；双手时伤害+1d2。</td><td>中</td><td class="durability">16</td></tr>
+                    <tr><td><b>焰形剑</b></td><td class="dmg-dice">1d8+1 挥砍</td><td>中(5-10尺)</td><td>命中后流血效果持续时间+1轮；流血触发时每轮1d4。</td><td>中</td><td class="durability">14</td></tr>
+                    <tr><td><b>长剑</b></td><td class="dmg-dice">1d8+1 挥砍</td><td>中(5-10尺)</td><td>标准配备。平衡性好无特殊惩罚；首次攻击检定+1。</td><td>中</td><td class="durability">14</td></tr>
+                    <tr><td><b>尼泊尔弯刀</b></td><td class="dmg-dice">1d10 挥砍</td><td>近(5尺)</td><td>对穿戴中型护甲的目标忽略2点AC；大失败时可能失衡。</td><td>中</td><td class="durability">12</td></tr>
+                    <tr><td><b>大马士革刀</b></td><td class="dmg-dice">1d8+2 挥砍</td><td>中(5-10尺)</td><td>锋利无比，耐久消耗减半；对抗缴械豁免具有优势。</td><td>中</td><td class="durability">18</td></tr>
+                    <tr><td><b>仪式长剑</b></td><td class="dmg-dice">1d8+1 挥砍</td><td>中(5-10尺)</td><td>对邪魔、不死生物额外造成1d4光耀伤害；可作为施法法器。</td><td>中</td><td class="durability">12</td></tr>
+                    <tr><td><b>战斧</b></td><td class="dmg-dice">1d8+1 挥砍</td><td>近(5尺)</td><td>单刃轴头，平衡性好。忽略2点AC（来自护甲）。</td><td>중</td><td class="durability">12</td></tr>
+                    <tr><td><b>开山刀</b></td><td class="dmg-dice">1d10+1 挥砍</td><td>中(5-10尺)</td><td>对植物类敌人伤害×2；可清理植被。</td><td>中</td><td class="durability">14</td></tr>
+                    <tr><td><b>链枷</b></td><td class="dmg-dice">1d10 钝击</td><td>中(5-10尺)</td><td>农具改造。攻击时目标无法使用盾牌加值（AC）对抗该次攻击；大失败可能伤己。</td><td>中</td><td class="durability">10</td></tr>
+                    <tr><td><b>长柄消防斧</b></td><td class="dmg-dice">1d10+1 挥砍</td><td>远(10尺触及)</td><td>对门、障碍物自动成功（除魔法门外）；攻击范围+5尺。</td><td>中</td><td class="durability">14</td></tr>
+                    <tr><td><b>戟</b></td><td class="dmg-dice">1d10挥砍/1d8穿刺</td><td>远(10尺触及)</td><td>可切换伤害类型（挥砍/穿刺）；对抗冲锋时攻击具有优势。</td><td>中</td><td class="durability">14</td></tr>
+                    <tr><td><b>钉头锤</b></td><td class="dmg-dice">1d8 钝击</td><td>近(5尺)</td><td>铸铁锤头带棱刺。忽略1点AC；命中时DC 11体质豁免，失败则震慑1轮。</td><td>中</td><td class="durability">13</td></tr>
+                    <tr><td><b>伐木斧</b></td><td class="dmg-dice">1d10+2 挥砍</td><td>中(5-10尺)</td><td>对木质目标伤害加倍；大失败可能脱手。</td><td>中</td><td class="durability">14</td></tr>
+                    <tr><td><b>手杖剑（加强型）</b></td><td class="dmg-dice">1d6+1 穿刺</td><td>中(5-10尺)</td><td>外观手杖。突袭时先攻+2；可作为手杖不引人注意。</td><td>中</td><td class="durability">14</td></tr>
+                    <tr><td><b>砍刀（大号）</b></td><td class="dmg-dice">1d10+1 挥砍</td><td>近(5尺)</td><td>比一般砍刀更大。对植物、软甲（无甲/轻甲）额外+1d4伤害。</td><td>中</td><td class="durability">13</td></tr>
+                    <tr><td><b>晨星锤</b></td><td class="dmg-dice">1d10 钝击</td><td>近(5尺)</td><td>忽略2点AC（来自重型护甲）；10%概率造成流血（每轮1d4）。</td><td>中</td><td class="durability">12</td></tr>
+                    <tr><td><b>钢鞭</b></td><td class="dmg-dice">1d8 挥砍</td><td>中(10尺触及)</td><td>多节钢鞭。攻击时可绕过目标的盾牌加值（AC）；攻击具有劣势但命中后目标敏捷豁免具有劣势1轮。</td><td>中</td><td class="durability">12</td></tr>
+                    <tr><td><b>八角锤</b></td><td class="dmg-dice">1d10 钝击</td><td>近(5尺)</td><td>八棱锤头。命中时目标DC 13体质豁免，失败则震慑1轮。</td><td>中</td><td class="durability">16</td></tr>
+                    <tr><td><b>长矛（标准）</b></td><td class="dmg-dice">1d8+1 穿刺</td><td>远(10尺触及)</td><td>约2米长矛。对抗冲锋时攻击具有优势；攻击范围10尺。</td><td>中</td><td class="durability">13</td></tr>
+                    <tr><td><b>焰舌剑</b></td><td class="dmg-dice">1d8 挥砍+1d4火焰</td><td>中(5-10尺)</td><td>命中后额外造成1d4火焰伤害；可作为光源（5尺明亮）。</td><td>中</td><td class="durability">14</td></tr>
+                    <tr><td><b>寒铁战斧</b></td><td class="dmg-dice">1d8+1 挥砍</td><td>近(5尺)</td><td>对精类、恶魔额外造成1d6伤害；可穿透其伤害减免。</td><td>中</td><td class="durability">16</td></tr>
+                    <tr><td><b>锯齿刃</b></td><td class="dmg-dice">1d10 挥砍</td><td>中(5-10尺)</td><td>兽人风格。命中后目标流血（每轮1d4，持续1d3轮）；大失败时武器卡在目标身上。</td><td>中</td><td class="durability">10</td></tr>
+                    <tr><td><b>水晶剑</b></td><td class="dmg-dice">1d8 穿刺</td><td>中(5-10尺)</td><td>在阳光下攻击具有优势；大失败时武器碎裂。</td><td>中</td><td class="durability">8</td></tr>
+                    <tr><td><b>符文战锤</b></td><td class="dmg-dice">1d10 钝击</td><td>近(5尺)</td><td>矮人风格。命中时目标DC 12体质豁免，失败则震慑1轮；可作为施法法器。</td><td>中</td><td class="durability">18</td></tr>
+                    <tr><td><b>蛇形剑</b></td><td class="dmg-dice">1d8 挥砍</td><td>中(5-10尺)</td><td>攻击具有劣势，但若命中额外造成1d6穿刺伤害；无视盾牌加值。</td><td>中</td><td class="durability">12</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 🛡️ 重型武器库（完整15把，绝不残缺） -->
+        <div id="wpn-heavy" class="content-section">
+            <h2>二、近战主武器列表 - 🛡️ 重型武器</h2>
+            <p>双手持有，威力巨大，使用有严格的力量属性(STR)限制门槛。</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 15%;">武器名称</th>
+                        <th style="width: 15%;">基础伤害骰</th>
+                        <th style="width: 15%;">属性限制</th>
+                        <th style="width: 40%;">特殊战术特效与限制</th>
+                        <th style="width: 7%;">重量</th>
+                        <th style="width: 8%;">最大耐久</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><b>双手巨剑</b></td><td class="dmg-dice">2d6 挥砍</td><td>STR ≥ 15</td><td>攻击5尺内所有敌人（每个目标独立检定，第二次起具有劣势）。</td><td>重</td><td class="durability">16</td></tr>
+                    <tr><td><b>苏格兰斩剑</b></td><td class="dmg-dice">2d6 挥砍</td><td>STR ≥ 15</td><td>巨大的双手剑。对抗长柄武器（触及10尺）时无距离劣势。</td><td>重</td><td class="durability">18</td></tr>
+                    <tr><td><b>长柄战锤</b></td><td class="dmg-dice">2d6 钝击</td><td>STR ≥ 15</td><td>用于破甲。忽略3点AC；命中后目标被击退5尺。</td><td>重</td><td class="durability">16</td></tr>
+                    <tr><td><b>斩马刀</b></td><td class="dmg-dice">2d6 挥砍</td><td>STR ≥ 15</td><td>长柄大刀。对坐骑额外造成1d6伤害。</td><td>重</td><td class="durability">14</td></tr>
+                    <tr><td><b>攻城槌（便携）</b></td><td class="dmg-dice">2d8 钝击</td><td>STR ≥ 17</td><td>仅对建筑、门、大型构装体有效；使用时无法移动；携带时敏捷检定劣势，先攻-5。</td><td>重</td><td class="durability">12</td></tr>
+                    <tr><td><b>船锚钩（带链）</b></td><td class="dmg-dice">1d10 穿刺</td><td>STR ≥ 15</td><td>命中后可用附赠动作进行力量对抗，成功则拉近5尺；可投掷（射程10/30）。</td><td>重</td><td class="durability">12</td></tr>
+                    <tr><td><b>双刃战斧</b></td><td class="dmg-dice">1d10+2 挥砍</td><td>STR ≥ 15</td><td>双面开刃。10%概率造成流血（每轮1d4）。</td><td>重</td><td class="durability">14</td></tr>
+                    <tr><td><b>巨型棍棒</b></td><td class="dmg-dice">2d6 钝击</td><td>STR ≥ 15</td><td>坚硬木材头部包铁。命中时目标DC 13体质豁免，失败则震慑1轮。</td><td>重</td><td class="durability">15</td></tr>
+                    <tr><td><b>长矛（重型）</b></td><td class="dmg-dice">1d8+1 穿刺</td><td>STR ≥ 13</td><td>超长矛。对抗冲锋时攻击具有优势；攻击范围15尺（15尺触及）。</td><td>重</td><td class="durability">14</td></tr>
+                    <tr><td><b>铁锤（工匠用）</b></td><td class="dmg-dice">2d6 钝击</td><td>STR ≥ 15</td><td>铁匠大锤。对构装体、石质目标伤害×1.5。</td><td>重</td><td class="durability">18</td></tr>
+                    <tr><td><b>雷霆巨锤</b></td><td class="dmg-dice">2d8 钝击</td><td>STR ≥ 17</td><td>巨人风格。命中时目标DC 13力量豁免，失败则被击退10尺并倒地。</td><td>重</td><td class="durability">16</td></tr>
+                    <tr><td><b>陨铁巨剑</b></td><td class="dmg-dice">2d6+1 挥砍</td><td>STR ≥ 15</td><td>星辰之剑。攻击检定+1；对构装体、土系生物额外+1d6。</td><td>重</td><td class="durability">20</td></tr>
+                    <tr><td><b>龙骨巨斧</b></td><td class="dmg-dice">1d12+1 挥砍</td><td>STR ≥ 17</td><td>龙骨制成。对龙类额外+1d8伤害；命中时DC 12体质豁免，失败则震慑1轮。</td><td>重</td><td class="durability">18</td></tr>
+                    <tr><td><b>深渊链锤</b></td><td class="dmg-dice">2d6 钝击</td><td>STR ≥ 15</td><td>对恶魔、邪魔额外+1d6伤害；命中后DC 12感知豁免，失败则恐惧1轮。</td><td>重</td><td class="durability">14</td></tr>
+                    <tr><td><b>碎星锤</b></td><td class="dmg-dice">2d8 钝击</td><td>STR ≥ 17</td><td>破甲重锤。忽略4点AC；命中时DC 14体质豁免，失败则震慑1轮。</td><td>重</td><td class="durability">18</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ✨ 特殊武器库（完整10把） -->
+        <div id="wpn-special" class="content-section">
+            <h2>二、近战主武器列表 - ✨ 特殊武器</h2>
+            <p>需特别许可或战役奖励，自带超自然威能或主题武器特质。</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 15%;">武器名称</th>
+                        <th style="width: 15%;">基础伤害骰</th>
+                        <th style="width: 15%;">攻击距离</th>
+                        <th style="width: 40%;">特殊战术特效与限制</th>
+                        <th style="width: 7%;">重量</th>
+                        <th style="width: 8%;">最大耐久</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><b>镀银长剑</b></td><td class="dmg-dice">1d8 挥砍</td><td>中(5-10尺)</td><td>对畏银生物（狼人、吸血鬼）视作魔法武器，额外+1d4光耀；对抗恐惧豁免优势。</td><td>中</td><td class="durability">16</td></tr>
+                    <tr><td><b>灵体剥离器</b></td><td class="dmg-dice">1d4物理 / 1d10力场</td><td>远(10尺触及)</td><td>对灵体造成1d10力场伤害；每日1次，使灵体DC 14感知豁免，失败束缚1轮。</td><td>中</td><td class="durability">10</td></tr>
+                    <tr><td><b>痛苦荆棘鞭</b></td><td class="dmg-dice">1d6 挥砍</td><td>中(10尺触及)</td><td>命中后流血（每轮1d4，持续1d3轮），敏捷-2（持续1轮）；每次使用需DC 10感知豁免，失败受1点精神伤害。</td><td>轻</td><td class="durability">8</td></tr>
+                    <tr><td><b>仪式匕首（大型）</b></td><td class="dmg-dice">1d6+2 穿刺</td><td>近(5尺)</td><td>对召唤物、恶魔额外+1d6；可作施法法器；使用后需DC 10感知豁免，失败受1点精神伤害。</td><td>轻</td><td class="durability">12</td></tr>
+                    <tr><td><b>时序之刃</b></td><td class="dmg-dice">1d8 力场</td><td>中(5-10尺)</td><td>命中目标先攻-2（可叠至-6）；每日1次，目标DC 13敏捷豁免，失败时间停滞（缓慢术）1轮。</td><td>轻</td><td class="durability">16</td></tr>
+                    <tr><td><b>秩序之锚</b></td><td class="dmg-dice">1d8 钝击</td><td>中(5-10尺)</td><td>沃波尔主题。命中后DC 13力量豁免，失败被束缚1轮；对构装体额外+1d4。</td><td>中</td><td class="durability">18</td></tr>
+                    <tr><td><b>哀悼之刺</b></td><td class="dmg-dice">1d6 穿刺</td><td>中(5-10尺)</td><td>贝拉主题。命中后目标DC 13感知豁免，失败则你获得其一项选择的技能熟练项，持续1小时。</td><td>轻</td><td class="durability">12</td></tr>
+                    <tr><td><b>雾影之刃</b></td><td class="dmg-dice">1d6 挥砍</td><td>近(5尺)</td><td>米克主题。重度遮蔽或隐形时攻击具优势；附赠动作可变雾气1轮（无法攻击但可穿过狭缝）。</td><td>轻</td><td class="durability">10</td></tr>
+                    <tr><td><b>海潮之斧</b></td><td class="dmg-dice">1d12 挥砍</td><td>中(5-10尺)</td><td>周坤主题。需STR≥15；每日1次释放15尺锥形水流，目标DC 14力量豁免，失败击退10尺并倒地。</td><td>重</td><td class="durability">16</td></tr>
+                    <tr><td><b>破晓圣剑</b></td><td class="dmg-dice">1d8 光耀</td><td>中(5-10尺)</td><td>圣银修会主题。对不死、邪魔额外+1d6光耀；黑暗中发出10尺明亮+10尺微光。</td><td>中</td><td class="durability">16</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 🔧 罕见/自制武器库（完整15把） -->
+        <div id="wpn-custom" class="content-section">
+            <h2>二、近战主武器列表 - 🔧 罕见/自制武器</h2>
+            <p>特殊工艺或民间非制式改装改装，机制独特。</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 15%;">武器名称</th>
+                        <th style="width: 15%;">基础伤害骰</th>
+                        <th style="width: 15%;">攻击距离</th>
+                        <th style="width: 40%;">特殊战术特效与限制</th>
+                        <th style="width: 7%;">重量</th>
+                        <th style="width: 8%;">最大耐久</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><b>硬化藤杖</b></td><td class="dmg-dice">1d6+1 钝击</td><td>中(5-10尺)</td><td>持用时对抗近战AC+1；可作为标准普通手杖不引人注意。</td><td>轻</td><td class="durability">22</td></tr>
+                    <tr><td><b>铁路道钉锤</b></td><td class="dmg-dice">1d6+2 钝击</td><td>近(5尺)</td><td>对金属、机械额外+2伤害；对构装体伤害+1d4。</td><td>中</td><td class="durability">14</td></tr>
+                    <tr><td><b>教堂烛台（重型）</b></td><td class="dmg-dice">1d8 钝击</td><td>中(5-10尺)</td><td>可作圣徽；对邪恶生物攻击具优势；持有者对抗恐惧豁免具优势。</td><td>中</td><td class="durability">16</td></tr>
+                    <tr><td><b>屠夫斩骨刀（巨型）</b></td><td class="dmg-dice">1d10+1 挥砍</td><td>近(5尺)</td><td>对血肉生物暴击阈值降至19-20；视见者需DC 12感知豁免，失败恐惧1轮。</td><td>重</td><td class="durability">16</td></tr>
+                    <tr><td><b>灌注水银的棍棒</b></td><td class="dmg-dice">1d8 钝击</td><td>近(5尺)</td><td>攻击检定+1；使用后持有者DC 12体质豁免，失败中毒1分钟；大失败碎裂爆毒（5尺内生物检定）。</td><td>中</td><td class="durability">10</td></tr>
+                    <tr><td><b>玻璃破片长矛</b></td><td class="dmg-dice">1d8 穿刺</td><td>远(10尺触及)</td><td>第一次命中额外+1d4；攻击自然1武器碎裂，对5尺内所有生物造成1d4穿刺伤害。</td><td>中</td><td class="durability">6</td></tr>
+                    <tr><td><b>黑曜石刃剑</b></td><td class="dmg-dice">1d8+3 挥砍</td><td>中(5-10尺)</td><td>极易碎但极其锋利。大失败碎裂；暴击时额外+1d6伤害。</td><td>中</td><td class="durability">4</td></tr>
+                    <tr><td><b>伞剑</b></td><td class="dmg-dice">1d6 穿刺</td><td>中(5-10尺)</td><td>可隐蔽携带；雨天可用伞面干扰视线获得半身掩护（AC+2）。</td><td>轻</td><td class="durability">12</td></tr>
+                    <tr><td><b>多节棍</b></td><td class="dmg-dice">1d6 钝击</td><td>中(10尺触及)</td><td>三节棍。对抗远程AC+2；可缴械（力量对抗具优势），但常规攻击具有劣势。</td><td>轻</td><td class="durability">14</td></tr>
+                    <tr><td><b>袖剑</b></td><td class="dmg-dice">1d4+1 穿刺</td><td>近(5尺)</td><td>极隐蔽，突袭具优势；若目标未察觉你，伤害骰翻倍。</td><td>轻</td><td class="durability">10</td></tr>
+                    <tr><td><b>双节棍</b></td><td class="dmg-dice">1d6 钝击</td><td>近(5尺)</td><td>若攻击前用附赠动作蓄力，本次伤害×1.5；对抗缴械豁免具有优势。</td><td>轻</td><td class="durability">12</td></tr>
+                    <tr><td><b>齿轮剑</b></td><td class="dmg-dice">1d8 挥砍</td><td>中(5-10尺)</td><td>发条机械驱动。每日1次攻击具优势；对构装体额外+1d4。</td><td>中</td><td class="durability">16</td></tr>
+                    <tr><td><b>骨刃</b></td><td class="dmg-dice">1d6 挥砍</td><td>近(5尺)</td><td>死灵气息。对不死生物额外+1d6伤害；持有者每日需DC 12感知豁免，失败受1点精神伤。</td><td>轻</td><td class="durability">10</td></tr>
+                    <tr><td><b>活体藤鞭</b></td><td class="dmg-dice">1d4 挥砍</td><td>中(10尺触及)</td><td>每日自动恢复2d4点耐久；命中后目标DC 12敏捷豁免，失败则被束缚1轮。</td><td>轻</td><td class="durability">8</td></tr>
+                    <tr><td><b>墨玉锤</b></td><td class="dmg-dice">1d10 钝击</td><td>近(5尺)</td><td>对石质、土系生物额外+1d6；高级坚固耐用，最大耐久+6。</td><td>中</td><td class="durability">20</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 空白暂存占位（预留补丁房间） -->
+        <div id="wpn-ranged" class="content-section"><h2>远程武器库</h2><p style="color: var(--text-muted); font-style: italic;">（后勤物资整备中...）</p></div>
+        <div id="armor-shop" class="content-section"><h2>防具库</h2><p style="color: var(--text-muted); font-style: italic;">（护甲整备中...）</p></div>
+        <div id="item-shop" class="content-section"><h2>🧪 炼金与道具药品</h2><p style="color: var(--text-muted); font-style: italic;">（消耗品整备中...）</p></div>
+
+        <!-- 🔧 三、武器耐久度与修理系统 -->
+        <div id="sys-durability" class="content-section">
+            <h2>三、耐久度与修理系统</h2>
+            
+            <h3>1. 耐久状态</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 30%;">耐久百分比</th>
+                        <th style="width: 30%;">状态</th>
+                        <th style="width: 40%;">具体游戏效果</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><b>75% - 100%</b></td><td><span style="color: #70e28c; font-weight: bold;">完好</span></td><td>正常使用，无惩罚</td></tr>
+                    <tr><td><b>25% - 74%</b></td><td><span style="color: #e5c158; font-weight: bold;">磨损</span></td><td>攻击检定具有劣势（若未及时修复）</td></tr>
+                    <tr><td><b>0% - 24%</b></td><td><span class="highlight">损坏</span></td><td>严重破损，无法使用，必须进行专业修理</td></tr>
+                </tbody>
+            </table>
+
+            <h3>2. 精密耐久损耗触发条件</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 50%;">具体战术触发条件</th>
+                        <th style="width: 50%;">耐久损失额度</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>成功格挡一次物理攻击</td><td><b>1 点</b></td></tr>
+                    <tr><td>拦截/格挡怪物暴击伤害</td><td><b>2 点</b></td></tr>
+                    <tr><td>武器命中坚硬表面（墙壁、重铠甲壳、BOSS石质外骨骼）</td><td><b>1d4 点</b></td></tr>
+                    <tr><td>攻击检定出现大失败（自然 1）</td><td><b>1d4 点</b></td></tr>
+                    <tr><td>使用凡铁武器强行格挡魔法或能量攻击</td><td><b>1d6 点</b></td></tr>
+                    <tr><td>身处极度恶劣环境（极端酸雨、极寒冰封风暴等）</td><td><b>每场景 1d2 点</b></td></tr>
+                </tbody>
+            </table>
+
+            <h3>3. 据点后勤工坊修理规则</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>损坏程度</th>
+                        <th>所需工时</th>
+                        <th>消耗后勤基础材料</th>
+                        <th>对应属性技能检定</th>
+                        <th>修理成功DC</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><b>磨损 (25%-74%)</b></td><td>1 小时</td><td>基础维修工具箱</td><td>智力（工匠工具）</td><td><b>DC 12</b></td></tr>
+                    <tr><td><b>损坏 (0%-24%)</b></td><td>4 小时</td><td>专业后勤工具 + 对应高级材料</td><td>智力（工匠工具）</td><td><b>DC 17</b></td></tr>
+                    <tr><td><b>完全碎裂 (0%)</b></td><td>—</td><td>无法自行修复（需大师级工匠+特殊核心配方）</td><td>—</td><td><b>—</b></td></tr>
+                </tbody>
+            </table>
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;">
+                * <b>专业修理对应工匠类别细则：</b><br>
+                - 金属武器/护甲：铁匠工具 | - 木制品/长杆握柄：木匠工具 | - 复杂发条齿轮机械：工匠工具（机械）<br>
+                - 罕见魔法/特殊物品：奥秘 + 特殊材料（需视战役阶段由 KP 进行特殊裁定）
+            </p>
+        </div>
+
+        <!-- 📜 战役世界线 -->
+        <div id="world-lore" class="content-section">
+            <h2>四、伦敦世界观与剧情NPC</h2>
+            <p style="color: var(--text-muted); font-style: italic;">（当前战役迷雾笼罩，随着剧情推进，世界线线索将在此更新...）</p>
+        </div>
+
+    </div>
     </div>
 
     <script>
