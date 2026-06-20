@@ -79,44 +79,48 @@
 </head>
 <body>
     <!-- ==================== 左侧导航（精准替换这部分即可） ==================== -->
-        <div class="sidebar">
-            <h2>📜 七钟残响</h2>
-            
-            <div class="menu-group">
-                <div class="menu-title">🏠 导览</div>
-                <ul class="menu-items">
-                    <li class="nav-btn active" data-target="home">🏠 首页与据点分配规则</li>
-                </ul>
-            </div>
-            
-            <div class="menu-group">
-                <div class="menu-title">⚔️ 武器仓库</div>
-                <ul class="sub-menu-items">
-                    <li class="nav-btn" data-target="wpn-light">└─ 轻型主武器</li>
-                    <li class="nav-btn" data-target="wpn-medium">└─ 中型主武器</li>
-                    <li class="nav-btn" data-target="wpn-heavy">└─ 重型主武器</li>
-                    <li class="nav-btn" data-target="wpn-special">└─ 特殊主武器</li>
-                    <li class="nav-btn" data-target="wpn-custom">└─ 罕见/自制武器</li>
-                </ul>
-                <ul class="menu-items">
-                    <li class="nav-btn" data-target="wpn-ranged">🏹 远程武器库</li>
-                </ul>
-            </div>
-            
-            <div class="menu-group">
-                <div class="menu-title">🛡️ 防具与后勤</div>
-                <ul class="menu-items">
-                    <li class="nav-btn" data-target="armor-shop">🛡️ 防具防具库</li>
-                    <li class="nav-btn" data-target="item-shop">🧪 炼金与道具药品</li>
-                </ul>
-            </div>
+<div class="sidebar">
+        <h2>📜 七钟残响</h2>
+        
+        <div class="menu-group">
+            <div class="menu-title">🏠 导览</div>
+            <ul class="menu-items">
+                <li class="nav-btn active" data-target="home">🏠 首页与据点生成规则</li>
+            </ul>
+        </div>
+        
+        <div class="menu-group">
+            <div class="menu-title">⚔️ 近战军械</div>
+            <ul class="menu-items">
+                <li class="nav-btn" data-target="wpn-main-hub">⚔️ 主武器仓库 (规则分配页)</li>
+            </ul>
+            <ul class="sub-menu-items">
+                <li class="nav-btn" data-target="wpn-light">└─ 轻型主武器 (29种)</li>
+                <li class="nav-btn" data-target="wpn-medium">└─ 中型主武器 (30种)</li>
+                <li class="nav-btn" data-target="wpn-heavy">└─ 重型主武器 (15种)</li>
+                <li class="nav-btn" data-target="wpn-special">└─ 特殊主武器 (10种)</li>
+                <li class="nav-btn" data-target="wpn-custom">└─ 罕见/自制武器 (15种)</li>
+            </ul>
+            <ul class="menu-items">
+                <li class="nav-btn" data-target="wpn-ranged">🏹 远程武器库</li>
+            </ul>
+        </div>
+        
+        <div class="menu-group">
+            <div class="menu-title">🛡️ 防具与后勤</div>
+            <ul class="menu-items">
+                <li class="nav-btn" data-target="armor-shop">🛡️ 防具库</li>
+                <li class="nav-btn" data-target="item-shop">🧪 炼金与道具药品</li>
+            </ul>
+        </div>
 
-            <div class="menu-group">
-                <div class="menu-title">⚙️ 规则核心速查</div>
-                <ul class="menu-items">
-                    <li class="nav-btn" data-target="sys-durability">🔧 耐久度与修理系统</li>
-                </ul>
-            </div>
+        <div class="menu-group">
+            <div class="menu-title">⚙️ 规则核心速查</div>
+            <ul class="menu-items">
+                <li class="nav-btn" data-target="sys-durability">🔧 耐久度与修理系统</li>
+            </ul>
+        </div>
+    </div>
 
             <div class="menu-group">
                 <div class="menu-title">🕵️ 战役世界线</div>
@@ -129,18 +133,16 @@
         <!-- ==================== 右侧主要内容区 ==================== -->
     <div class="main-content">
 
-        <!-- 🏠 首页（现在彻底干净了，不留任何主武器规则） -->
         <div id="home" class="content-section active">
             <h2>🏠 首页与据点生成规则</h2>
             <p>欢迎来到七钟残响据点管理系统。请从左侧菜单选择对应的军械库查看详细分配规则。</p>
             <div class="brass-box">
-                <p>💡 <b>据点基本逻辑</b>：这里是团队唯一的安全后勤补给点。随着战役推进与据点升级，各仓库的库存与装备规则将在此处更新汇总。</p>
+                <p>💡 <b>据点基本逻辑</b>：这里是团队唯一的安全后勤补给点。副武器、远程武器等其余分配规则后续将规划在各自的独立仓库页面中，避免首页堆砌杂乱。</p>
             </div>
         </div>
 
-        <!-- ⚔️ 主武器仓库（你给的那一整堆规则，全部完美搬运到了这里） -->
         <div id="wpn-main-hub" class="content-section">
-            <h2>⚔️ 主武器仓库：维多利亚时代警局军械库(DND 5e改造版)</h2>
+            <h2>📜 近战主武器库：维多利亚时代警局军械库(DND 5e改造版)</h2>
             
             <h3>一、领取与分配规则</h3>
             
@@ -178,7 +180,7 @@
                 <li>准备武器池</li>
                 <li>进行 X 次抽取，每次掷 d（取武器数量）决定武器种类</li>
                 <li>统计每种武器获得数量（有些武器可能多把，有些可能零把）</li>
-                <li>玩家按槽位从清单中选取。</li>
+                <li>玩家按槽位从清单中选取</li>
             </ol>
             <div class="brass-box">
                 <p>💡 <b>据点补给逻辑</b>：警局是补给点，玩家每次回来可以按库存补充。武器可能耗尽，也可能有新的补给运到。KP可根据剧情需要调整基础库存值或额外 roll 几轮。</p>
