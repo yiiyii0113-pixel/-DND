@@ -111,6 +111,39 @@
                 <li class="nav-btn" data-target="sub-wpn-special">└─ 特殊与异国副武</li>
                 <li class="nav-btn" data-target="sub-wpn-hidden">└─ 极隐秘暗杀副武</li>
             </ul>
+
+<!-- ==================== 🔮 魔法军械（通用大类完全体） ==================== -->
+        <div class="menu-group">
+            <div class="menu-title">🔮 魔法军械</div>
+            <ul class="menu-items">
+                <li class="nav-btn" data-target="wpn-magic-hub">📜 魔法主武器库</li>
+            </ul>
+            <ul class="sub-menu-items">
+                <li class="nav-btn" data-target="mag-staff">└─ 通用法杖类</li>
+                <li class="nav-btn" data-target="mag-wand">└─ 通用魔杖类</li>
+                <li class="nav-btn" data-target="mag-rod">└─ 通用权杖类</li>
+                <li class="nav-btn" data-target="mag-orb">└─ 通用法球类</li>
+                <li class="nav-btn" data-target="mag-crystal">└─ 通用水晶类</li>
+                <li class="nav-btn" data-target="mag-holy">└─ 通用圣徽类</li>
+                <li class="nav-btn" data-target="mag-druid">└─ 通用德鲁伊法器</li>
+                <li class="nav-btn" data-target="mag-tome">└─ 通用法典/法术书</li>
+            </ul>
+        </div>
+
+        <!-- ==================== ✨ 职业专属魔武（完全独立分支） ==================== -->
+        <div class="menu-group">
+            <div class="menu-title">✨ 职业专属魔武</div>
+            <ul class="sub-menu-items">
+                <li class="nav-btn" data-target="class-wizard">└─ 法师专属法器</li>
+                <li class="nav-btn" data-target="class-warlock">└─ 邪术师专属法器</li>
+                <li class="nav-btn" data-target="class-sorcerer">└─ 术士专属法器</li>
+                <li class="nav-btn" data-target="class-cleric">└─ 牧师专属军械</li>
+                <li class="nav-btn" data-target="class-paladin">└─ 圣武士专属军械</li>
+                <li class="nav-btn" data-target="class-druid">└─ 德鲁伊专属法器</li>
+                <li class="nav-btn" data-target="class-ranger">└─ 游侠专属魔武</li>
+                <li class="nav-btn" data-target="class-bard">└─ 吟游诗人专属音武器</li>
+            </ul>
+        </div>
             
             <ul class="menu-items" style="margin-top: 10px;">
                 <li class="nav-btn" data-target="wpn-ranged">🏹 远程武器库</li>
@@ -616,6 +649,273 @@
                 - 罕见魔法/特殊物品：奥秘 + 特殊材料（需视战役阶段由 KP 进行特殊裁定）
             </p>
         </div>
+
+        <!-- ==================== 📜 魔法主武器库主页（规则与公式） ==================== -->
+        <div id="wpn-magic-hub" class="content-section">
+            <h2>📜 魔法主武器库</h2>
+            <p><b>说明：</b>此页面收录通用型魔法法器与基础生成规则。任何具备相应施法能力的职业均可同调或持握通用法器。</p>
+            
+            <h3>一、据点随机生成规则</h3>
+            <h4>魔法主武器总件数计算公式</h4>
+            <div class="brass-box" style="border-left-color: #a78bfa; background: rgba(167, 139, 250, 0.05); padding: 15px; border-left: 4px solid #a78bfa; margin-bottom: 15px;">
+                <p style="font-size: 15px; font-weight: bold; text-align: center; color: #a78bfa; margin-bottom: 10px;">
+                    总件数 T = (团队总槽位数 × 2d4) + (玩家数量 × 1d6) + (2d8 - 1d4) + 基础库存值
+                </p>
+                <p><b>基础库存值调节系数：</b></p>
+                <ul>
+                    <li><b>新手阶段</b>：基础库存值 = 4</li>
+                    <li><b>标准阶段</b>：基础库存值 = 6</li>
+                    <li><b>硬核阶段</b>：基础库存值 = 8</li>
+                </ul>
+            </div>
+
+            <h3>二、魔法主武器领取与稀有度限制规则</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">角色等级</th>
+                        <th style="width: 35%;">可领取数量</th>
+                        <th style="width: 40%;">允许稀有度</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><b>1 - 4 级</b></td><td><span class="highlight" style="color: #ffca28; font-weight: bold;">1 把</span></td><td>普通或非常见</td></tr>
+                    <tr><td><b>5 - 10 级</b></td><td><span class="highlight" style="color: #ffca28; font-weight: bold;">2 把</span></td><td>可包含 1 把稀有</td></tr>
+                    <tr><td><b>11 - 16 级</b></td><td><span class="highlight" style="color: #ffca28; font-weight: bold;">2 把</span></td><td>可包含 1 把极珍稀</td></tr>
+                    <tr><td><b>17 - 20 级</b></td><td><span class="highlight" style="color: #ffca28; font-weight: bold;">3 把</span></td><td>可包含 1 把传说</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- └─ 子分支：通用法杖类 -->
+        <div id="mag-staff" class="content-section">
+            <h2>🔮 通用法杖类</h2>
+            <p class="section-desc">说明：全职业通用。近战视为魔法长棍（1d6钝击/1d8双手）。可用动作消耗充能引导奥术能量。</p>
+            <table>
+                <thead>
+                    <tr><th style="width: 18%;">武器名称</th><th style="width: 10%;">稀有度</th><th style="width: 10%;">价格</th><th style="width: 10%;">耐久</th><th style="width: 52%;">效果与消耗</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><b>饰品类法杖</b></td><td>普通</td><td>75gp</td><td>15</td><td>可作为标准施法法器使用，无附加魔法效应。</td></tr>
+                    <tr><td><b>学徒法杖</b></td><td>非常见</td><td>300gp</td><td>15</td><td>需同调。持握时施法者的法术攻击检定获得+1加成。</td></tr>
+                    <tr><td><b>防护法杖</b></td><td>非常见</td><td>400gp</td><td>15</td><td>10发充能。每日黎明恢复1d6+4发。可用动作消耗充能施放法师护甲（1充能）或护盾术（2充能）。</td></tr>
+                    <tr><td><b>蝰蛇法杖</b></td><td>非常见</td><td>400gp</td><td>15</td><td>可用附赠动作将杖头活化为毒蛇，近战命中造成1d6穿刺，目标须通过DC15体质豁免否则受3d6毒素伤害。</td></tr>
+                    <tr><td><b>巨蟒法杖</b></td><td>非常见</td><td>400gp</td><td>15</td><td>可用动作将其抛至地面，化为一条完全听从持有者指挥的巨蟒形态生物，生命值归零或主动收回时变回法杖。</td></tr>
+                    <tr><td><b>火焰法杖</b></td><td>稀有</td><td>2,500gp</td><td>15</td><td>10发充能。每日黎明恢复1d6+4发。可用动作消耗充能施放：燃烧之手（1充能）、火球术（3充能）、火墙术（4充能）。</td></tr>
+                    <tr><td><b>冬霜法杖</b></td><td>稀有</td><td>2,500gp</td><td>15</td><td>10发充能。每日黎明恢复1d6+4发。可用动作消耗充能施放：冰冻射线（1充能）、冰风暴（3充能）、寒冰锥（4充能）。</td></tr>
+                    <tr><td><b>强袭法杖</b></td><td>稀有</td><td>3,000gp</td><td>15</td><td>10发充能。近战命中时可消耗至多3发充能，每消耗1发充能使本次打击额外造成1d6力场伤害。</td></tr>
+                    <tr><td><b>治愈法杖</b></td><td>稀有</td><td>3,500gp</td><td>15</td><td>10发充能。每日黎明恢复1d6+4发。持握时可用动作消耗充能施放：治疗伤口（1充能）、群体治疗伤口（5充能）。</td></tr>
+                    <tr><td><b>魅惑法杖</b></td><td>稀有</td><td>3,000gp</td><td>15</td><td>10发充能。可消耗充能施放魅惑人类或命令术。当持有者对抗附魔法术豁免失败时，可消耗1发充能直接转为成功。</td></tr>
+                    <tr><td><b>死者法杖</b></td><td>稀有</td><td>3,000gp</td><td>15</td><td>10发充能。施放死灵学派法术时判定获得修正。可消耗充能施放造成伤害、吸血鬼之触等死灵法术。</td></tr>
+                    <tr><td><b>旅人杖</b></td><td>极珍稀</td><td>20,000gp</td><td>15</td><td>10发充能。每日黎明恢复1d6+4发。持握时可用动作消耗充能施放：迷踪步（2充能）、闪现术（3充能）、放逐术（4充能）、传送术（7充能）。</td></tr>
+                    <tr><td><b>威力法杖</b></td><td>极珍稀</td><td>25,000gp</td><td>15</td><td>20发充能。近战攻击与伤害检定+2。持握时AC、全豁免、法术攻击检定+2。可消耗充能爆发强力力场重击。</td></tr>
+                    <tr><td><b>大法师法杖</b></td><td>传说</td><td>75,000gp</td><td>15</td><td>50发充能。近战武器攻击与伤害检定+2，法术攻击检定与法术豁免DC+2。可无消耗施放多种基础奥术，或消耗充能施放高环毁灭性法术。</td></tr>
+                    <tr style="background: rgba(255,215,0,0.02); font-style: italic;"><td><b>【待补充】</b></td><td>—</td><td>—</td><td>—</td><td>通用法杖扩展预留栏位。</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- └─ 子分支：通用魔杖类 -->
+        <div id="mag-wand" class="content-section">
+            <h2>🔮 通用魔杖类</h2>
+            <p class="section-desc">说明：纯施法型短法器，不具备任何近战物理物理属性。依赖内部固化充能进行法术倾泻。</p>
+            <table>
+                <thead>
+                    <tr><th style="width: 18%;">武器名称</th><th style="width: 10%;">稀有度</th><th style="width: 10%;">价格</th><th style="width: 10%;">耐久</th><th style="width: 52%;">效果与消耗</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><b>标准魔杖</b></td><td>普通</td><td>75gp</td><td>10</td><td>无附加魔法效应，可作为最基础的奥术或神圣施法法器。</td></tr>
+                    <tr><td><b>侦测魔杖</b></td><td>非常见</td><td>300gp</td><td>10</td><td>3发充能。每日黎明恢复。可用动作消耗1发施放侦测魔法或侦测善恶，无需消耗法术位。</td></tr>
+                    <tr><td><b>魔法飞弹魔杖</b></td><td>非常见</td><td>400gp</td><td>10</td><td>7发充能。每日黎明恢复1d6+1发。可用动作消耗充能释放魔法飞弹，每多消耗1发充能，法术环阶提升1环。</td></tr>
+                    <tr><td><b>隐形魔杖</b></td><td>非常见</td><td>400gp</td><td>10</td><td>3发充能。每日黎明恢复。可用动作消耗1发施放隐形术，作用于自身或接触到的生物。</td></tr>
+                    <tr><td><b>飞行魔杖</b></td><td>非常见</td><td>400gp</td><td>10</td><td>3发充能。每日黎明恢复。可用动作消耗1发施放飞行术，赋予目标飞行速度。</td></tr>
+                    <tr><td><b>护盾魔杖</b></td><td>非常见</td><td>350gp</td><td>10</td><td>3发充能。当持有者将要受到攻击命中或受到魔法飞弹法术时，可用反应消耗1发施放护盾术。</td></tr>
+                    <tr><td><b>治疗魔杖</b></td><td>非常见</td><td>400gp</td><td>10</td><td>7发充能。每日黎明定额恢复。可用动作消耗1发施放1环治疗伤口，可通过增投充能来提升治疗环阶。</td></tr>
+                    <tr><td><b>法术储存魔杖</b></td><td>非常见</td><td>300gp</td><td>10</td><td>可由施法者在非战斗状态下，将一个1至3环的法术提前注入魔杖中。后续战斗中可用动作直接无消耗引爆释放该法术。</td></tr>
+                    <tr><td><b>火球魔杖</b></td><td>稀有</td><td>3,500gp</td><td>10</td><td>7发充能。每日黎明恢复1d6+1发。可用动作消耗1发施放标准火球术（法术豁免DC固定为15）。</td></tr>
+                    <tr><td><b>闪电魔杖</b></td><td>稀有</td><td>3,500gp</td><td>10</td><td>7发充能。每日黎明恢复1d6+1发。可用动作消耗1发施放标准闪电束（法术豁免DC固定为15）。</td></tr>
+                    <tr><td><b>恐惧魔杖</b></td><td>稀有</td><td>3,000gp</td><td>10</td><td>7发充能。可用动作消耗1发施放恐惧术，迫使前方锥形范围内的敌人进行感知豁免，失败则陷入恐慌。</td></tr>
+                    <tr><td><b>束缚魔杖</b></td><td>稀有</td><td>3,000gp</td><td>10</td><td>7发充能。可用动作消耗1发施放人类定身术，强行麻痹一个类人生物目标（法术豁免DC固定为15）。</td></tr>
+                    <tr><td><b>解除魔杖</b></td><td>稀有</td><td>3,500gp</td><td>10</td><td>5发充能。可用动作消耗1发施放解除魔法，尝试终止目标身上的法术效应或魔法结界。</td></tr>
+                    <tr><td><b>亡灵魔杖</b></td><td>稀有</td><td>3,000gp</td><td>10</td><td>7发充能。可用动作消耗1发施放操纵死尸，从战场上的尸体中强行唤醒骷髅或僵尸协助战斗。</td></tr>
+                    <tr><td><b>变形魔杖</b></td><td>极珍稀</td><td>15,000gp</td><td>10</td><td>7发充能。可用动作消耗1发施放变形术（法术豁免DC固定为15），将目标强行扭曲为其他生物形态。</td></tr>
+                    <tr style="background: rgba(255,215,0,0.02); font-style: italic;"><td><b>【待补充】</b></td><td>—</td><td>—</td><td>—</td><td>通用魔杖扩展预留栏位。</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- └─ 子分支：通用权杖类 -->
+        <div id="mag-rod" class="content-section">
+            <h2>🔮 通用权杖类</h2>
+            <p class="section-desc">说明">说明：短重质魔法兵器，偏向战术控制与防御。近战可作为轻型钝器使用（1d6钝击）。</p>
+            <table>
+                <thead>
+                    <tr><th style="width: 18%;">武器名称</th><th style="width: 10%;">稀有度</th><th style="width: 10%;">价格</th><th style="width: 10%;">耐久</th><th style="width: 52%;">效果与消耗</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><b>警戒权杖</b></td><td>非常见</td><td>350gp</td><td>12</td><td>持握时持有者的个人先攻检定获得加成，且在任何情况下绝对不会陷入被突袭状态。</td></tr>
+                    <tr><td><b>恐惧权杖</b></td><td>非常见</td><td>350gp</td><td>12</td><td>每日黎明重置。可用动作引爆权杖顶端的恐惧晶体，释放出15尺锥形心理冲击，迫使敌方进行感知豁免。</td></tr>
+                    <tr><td><b>治愈权杖</b></td><td>非常见</td><td>400gp</td><td>12</td><td>每日3发充能。持有者可通过接触将权杖中的神圣能量注入生物体内，使其恢复2d8点生命值。</td></tr>
+                    <tr><td><b>防护权杖</b></td><td>非常见</td><td>350gp</td><td>12</td><td>持握时常驻提供基础护甲AC+1修正。每日可激活1次，使自身在1分钟内对特定属性的伤害获得元素抗性。</td></tr>
+                    <tr><td><b>寂静权杖</b></td><td>非常见</td><td>350gp</td><td>12</td><td>每日1次。可用动作以权杖落点为中心创造一个15尺半径的绝对沉默结界，该区域内无法释放任何带有言语成分的法术。</td></tr>
+                    <tr><td><b>触须权杖</b></td><td>稀有</td><td>3,500gp</td><td>12</td><td>可用动作令权杖尖端的3条触手对15尺内的敌人同步发动物理鞭笞。若3条触手同时命中同一目标，将附加严重减速效果。</td></tr>
+                    <tr><td><b>吸收权杖</b></td><td>稀有</td><td>4,000gp</td><td>12</td><td>当持有者成为单一目标法术的唯一目标时，可用反应强行将该法术拦截并吸收，法术能量会转化为权杖的可用充能。</td></tr>
+                    <tr><td><b>支配权杖</b></td><td>稀有</td><td>4,000gp</td><td>12</td><td>每日1次。可用动作直视视野内的一个人形目标，对其强行施加精神支配术，控制其后续轮次的战术行动。</td></tr>
+                    <tr><td><b>王权权杖</b></td><td>稀有</td><td>3,500gp</td><td>12</td><td>在所有社交与威吓层面的魅力检定中获得优势。每日可释放一次强力的命令术。</td></tr>
+                    <tr><td><b>元素权杖</b></td><td>稀有</td><td>3,000gp</td><td>12</td><td>在绑定时从火、水、土、风中选择一种。持握该权杖时，持有者永久获得该属性的伤害抗性。</td></tr>
+                    <tr style="background: rgba(255,215,0,0.02); font-style: italic;"><td><b>【待补充】</b></td><td>—</td><td>—</td><td>—</td><td>通用权杖扩展预留栏位。</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- └─ 子分支：通用法球类 -->
+        <div id="mag-orb" class="content-section">
+            <h2>🔮 通用法球类</h2>
+            <p class="section-desc">说明：球状晶体施法法器，没有近战攻击属性。主要通过引发周围的能量共振来提供偏转掩护或法力回补。</p>
+            <table>
+                <thead>
+                    <tr><th style="width: 18%;">武器名称</th><th style="width: 10%;">稀有度</th><th style="width: 10%;">价格</th><th style="width: 10%;">耐久</th><th style="width: 52%;">效果与消耗</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><b>标准法球</b></td><td>普通</td><td>75gp</td><td>12</td><td>无任何附加魔法效应的通用球形法器。</td></tr>
+                    <tr><td><b>烈焰防护法球</b></td><td>普通</td><td>100gp</td><td>12</td><td>需同调。当持有者即将受到突发性火焰伤害时，可用反应激活法球屏障，使本次火焰伤害直接减半。</td></tr>
+                    <tr><td><b>光耀防护法球</b></td><td>普通</td><td>100gp</td><td>12</td><td>需同调。当持有者即将受到光耀或神圣伤害时，可用反应激活法球屏障，使本次伤害值直接减半。</td></tr>
+                    <tr><td><b>毒酸防护法球</b></td><td>普通</td><td>100gp</td><td>12</td><td>需同调。当持有者即将受到酸蚀或毒素伤害时，可用反应激活法球屏障，使本次伤害值直接减半。</td></tr>
+                    <tr><td><b>元素共鸣法球</b></td><td>非常见</td><td>350gp</td><td>12</td><td>选择一种元素（火/水/土/风）。持握时，施放对应属性法术时造成的总伤害获得额外修正。</td></tr>
+                    <tr><td><b>常驻侦测法球</b></td><td>非常见</td><td>300gp</td><td>12</td><td>持握法球时，持有者可以随意施放侦测魔法，无需消耗任何法术位或仪式准备时间。</td></tr>
+                    <tr><td><b>预警偏转法球</b></td><td>稀有</td><td>3,000gp</td><td>12</td><td>需同调。法球会无意识在持有者周围悬浮偏转，个人先攻获得修正，且绝对不会陷入被突袭状态。</td></tr>
+                    <tr><td><b>大内源法力法球</b></td><td>稀有</td><td>3,500gp</td><td>12</td><td>每日1次。施法者可通过冥想沟通法球内部的核心法源，无条件为自己恢复一个已消耗的3环或更低阶法术位。</td></tr>
+                    <tr><td><b>元素主宰法球</b></td><td>极珍稀</td><td>15,000gp</td><td>12</td><td>需同调。选择一种核心元素，持有者对该伤害属性获得完全免疫，且施放该属性法术时法术豁免DC获得全面攀升。</td></tr>
+                    <tr><td><b>奥术归流大法师球</b></td><td>极珍稀</td><td>20,000gp</td><td>12</td><td>需同调。全面修正施法者的法术攻击检定。每日可强制收回一个4环或以下级别的已消耗法术位。</td></tr>
+                    <tr style="background: rgba(255,215,0,0.02); font-style: italic;"><td><b>【待补充】</b></td><td>—</td><td>—</td><td>—</td><td>通用法球扩展预留栏位。</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- └─ 子分支：通用水晶类 -->
+        <div id="mag-crystal" class="content-section">
+            <h2>🔮 通用水晶类</h2>
+            <p class="section-desc">说明：轻量化挂饰或镶嵌型结晶法器。主要强化施法者的专注维持能力与精神链条。</p>
+            <table>
+                <thead>
+                    <tr><th style="width: 18%;">武器名称</th><th style="width: 10%;">稀有度</th><th style="width: 10%;">价格</th><th style="width: 10%;">耐久</th><th style="width: 52%;">效果与消耗</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><b>标准水晶</b></td><td>普通</td><td>60gp</td><td>10</td><td>未充能的基础天然晶体法器。</td></tr>
+                    <tr><td><b>高度专注水晶</b></td><td>非常见</td><td>300gp</td><td>10</td><td>在受到物理或魔法伤害时，持有者为了维持当前处于专注状态的法术而进行的体质豁免判定具有常驻优势。</td></tr>
+                    <tr><td><b>反制共鸣水晶</b></td><td>非常见</td><td>350gp</td><td>10</td><td>每日1次。当有敌方施法者对持有者施展法术时，水晶可自动共鸣，允许持有者强行打出一发3环法术反制。</td></tr>
+                    <tr><td><b>精神拓宽灵能晶</b></td><td>非常见</td><td>300gp</td><td>10</td><td>大幅度拓宽持有者的精神触达范围，若职业自带心灵感应或精神侦测能力，其有效侦测跨度增加100尺。</td></tr>
+                    <tr><td><b>微量法力晶石</b></td><td>稀有</td><td>3,000gp</td><td>10</td><td>每日1次。可用附赠动作捏碎晶石表面的微光层（不破坏整体），直接恢复一个已消耗的1环法术位。</td></tr>
+                    <tr><td><b>法术折叠记忆晶</b></td><td>稀有</td><td>3,500gp</td><td>10</td><td>可以由施法者提前将一个1-3环法术以精神烙印的形式折叠存入水晶中。在需要时可以跨越法术位限制直接将其释放。</td></tr>
+                    <tr><td><b>结界防护晶簇</b></td><td>稀有</td><td>3,000gp</td><td>10</td><td>常驻为持有者提供护甲值AC+1加成。每日可主动释放一次防护善恶，在自身周围构筑一层排斥外来异界生物的微型力场。</td></tr>
+                    <tr><td><b>极星远古晶核</b></td><td>极珍稀</td><td>15,000gp</td><td>10</td><td>需同调。施法者的全学派法术攻击检定获得大额加成。每日可为持有者回补一个3环级别的法术位。</td></tr>
+                    <tr style="background: rgba(255,215,0,0.02); font-style: italic;"><td><b>【待补充】</b></td><td>—</td><td>—</td><td>—</td><td>通用水晶扩展预留栏位。</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- └─ 子分支：通用圣徽类 -->
+        <div id="mag-holy" class="content-section">
+            <h2>🔮 通用圣徽类</h2>
+            <p class="section-desc">说明：神圣施法法器，主要适配牧师与圣武士。可佩戴于颈间、镶嵌于盾牌或直接持握，无近战物理属性。</p>
+            <table>
+                <thead>
+                    <tr><th style="width: 18%;">武器名称</th><th style="width: 10%;">稀有度</th><th style="width: 10%;">价格</th><th style="width: 10%;">耐久</th><th style="width: 52%;">效果与消耗</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><b>标准圣徽</b></td><td>普通</td><td>50gp</td><td>12</td><td>最基础的神圣引流法器，无附加特殊魔法效应。</td></tr>
+                    <tr><td><b>驱散圣徽</b></td><td>非常见</td><td>300gp</td><td>12</td><td>每日1次。施法者在引导神力进行“驱散不死生物”时，目标敌人的豁免DC获得+2惩罚。</td></tr>
+                    <tr><td><b>治愈圣徽</b></td><td>非常见</td><td>350gp</td><td>12</td><td>常驻被动。当施法者通过该法器释放任何治疗学派法术时，目标额外恢复1d4+1点生命值。</td></tr>
+                    <tr><td><b>战争圣徽</b></td><td>非常见</td><td>300gp</td><td>12</td><td>每日1次。可用动作直接施展一次标准祝福术，且本次施法完全不消耗任何法术位。</td></tr>
+                    <tr><td><b>守护圣徽</b></td><td>稀有</td><td>3,000gp</td><td>12</td><td>持握或佩戴时个人护甲值AC+1。每日可主动施展一次防护善恶，构建排斥外法界生物的微型结界。</td></tr>
+                    <tr><td><b>光耀圣徽</b></td><td>稀有</td><td>3,000gp</td><td>12</td><td>当引导神圣能量释放带有光耀伤害的法术时，最终的总伤害额外附加1d4点光耀判定。</td></tr>
+                    <tr><td><b>殉道圣徽</b></td><td>稀有</td><td>3,500gp</td><td>12</td><td>同调共感。当施法者使一个盟友恢复生命值时，自身也会获得同等的治疗量（每日恢复上限20点）。</td></tr>
+                    <tr><td><b>至高圣徽</b></td><td>极珍稀</td><td>15,000gp</td><td>12</td><td>需同调。法术攻击检定获得加成。每日有1次机会直接施展一次神圣干预（如同法术效力，固定DC15）。</td></tr>
+                    <tr style="background: rgba(255,215,0,0.02); font-style: italic;"><td><b>【待补充】</b></td><td>—</td><td>—</td><td>—</td><td>通用圣徽扩展预留栏位。</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- └─ 子分支：通用德鲁伊法器类 -->
+        <div id="mag-druid" class="content-section">
+            <h2>🔮 通用德鲁伊法器类</h2>
+            <p class="section-desc">说明：自然施法法器，主要适配德鲁伊与游侠。通常由槲寄生、冬青枝或特殊古木雕琢而成。</p>
+            <table>
+                <thead>
+                    <tr><th style="width: 18%;">武器名称</th><th style="width: 10%;">稀有度</th><th style="width: 10%;">价格</th><th style="width: 10%;">耐久</th><th style="width: 52%;">效果与消耗</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><b>标准德鲁伊法器</b></td><td>普通</td><td>50gp</td><td>12</td><td>凝聚自然之力的基础木质法器，无附加附加属性。</td></tr>
+                    <tr><td><b>自然法器</b></td><td>非常见</td><td>300gp</td><td>12</td><td>常驻加成。在释放德鲁伊职业法术列表内的法术时，法术攻击检定获得+1修正。</td></tr>
+                    <tr><td><b>野兽法器</b></td><td>非常见</td><td>300gp</td><td>12</td><td>每日1次。可用动作直接施展野兽感知或动物交谈，不需要消耗任何基础法术位。</td></tr>
+                    <tr><td><b>元素法器</b></td><td>稀有</td><td>3,000gp</td><td>12</td><td>大自然的回响。当施法者释放召唤元素类法术时，被召唤出的自然造物直接获得+10临时生命值。</td></tr>
+                    <tr><td><b>林地法器</b></td><td>稀有</td><td>3,000gp</td><td>12</td><td>在森林、沼泽或植被茂盛的荒野区域，法术攻击检定+1。每日可额外无消耗施展一次植物交谈。</td></tr>
+                    <tr><td><b>远古法器</b></td><td>极珍稀</td><td>15,000gp</td><td>12</td><td>需同调。全法术攻击检定获得加成。每日可无消耗施展一次高阶的召唤林地之友（等同于5环法术效力）。</td></tr>
+                    <tr style="background: rgba(255,215,0,0.02); font-style: italic;"><td><b>【待补充】</b></td><td>—</td><td>—</td><td>—</td><td>通用德鲁伊法器扩展预留栏位。</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- └─ 子分支：通用法典/法术书类 -->
+        <div id="mag-tome" class="content-section">
+            <h2>🔮 通用法典/法术书类</h2>
+            <p class="section-desc">说明：记载深奥魔法的质朴书籍，适配法师与吟游诗人等需要研究文本的施法者。持握时视作施法法器。</p>
+            <table>
+                <thead>
+                    <tr><th style="width: 18%;">武器名称</th><th style="width: 10%;">稀有度</th><th style="width: 10%;">价格</th><th style="width: 10%;">耐久</th><th style="width: 52%;">效果与消耗</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><b>标准法术书</b></td><td>普通</td><td>50gp</td><td>12</td><td>由坚韧皮革装订的魔法书籍，用于日常记载与引导基础奥术。</td></tr>
+                    <tr><td><b>耐久法术书</b></td><td>普通</td><td>100gp</td><td>18</td><td>经过特殊炼金浸泡。具备极高耐损度，常驻不惧水浸、不惧烈火、不易被物理撕毁属性。</td></tr>
+                    <tr><td><b>奥术法典</b></td><td>非常见</td><td>350gp</td><td>12</td><td>每日1次。施法者在进行短休息时，可以利用此法典临时替换修改一个当前已经准备完毕的法术。</td></tr>
+                    <tr><td><b>古代法典</b></td><td>稀有</td><td>4,000gp</td><td>12</td><td>绝版古籍。内部额外记载了未知魔法（由KP决定内容），使用者通过研读可强行习得一个新法术。</td></tr>
+                    <tr style="background: rgba(255,215,0,0.02); font-style: italic;"><td><b>【待补充】</b></td><td>—</td><td>—</td><td>—</td><td>通用法典/法术书扩展预留栏位。</td></tr>
+                </tbody>
+            </table>
+    </div>
+
+
+        <!-- ==================== 🛡️ 职业专属魔武区（先留空，等后续指令单独拉满） ==================== -->
+
+        <div id="class-wizard" class="content-section">
+            <h2>🧙‍♂️ 法师专属法器库</h2>
+            <p>内容扩充中，请等待后续分批数据导入...</p>
+        </div>
+
+        <div id="class-warlock" class="content-section">
+            <h2>👁️ 邪术师专属法器库</h2>
+            <p>内容扩充中，请等待后续分批数据导入...</p>
+        </div>
+
+        <div id="class-sorcerer" class="content-section">
+            <h2>🩸 术士专属法器库</h2>
+            <p>内容扩充中，请等待后续分批数据导入...</p>
+        </div>
+
+        <div id="class-cleric" class="content-section">
+            <h2>⛪ 牧师专属军械库</h2>
+            <p>内容扩充中，请等待后续分批数据导入...</p>
+        </div>
+
+        <div id="class-paladin" class="content-section">
+            <h2>⚔️ 圣武士专属军械库（魔法法武）</h2>
+            <p>内容扩充中，请等待后续分批数据导入...</p>
+        </div>
+
+        <div id="class-druid" class="content-section">
+            <h2>🍃 德鲁伊专属法器库</h2>
+            <p>内容扩充中，请等待后续分批数据导入...</p>
+        </div>
+
+        <div id="class-ranger" class="content-section">
+            <h2>🏹 游侠专属魔武库</h2>
+            <p>内容扩充中，请等待后续分批数据导入...</p>
+        </div>
+
+        <div id="class-bard" class="content-section">
+            <h2>🎵 吟游诗人专属音武器库</h2>
+            <p>内容扩充中，请等待后续分批数据导入...</p>
+                                           </div>
 
         <!-- 📜 战役世界线 -->
         <div id="world-lore" class="content-section">
