@@ -113,24 +113,25 @@
             </ul>
 
 <!-- ==================== 🔮 魔法军械（通用大类完全体） ==================== -->
- <p style="margin-bottom: 5px;">
-    <a href="#mag-main-page" style="font-weight: bold;">📜 魔法主武器库</a>
-</p>
-
-<!-- 2. 独立的子列表 -->
-<ul style="margin-top: 0; padding-left: 20px;">
-    <li><a href="#staff-section">🦯 1. 法杖类</a></li>
-    <li><a href="#wand-section">🦯 2. 魔杖类</a></li>
-    <li><a href="#rod-section">🔱 3. 权杖类</a></li>
-    <li><a href="#orb-section">🔮 4. 法球类</a></li>
-    <li><a href="#crystal-section">💎 5. 水晶类</a></li>
-    <li><a href="#holy-section">🛡️ 6. 圣徽类</a></li>
-    <li><a href="#druid-section">🌿 7. 德鲁伊法器</a></li>
-    <li><a href="#tome-section">📖 8. 法典/法术书</a></li>
-    <li><a href="#jewelry-section">✨ 9. 秘法珠宝</a></li>
-    <li><a href="#trigger-section">⚡ 10. 咒术触发</a></li>
-    <li><a href="#artifact-section">🌌 11. 异界奇物</a></li>
-</ul>
+ <div class="menu-group">
+    <div class="menu-title">🔮 魔法军械</div>
+    <ul class="menu-items">
+        <li class="nav-btn" data-target="mag-main-hub">📜 魔法主武器仓库</li>
+    </ul>
+    <ul class="sub-menu-items">
+        <li class="nav-btn" data-target="mag-staff">└─ 法杖类</li>
+        <li class="nav-btn" data-target="mag-wand">└─ 魔杖类</li>
+        <li class="nav-btn" data-target="mag-rod">└─ 权杖类</li>
+        <li class="nav-btn" data-target="mag-orb">└─ 法球类</li>
+        <li class="nav-btn" data-target="mag-crystal">└─ 水晶类</li>
+        <li class="nav-btn" data-target="mag-holy">└─ 圣徽类</li>
+        <li class="nav-btn" data-target="mag-druid">└─ 德鲁伊法器</li>
+        <li class="nav-btn" data-target="mag-book">└─ 法典/法术书</li>
+        <li class="nav-btn" data-target="mag-jewelry">└─ 秘法珠宝</li>
+        <li class="nav-btn" data-target="mag-trigger">└─ 咒术触发</li>
+        <li class="nav-btn" data-target="mag-artifact">└─ 异界奇物</li>
+    </ul>
+</div>
 
             <!-- 侧边栏：魔法副武器库及其子分支 -->
 <div class="menu-group">
@@ -657,7 +658,7 @@
         <!-- ==================== 📜 魔法主武器库主页（规则与公式） ==================== -->
 <div id="mag-main-page">
     <h2>📜 魔法主武器库</h2>
-    <p>说明：此列表收录专专为施法者设计的魔法主武器。所有武器均可重复使用，充能数据以 “上限 / 每日恢复” 格式标注。稀有度越高，上限与恢复越苛刻，但效果也越强。</p>
+    <p>说明：此列表收录专为施法者设计的魔法主武器。所有武器均可重复使用，充能数据以 “上限 / 每日恢复” 格式标注。稀有度越高，上限与恢复越苛刻，但效果也越强。</p>
     <blockquote style="background: rgba(255,255,255,0.02); padding: 10px; border-left: 4px solid #ffb000; margin: 10px 0;">
         <b>💡 适配职业：</b>法师、术士、邪术师、牧师、圣武士、德鲁伊、游侠、吟游诗人。
     </blockquote>
@@ -685,295 +686,203 @@
 
     <!-- 1. 法杖类 -->
     <h3 id="staff-section">🔱 1. 法杖类（Staff，共16种）</h3>
-    <p style="color: #aaa; font-style: italic;">说明：可作为魔法长棍（Quarterstaff）进行近战攻击（1d6钝击/1d8双手），同时作为施法法器。持握法杖时，可用动作消耗充能施放法术。</p>
     <table>
         <thead>
-            <tr>
-                <th style="width: 15%;">武器名</th>
-                <th style="width: 10%;">稀有度</th>
-                <th style="width: 8%;">等级</th>
-                <th style="width: 10%;">价格</th>
-                <th style="width: 8%;">耐久</th>
-                <th style="width: 12%;">上限/每日恢复</th>
-                <th>效果与消耗</th>
-            </tr>
+            <tr><th style="width: 15%;">武器名</th><th style="width: 10%;">稀有度</th><th style="width: 8%;">等级</th><th style="width: 10%;">价格</th><th style="width: 8%;">耐久</th><th style="width: 12%;">上限/恢复</th><th>效果与消耗</th></tr>
         </thead>
         <tbody>
-            <tr><td>饰品类法杖</td><td>普通</td><td>1级+</td><td>75gp</td><td>15</td><td>—</td><td>可作为施法法器使用。无充能，无特殊效果。</td></tr>
-            <tr><td>学徒法杖</td><td>非常见</td><td>1级+</td><td>300gp</td><td>15</td><td>—</td><td>可作为施法法器；持握时法术攻击检定+1。需同调。无充能。</td></tr>
-            <tr><td>防护法杖</td><td>非常见</td><td>1级+</td><td>400gp</td><td>15</td><td>6 / 1d4+2</td><td>可用动作消耗充能施放（需在职业法术列表内）：法师护甲（1充能）、护盾术（2充能）。</td></tr>
-            <tr><td>火焰法杖</td><td>稀有</td><td>5级+</td><td>2,500gp</td><td>20</td><td>8 / 1d6+2</td><td>可用动作消耗充能施放：燃烧之手（1充能）、火球术（3充能）、火墙术（4充能）。</td></tr>
-            <tr><td>冬霜法杖</td><td>稀有</td><td>5级+</td><td>2,500gp</td><td>20</td><td>8 / 1d6+2</td><td>可用动作消耗充能施放：冰冻射线（1充能）、冰风暴（3充能）、寒冰锥（4充能）。</td></tr>
-            <tr><td>强袭法杖</td><td>稀有</td><td>5级+</td><td>3,000gp</td><td>20</td><td>8 / 1d6+2</td><td>近战命中时可消耗至多4发充能，每发额外造成1d6力场伤害。</td></tr>
-            <tr><td>治愈法杖</td><td>稀有</td><td>5级+</td><td>3,500gp</td><td>20</td><td>8 / 1d6+2</td><td>可用动作消耗充能施放：治疗伤口（1充能）、治愈真言（1充能）、群体治疗伤口（5充能）。</td></tr>
-            <tr><td>蝰蛇法杖</td><td>非常见</td><td>1级+</td><td>400gp</td><td>15</td><td>5 / 1d4+1</td><td>需牧师/德鲁伊/邪术师同调。附赠动作将杖头活化为毒蛇，造成1d6穿刺+DC15体质豁免否则3d6毒素。</td></tr>
-            <tr><td>巨蟒法杖</td><td>非常见</td><td>1级+</td><td>400gp</td><td>15</td><td>4 / 1d4</td><td>需牧师/德鲁伊/邪术师同调。动作扔出变为巨蟒（听从指挥），持续1小时或HP归零。</td></tr>
-            <tr><td>旅人杖</td><td>极珍稀</td><td>11级+</td><td>20,000gp</td><td>25</td><td>11 / 1d4+1</td><td>可用动作消耗充能施放：迷踪步（2充能）、闪现术（3充能）、放逐术（4充能）、穿墙术（5充能）、传送术（7充能）。</td></tr>
-            <tr><td>魅惑法杖</td><td>稀有</td><td>5级+</td><td>3,000gp</td><td>20</td><td>9 / 1d6+2</td><td>需吟游诗人/牧师/德鲁伊/术士/邪术师/法师同调。消耗2充能施放魅惑人类/命令术；对抗附魔法术豁免失败时可转为成功（消耗2充能）。</td></tr>
-            <tr><td>死者法杖</td><td>稀有</td><td>5级+</td><td>3,000gp</td><td>20</td><td>9 / 1d6+2</td><td>需牧师/邪术师/法师同调。消耗充能施放：造成伤害（1充能）、吸血鬼之触（3充能）、操纵死尸（4充能）。</td></tr>
-            <tr><td>威力法杖</td><td>极珍稀</td><td>11级+</td><td>25,000gp</td><td>25</td><td>14 / 无</td><td>需术士/邪术师/法师同调。可作为魔法长棍（攻击/伤害+2）。持握时AC、豁免、法术攻击+2。消耗充能施放法术（三环内法术，一环1充能，2环2，三环4），近战命中时消耗1发造成额外1d6力场. 充能耗尽时骰d20，1则所有属性-D3，直到长休法杖恢复所有充能后消除负面效果。</td></tr>
-            <tr><td>大法师法杖</td><td>传说</td><td>17级+</td><td>75,000gp</td><td>30</td><td>20 / 无</td><td>需术士/邪术师/法师同调。可作为魔法长棍（攻击/伤害+2）；法术攻击+2。可消耗充能施放多种高环法术（由KP决定具体列表）。无恢复：耗尽后需长休恢复全部。</td></tr>
-            <tr><td>雷鸣法杖</td><td>稀有</td><td>5级+</td><td>2,800gp</td><td>20</td><td>6 / 1d4+2</td><td>近战命中时可消耗1发造成额外2d6雷鸣伤害并击退10尺（DC13力量豁免）。可用动作消耗2发施放雷鸣波（15尺锥形，DC13体质豁免失败受3d6雷鸣并倒地）。</td></tr>
-            <tr><td>虚空法杖</td><td>极珍稀</td><td>11级+</td><td>22,000gp</td><td>25</td><td>10 / 1d4+1</td><td>需同调。消耗3发施放虚空裂隙（30尺内目标DC15感知豁免失败则放逐1轮并受4d8力场）。近战命中时消耗1发额外2d8力场。</td></tr>
+            <tr><td>饰品类法杖</td><td>普通</td><td>1级+</td><td>75gp</td><td>15</td><td>—</td><td>可作为施法法器使用。无充能。</td></tr>
+            <tr><td>学徒法杖</td><td>非常见</td><td>1级+</td><td>300gp</td><td>15</td><td>—</td><td>持握时法术攻击检定+1。需同调。</td></tr>
+            <tr><td>防护法杖</td><td>非常见</td><td>1级+</td><td>400gp</td><td>15</td><td>6 / 1d4+2</td><td>消耗1-2发施放法师护甲/护盾术。</td></tr>
+            <tr><td>火焰法杖</td><td>稀有</td><td>5级+</td><td>2,500gp</td><td>20</td><td>8 / 1d6+2</td><td>消耗充能施放燃烧之手/火球术/火墙术。</td></tr>
+            <tr><td>冬霜法杖</td><td>稀有</td><td>5级+</td><td>2,500gp</td><td>20</td><td>8 / 1d6+2</td><td>消耗充能施放冰冻射线/冰风暴/寒冰锥。</td></tr>
+            <tr><td>强袭法杖</td><td>稀有</td><td>5级+</td><td>3,000gp</td><td>20</td><td>8 / 1d6+2</td><td>近战命中消耗充能，额外造成1d6力场伤害。</td></tr>
+            <tr><td>治愈法杖</td><td>稀有</td><td>5级+</td><td>3,500gp</td><td>20</td><td>8 / 1d6+2</td><td>消耗充能施放治疗伤口/治愈真言/群体治疗。</td></tr>
+            <tr><td>蝰蛇法杖</td><td>非常见</td><td>1级+</td><td>400gp</td><td>15</td><td>5 / 1d4+1</td><td>附赠动作活化为毒蛇。</td></tr>
+            <tr><td>巨蟒法杖</td><td>非常见</td><td>1级+</td><td>400gp</td><td>15</td><td>4 / 1d4</td><td>动作化为巨蟒听从指挥。</td></tr>
+            <tr><td>旅人杖</td><td>极珍稀</td><td>11级+</td><td>20,000gp</td><td>25</td><td>11 / 1d4+1</td><td>消耗充能施放迷踪步/闪现/放逐/穿墙/传送。</td></tr>
+            <tr><td>魅惑法杖</td><td>稀有</td><td>5级+</td><td>3,000gp</td><td>20</td><td>9 / 1d6+2</td><td>消耗2充能魅惑人类/命令术。</td></tr>
+            <tr><td>死者法杖</td><td>稀有</td><td>5级+</td><td>3,000gp</td><td>20</td><td>9 / 1d6+2</td><td>消耗充能施放造成伤害/吸血鬼之触/操纵死尸。</td></tr>
+            <tr><td>威力法杖</td><td>极珍稀</td><td>11级+</td><td>25,000gp</td><td>25</td><td>14 / 无</td><td>持握AC/豁免/法术+2。消耗1-4充能施放法术。</td></tr>
+            <tr><td>大法师法杖</td><td>传说</td><td>17级+</td><td>75,000gp</td><td>30</td><td>20 / 无</td><td>法术攻击+2。无恢复，耗尽后长休重置。</td></tr>
+            <tr><td>雷鸣法杖</td><td>稀有</td><td>5级+</td><td>2,800gp</td><td>20</td><td>6 / 1d4+2</td><td>近战消耗1发额外2d6雷鸣伤害并击退。</td></tr>
+            <tr><td>虚空法杖</td><td>极珍稀</td><td>11级+</td><td>22,000gp</td><td>25</td><td>10 / 1d4+1</td><td>消耗3发施放虚空裂隙。近战命中额外2d8力场。</td></tr>
         </tbody>
     </table>
 
     <!-- 2. 魔杖类 -->
     <h3 id="wand-section">🔱 2. 魔杖类（Wand，共16种）</h3>
-    <p style="color: #aaa; font-style: italic;">说明：纯施法法器，通常不提供近战能力。多数魔杖被预先充能并可释放特定法术。</p>
     <table>
         <thead>
-            <tr>
-                <th style="width: 15%;">武器名</th>
-                <th style="width: 10%;">稀有度</th>
-                <th style="width: 8%;">等级</th>
-                <th style="width: 10%;">价格</th>
-                <th style="width: 8%;">耐久</th>
-                <th style="width: 12%;">上限/每日恢复</th>
-                <th>效果与消耗</th>
-            </tr>
+            <tr><th>武器名</th><th>稀有度</th><th>等级</th><th>价格</th><th>耐久</th><th>上限/恢复</th><th>效果与消耗</th></tr>
         </thead>
         <tbody>
-            <tr><td>魔法飞弹魔杖</td><td>非常见</td><td>1级+</td><td>400gp</td><td>10</td><td>6 / 1d4+2</td><td>消耗至多3发施放魔法飞弹：1发=1环版本。</td></tr>
-            <tr><td>火球魔杖</td><td>稀有</td><td>5级+</td><td>3,500gp</td><td>12</td><td>6 / 1d4+2</td><td>消耗1发施放火球术（DC15豁免半伤）。</td></tr>
-            <tr><td>闪电魔杖</td><td>稀有</td><td>5级+</td><td>3,500gp</td><td>12</td><td>6 / 1d4+2</td><td>消耗1发施放闪电束（DC15豁免半伤）。</td></tr>
-            <tr><td>恐惧魔杖</td><td>稀有</td><td>5级+</td><td>3,000gp</td><td>12</td><td>6 / 1d4+2</td><td>消耗1发施放恐惧术（DC15豁免）。</td></tr>
-            <tr><td>束缚魔杖</td><td>稀有</td><td>5级+</td><td>3,000gp</td><td>12</td><td>6 / 1d4+2</td><td>消耗1发施放人类定身术（DC15豁免）。</td></tr>
-            <tr><td>解除魔杖</td><td>稀有</td><td>5级+</td><td>3,500gp</td><td>10</td><td>6 / 1d4+1</td><td>消耗1发施放解除魔法（随着环数提升增加，1环1，2环2，3环4）。</td></tr>
-            <tr><td>侦测魔杖</td><td>非常见</td><td>1级+</td><td>300gp</td><td>10</td><td>5 / 1d4+1</td><td>消耗1发施放侦测魔法或侦测善恶。</td></tr>
-            <tr><td>隐形魔杖</td><td>非常见</td><td>1级+</td><td>400gp</td><td>10</td><td>4 / 1d4</td><td>消耗1发施放隐形术（自身）。</td></tr>
-            <tr><td>飞行魔杖</td><td>非常见</td><td>1级+</td><td>400gp</td><td>10</td><td>4 / 1d4</td><td>消耗1发施放飞行术（自身）。</td></tr>
-            <tr><td>护盾魔杖</td><td>非常见</td><td>1级+</td><td>350gp</td><td>10</td><td>5 / 1d4+1</td><td>反应消耗1发施放护盾术。</td></tr>
-            <tr><td>治疗魔杖</td><td>非常见</td><td>1级+</td><td>400gp</td><td>10</td><td>6 / 1d4+2</td><td>消耗1发施放治疗伤口（1环）。</td></tr>
-            <tr><td>亡灵魔杖</td><td>稀有</td><td>5级+</td><td>3,000gp</td><td>10</td><td>6 / 1d4+2</td><td>消耗1发施放操纵死尸。</td></tr>
-            <tr><td>变形魔杖</td><td>极珍稀</td><td>11级+</td><td>15,000gp</td><td>12</td><td>6 / 1d4+1</td><td>消耗2发施放变形术（DC11）。</td></tr>
-            <tr><td>法术储存魔杖</td><td>非常见</td><td>1级+</td><td>300gp</td><td>10</td><td>3 / 无</td><td>可储存一个1-3环法术（需提前存入），持握时可用动作释放（消耗1发），长休回复充能。</td></tr>
-            <tr><td>力场魔杖</td><td>极珍稀</td><td>11级+</td><td>14,000gp</td><td>15</td><td>8 / 1d4</td><td>消耗2发施放力场波（30尺线状，DC15敏捷豁免失败受4d8力场并击退15尺）。消耗1发可使一次近战攻击额外+2d6力场。</td></tr>
-            <tr><td>死灵魔杖</td><td>极珍稀</td><td>11级+</td><td>16,000gp</td><td>15</td><td>8 / 1d4+1</td><td>消耗3发施放死亡一指（30尺内DC14体质豁免，失败受6d8暗蚀，成功半伤）。消耗2发可使一次攻击额外+2d6暗蚀并恢复等量HP。</td></tr>
+            <tr><td>魔法飞弹魔杖</td><td>非常见</td><td>1级+</td><td>400gp</td><td>10</td><td>6 / 1d4+2</td><td>1发=1环魔法飞弹。</td></tr>
+            <tr><td>火球魔杖</td><td>稀有</td><td>5级+</td><td>3,500gp</td><td>12</td><td>6 / 1d4+2</td><td>1发=火球术。</td></tr>
+            <tr><td>闪电魔杖</td><td>稀有</td><td>5级+</td><td>3,500gp</td><td>12</td><td>6 / 1d4+2</td><td>1发=闪电束。</td></tr>
+            <tr><td>恐惧魔杖</td><td>稀有</td><td>5级+</td><td>3,000gp</td><td>12</td><td>6 / 1d4+2</td><td>1发=恐惧术。</td></tr>
+            <tr><td>束缚魔杖</td><td>稀有</td><td>5级+</td><td>3,000gp</td><td>12</td><td>6 / 1d4+2</td><td>1发=人类定身术。</td></tr>
+            <tr><td>解除魔杖</td><td>稀有</td><td>5级+</td><td>3,500gp</td><td>10</td><td>6 / 1d4+1</td><td>1-4发=解除魔法。</td></tr>
+            <tr><td>侦测魔杖</td><td>非常见</td><td>1级+</td><td>300gp</td><td>10</td><td>5 / 1d4+1</td><td>1发=侦测魔法/善恶。</td></tr>
+            <tr><td>隐形魔杖</td><td>非常见</td><td>1级+</td><td>400gp</td><td>10</td><td>4 / 1d4</td><td>1发=隐形术。</td></tr>
+            <tr><td>飞行魔杖</td><td>非常见</td><td>1级+</td><td>400gp</td><td>10</td><td>4 / 1d4</td><td>1发=飞行术。</td></tr>
+            <tr><td>护盾魔杖</td><td>非常见</td><td>1级+</td><td>350gp</td><td>10</td><td>5 / 1d4+1</td><td>1发=护盾术。</td></tr>
+            <tr><td>治疗魔杖</td><td>非常见</td><td>1级+</td><td>400gp</td><td>10</td><td>6 / 1d4+2</td><td>1发=治疗伤口。</td></tr>
+            <tr><td>亡灵魔杖</td><td>稀有</td><td>5级+</td><td>3,000gp</td><td>10</td><td>6 / 1d4+2</td><td>1发=操纵死尸。</td></tr>
+            <tr><td>变形魔杖</td><td>极珍稀</td><td>11级+</td><td>15,000gp</td><td>12</td><td>6 / 1d4+1</td><td>2发=变形术。</td></tr>
+            <tr><td>法术储存魔杖</td><td>非常见</td><td>1级+</td><td>300gp</td><td>10</td><td>3 / 无</td><td>储存1-3环法术。</td></tr>
+            <tr><td>力场魔杖</td><td>极珍稀</td><td>11级+</td><td>14,000gp</td><td>15</td><td>8 / 1d4</td><td>2发=力场波；1发近战额外2d6力场。</td></tr>
+            <tr><td>死灵魔杖</td><td>极珍稀</td><td>11级+</td><td>16,000gp</td><td>15</td><td>8 / 1d4+1</td><td>3发=死亡一指；2发近战额外2d6暗蚀。</td></tr>
         </tbody>
     </table>
 
-    <h3>🔱 权杖类（Rod，共12种）</h3>
-    <p style="color: #aaa; font-style: italic;">说明：兼具法器功能与特殊能力，部分可作为轻型钝器使用（1d6钝击）。</p>
+    <!-- 3. 权杖类 -->
+    <h3>🔱 3. 权杖类（Rod，共12种）</h3>
     <table>
         <thead>
-            <tr>
-                <th style="width: 15%;">武器名</th>
-                <th style="width: 10%;">稀有度</th>
-                <th style="width: 8%;">等级</th>
-                <th style="width: 10%;">价格</th>
-                <th style="width: 8%;">耐久</th>
-                <th style="width: 12%;">上限/每日恢复</th>
-                <th>效果与消耗</th>
-            </tr>
+            <tr><th>武器名</th><th>稀有度</th><th>等级</th><th>价格</th><th>耐久</th><th>上限/恢复</th><th>效果与消耗</th></tr>
         </thead>
         <tbody>
-            <tr><td>警戒权杖</td><td>非常见</td><td>1级+</td><td>350gp</td><td>12</td><td>—</td><td>持握时先攻+1；不会被突袭。无充能，常驻效果。</td></tr>
-            <tr><td>恐惧权杖</td><td>非常见</td><td>1级+</td><td>350gp</td><td>12</td><td>—</td><td>每日1次，释放15尺锥形恐惧（DC13感知豁免失败则恐惧1分钟）。</td></tr>
-            <tr><td>治愈权杖</td><td>非常见</td><td>1级+</td><td>400gp</td><td>12</td><td>6 / 1d4+1</td><td>消耗3发为接触生物恢复2d8+2 HP。</td></tr>
-            <tr><td>防护权杖</td><td>非常见</td><td>1级+</td><td>350gp</td><td>12</td><td>4 / 1d4</td><td>持握时AC+1；消耗1发施展防护能量（对应元素抗性，持续10分钟）。</td></tr>
-            <tr><td>触须权杖</td><td>稀有</td><td>5级+</td><td>3,500gp</td><td>13</td><td>5 / 1d4</td><td>消耗3充能召出三条触手，可用动作令三条触手各对15尺内目标发动攻击（+9命中，1d6钝击）；三触手同中一目标则DC15体质豁免，失败速度减半、敏豁劣势、1分钟内无法反应。消耗1发可额外召唤一条触手（持续1轮）。</td></tr>
-            <tr><td>吸收权杖</td><td>稀有</td><td>5级+</td><td>4,000gp</td><td>12</td><td>—</td><td>可吸收针对你的法术能量（每日1次），转化为1d4充能（上限不超过最大）。</td></tr>
-            <tr><td>支配权杖</td><td>稀有</td><td>5级+</td><td>4,000gp</td><td>12</td><td>—</td><td>每日1次，消耗1发尝试支配一个类人生物（DC15感知豁免）。</td></tr>
-            <tr><td>王权权杖</td><td>稀有</td><td>5级+</td><td>3,500gp</td><td>12</td><td>4 / 1d4</td><td>社交魅力检定+1；消耗2发施展命令术（DC15）。</td></tr>
-            <tr><td>元素权杖</td><td>稀有</td><td>5级+</td><td>3,000gp</td><td>12</td><td>—</td><td>选择一种元素（火/水/土/风），持握时获得对该元素伤害的抗性。无充能，常驻效果。</td></tr>
-            <tr><td>寂静权杖</td><td>非常见</td><td>1级+</td><td>350gp</td><td>12</td><td>4 / 1d4</td><td>消耗1发创造15尺沉默区域（持续1分钟）。</td></tr>
-            <tr><td>裂地权杖</td><td>极珍稀</td><td>11级+</td><td>18,000gp</td><td>15</td><td>6 / 1d4</td><td>消耗2发裂地术（15尺半径DC15敏捷豁免，失败受4d8钝击并倒地，地面变为困难地形）。消耗1发近战命中额外2d8钝击。</td></tr>
-            <tr><td>风暴权杖</td><td>极珍稀</td><td>11级+</td><td>20,000gp</td><td>15</td><td>6 / 1d4</td><td>消耗3发风暴召唤（30尺半径内所有敌人受3d6雷鸣+3d6闪电，DC16敏捷豁免半伤）。消耗1发使自身获得飞行速度（持续1轮）。</td></tr>
+            <tr><td>警戒权杖</td><td>非常见</td><td>1级+</td><td>350gp</td><td>12</td><td>—</td><td>先攻+1，不会被突袭。</td></tr>
+            <tr><td>恐惧权杖</td><td>非常见</td><td>1级+</td><td>350gp</td><td>12</td><td>—</td><td>每日1次释放恐惧锥。</td></tr>
+            <tr><td>治愈权杖</td><td>非常见</td><td>1级+</td><td>400gp</td><td>12</td><td>6 / 1d4+1</td><td>消耗3发回复2d8+2 HP。</td></tr>
+            <tr><td>防护权杖</td><td>非常见</td><td>1级+</td><td>350gp</td><td>12</td><td>4 / 1d4</td><td>AC+1，消耗1发防护能量。</td></tr>
+            <tr><td>触须权杖</td><td>稀有</td><td>5级+</td><td>3,500gp</td><td>13</td><td>5 / 1d4</td><td>召唤三条触手攻击，附带削弱效果。</td></tr>
+            <tr><td>吸收权杖</td><td>稀有</td><td>5级+</td><td>4,000gp</td><td>12</td><td>—</td><td>吸收法术转化为充能。</td></tr>
+            <tr><td>支配权杖</td><td>稀有</td><td>5级+</td><td>4,000gp</td><td>12</td><td>—</td><td>每日1次支配类人生物。</td></tr>
+            <tr><td>王权权杖</td><td>稀有</td><td>5级+</td><td>3,500gp</td><td>12</td><td>4 / 1d4</td><td>魅力检定+1，消耗2发命令术。</td></tr>
+            <tr><td>元素权杖</td><td>稀有</td><td>5级+</td><td>3,000gp</td><td>12</td><td>—</td><td>获得一种元素抗性。</td></tr>
+            <tr><td>寂静权杖</td><td>非常见</td><td>1级+</td><td>350gp</td><td>12</td><td>4 / 1d4</td><td>消耗1发创造沉默区域。</td></tr>
+            <tr><td>裂地权杖</td><td>极珍稀</td><td>11级+</td><td>18,000gp</td><td>15</td><td>6 / 1d4</td><td>消耗2发裂地术；消耗1发近战额外2d8钝击。</td></tr>
+            <tr><td>风暴权杖</td><td>极珍稀</td><td>11级+</td><td>20,000gp</td><td>15</td><td>6 / 1d4</td><td>消耗3发风暴召唤；消耗1发自身飞行。</td></tr>
         </tbody>
     </table>
 
-    <h3>🔮 法球类（Orb，共10种）</h3>
-    <p style="color: #aaa; font-style: italic;">说明：球形施法法器，通常具有元素或能量相关的防护能力。</p>
+    <!-- 4. 法球类 -->
+    <h3>🔮 4. 法球类（Orb，共10种）</h3>
     <table>
         <thead>
-            <tr>
-                <th style="width: 15%;">武器名</th>
-                <th style="width: 10%;">稀有度</th>
-                <th style="width: 8%;">等级</th>
-                <th style="width: 10%;">价格</th>
-                <th style="width: 8%;">耐久</th>
-                <th style="width: 12%;">上限/每日恢复</th>
-                <th>效果与消耗</th>
-            </tr>
+            <tr><th>武器名</th><th>稀有度</th><th>等级</th><th>价格</th><th>耐久</th><th>上限/恢复</th><th>效果与消耗</th></tr>
         </thead>
         <tbody>
-            <tr><td>标准法球</td><td>普通</td><td>1级+</td><td>75gp</td><td>12</td><td>—</td><td>可作为施法法器使用。</td></tr>
-            <tr><td>防护法球（火焰）</td><td>普通</td><td>1级+</td><td>100gp</td><td>12</td><td>—</td><td>需同调。持握时若受到火焰伤害，可用反应将伤害减半（最低0）。无充能，常驻效果。</td></tr>
-            <tr><td>防护法球（光耀）</td><td>普通</td><td>1级+</td><td>100gp</td><td>12</td><td>—</td><td>需同调。持握时若受到光耀伤害，可用反应将伤害减半（最低0）。</td></tr>
-            <tr><td>防护法球（酸蚀/毒素）</td><td>普通</td><td>1级+</td><td>100gp</td><td>12</td><td>—</td><td>需同调。持握时若受到酸蚀或毒素伤害，可用反应将伤害减半（最低0）。</td></tr>
-            <tr><td>元素法球</td><td>非常见</td><td>1级+</td><td>350gp</td><td>12</td><td>—</td><td>选择一种元素（火/水/土/风），持握时获得对该元素伤害的抗性。常驻效果。</td></tr>
-            <tr><td>侦测法球</td><td>非常见</td><td>1级+</td><td>300gp</td><td>12</td><td>—</td><td>持握时可随意施放侦测魔法。常驻效果。</td></tr>
-            <tr><td>预警法球</td><td>稀有</td><td>5级+</td><td>3,000gp</td><td>12</td><td>—</td><td>需同调。持握时不会被突袭，先攻+1。常驻效果.</td></tr>
-            <tr><td>法力法球</td><td>稀有</td><td>5级+</td><td>3,500gp</td><td>12</td><td>—</td><td>每日1次，消耗1发恢复一个1-3环的法术位。</td></tr>
-            <tr><td>元素掌控法球</td><td>极珍稀</td><td>11级+</td><td>15,000gp</td><td>16</td><td>—</td><td>需同调。选择一种元素，持握时免疫该元素伤害，且施放该元素法术时伤害+2。常驻效果，长休改变选择。</td></tr>
-            <tr><td>大法师法球</td><td>极珍稀</td><td>11级+</td><td>20,000gp</td><td>16</td><td>4 / 1d4</td><td>需同调。法术攻击+1；消耗1发恢复一个4环或以下法术位。</td></tr>
+            <tr><td>标准法球</td><td>普通</td><td>1级+</td><td>75gp</td><td>12</td><td>—</td><td>施法法器。</td></tr>
+            <tr><td>防护法球(火/光/酸毒)</td><td>普通</td><td>1级+</td><td>100gp</td><td>12</td><td>—</td><td>反应将特定伤害减半。</td></tr>
+            <tr><td>元素法球</td><td>非常见</td><td>1级+</td><td>350gp</td><td>12</td><td>—</td><td>获得元素抗性。</td></tr>
+            <tr><td>侦测法球</td><td>非常见</td><td>1级+</td><td>300gp</td><td>12</td><td>—</td><td>随意施放侦测魔法。</td></tr>
+            <tr><td>预警法球</td><td>稀有</td><td>5级+</td><td>3,000gp</td><td>12</td><td>—</td><td>不被突袭，先攻+1。</td></tr>
+            <tr><td>法力法球</td><td>稀有</td><td>5级+</td><td>3,500gp</td><td>12</td><td>—</td><td>每日1次回复1-3环法术位。</td></tr>
+            <tr><td>元素掌控法球</td><td>极珍稀</td><td>11级+</td><td>15,000gp</td><td>16</td><td>—</td><td>免疫该元素，该法术伤害+2。</td></tr>
+            <tr><td>大法师法球</td><td>极珍稀</td><td>11级+</td><td>20,000gp</td><td>16</td><td>4 / 1d4</td><td>法术攻击+1；消耗1发回复4环或以下位。</td></tr>
         </tbody>
     </table>
 
-    <h3>💎 水晶类（Crystal，共8种）</h3>
-    <p style="color: #aaa; font-style: italic;">说明：水晶状施法法器，通常轻盈便携。</p>
+    <!-- 5. 水晶类 -->
+    <h3>💎 5. 水晶类（Crystal，共8种）</h3>
     <table>
         <thead>
-            <tr>
-                <th style="width: 15%;">武器名</th>
-                <th style="width: 10%;">稀有度</th>
-                <th style="width: 8%;">等级</th>
-                <th style="width: 10%;">价格</th>
-                <th style="width: 8%;">耐久</th>
-                <th style="width: 12%;">上限/每日恢复</th>
-                <th>效果与消耗</th>
-            </tr>
+            <tr><th>武器名</th><th>稀有度</th><th>等级</th><th>价格</th><th>耐久</th><th>上限/恢复</th><th>效果与消耗</th></tr>
         </thead>
         <tbody>
-            <tr><td>标准水晶</td><td>普通</td><td>1级+</td><td>60gp</td><td>8</td><td>—</td><td>可作为施法法器使用。</td></tr>
-            <tr><td>专注水晶</td><td>非常见</td><td>1级+</td><td>300gp</td><td>8</td><td>—</td><td>持握时维持法术专注的体质豁免+1。常驻效果。</td></tr>
-            <tr><td>共鸣水晶</td><td>非常见</td><td>1级+</td><td>350gp</td><td>8</td><td>3 / 1d2</td><td>消耗1发施放一次法术反制（3环）。</td></tr>
-            <tr><td>灵能水晶</td><td>非常见</td><td>1级+</td><td>300gp</td><td>8</td><td>—</td><td>持握时心灵感应距离增加至100尺。常驻效果。</td></tr>
-            <tr><td>法力水晶</td><td>稀有</td><td>5级+</td><td>3,000gp</td><td>10</td><td>3 / 1d2</td><td>消耗1发恢复一个1环法术位。</td></tr>
-            <tr><td>记忆水晶</td><td>稀有</td><td>5级+</td><td>3,500gp</td><td>10</td><td>3 / 1d2</td><td>可存储一个1-3环法术（需提前存入），持握时可用动作释放（消耗1发）。</td></tr>
-            <tr><td>防护水晶</td><td>稀有</td><td>5级+</td><td>3,000gp</td><td>10</td><td>4 / 1d4</td><td>持握时AC+1；消耗1发施展护盾术进行防护。</td></tr>
-            <tr><td>远古水晶</td><td>极珍稀</td><td>11级+</td><td>15,000gp</td><td>12</td><td>5 / 1d4</td><td>需同调。法术攻击+1；消耗1发恢复一个4环或以下法术位。</td></tr>
+            <tr><td>标准水晶</td><td>普通</td><td>1级+</td><td>60gp</td><td>8</td><td>—</td><td>施法法器。</td></tr>
+            <tr><td>专注水晶</td><td>非常见</td><td>1级+</td><td>300gp</td><td>8</td><td>—</td><td>专注豁免+1。</td></tr>
+            <tr><td>共鸣水晶</td><td>非常见</td><td>1级+</td><td>350gp</td><td>8</td><td>3 / 1d2</td><td>消耗1发法术反制。</td></tr>
+            <tr><td>灵能水晶</td><td>非常见</td><td>1级+</td><td>300gp</td><td>8</td><td>—</td><td>心灵感应距离100尺。</td></tr>
+            <tr><td>法力水晶</td><td>稀有</td><td>5级+</td><td>3,000gp</td><td>10</td><td>3 / 1d2</td><td>消耗1发回复1环位。</td></tr>
+            <tr><td>记忆水晶</td><td>稀有</td><td>5级+</td><td>3,500gp</td><td>10</td><td>3 / 1d2</td><td>存储1-3环法术。</td></tr>
+            <tr><td>防护水晶</td><td>稀有</td><td>5级+</td><td>3,000gp</td><td>10</td><td>4 / 1d4</td><td>AC+1，消耗1发护盾术。</td></tr>
+            <tr><td>远古水晶</td><td>极珍稀</td><td>11级+</td><td>15,000gp</td><td>12</td><td>5 / 1d4</td><td>法术攻击+1；消耗1发回复4环或以下位。</td></tr>
         </tbody>
     </table>
 
-    <h3>🛡️ 圣徽类（Holy Symbol，共8种）</h3>
-    <p style="color: #aaa; font-style: italic;">说明：神圣施法法器，牧师与圣武士专用。可佩戴于颈间或持握。</p>
+    <!-- 6. 圣徽类 -->
+    <h3>🛡️ 6. 圣徽类（Holy Symbol，共8种）</h3>
     <table>
         <thead>
-            <tr>
-                <th style="width: 15%;">武器名</th>
-                <th style="width: 10%;">稀有度</th>
-                <th style="width: 8%;">等级</th>
-                <th style="width: 10%;">价格</th>
-                <th style="width: 8%;">耐久</th>
-                <th style="width: 12%;">上限/每日恢复</th>
-                <th>效果与消耗</th>
-            </tr>
+            <tr><th>武器名</th><th>稀有度</th><th>等级</th><th>价格</th><th>耐久</th><th>上限/恢复</th><th>效果与消耗</th></tr>
         </thead>
         <tbody>
-            <tr><td>标准圣徽</td><td>普通</td><td>1级+</td><td>50gp</td><td>6</td><td>—</td><td>可作为施法法器使用。</td></tr>
-            <tr><td>驱散圣徽</td><td>非常见</td><td>1级+</td><td>300gp</td><td>8</td><td>—</td><td>每日1次，驱散不死生物时豁免DC+2。</td></tr>
-            <tr><td>治愈圣徽</td><td>非常见</td><td>1级+</td><td>350gp</td><td>8</td><td>—</td><td>施放治疗法术时，额外恢复1d4+1 HP。常驻效果。</td></tr>
-            <tr><td>战争圣徽</td><td>非常见</td><td>1级+</td><td>300gp</td><td>8</td><td>3 / 1d2</td><td>消耗1发施展一次祝福术（无需消耗法术位）。</td></tr>
-            <tr><td>守护圣徽</td><td>稀有</td><td>5级+</td><td>3,000gp</td><td>8</td><td>4 / 1d3</td><td>持握时AC+1；消耗1发施展防护善恶.</td></tr>
-            <tr><td>光耀圣徽</td><td>稀有</td><td>5级+</td><td>3,000gp</td><td>8</td><td>—</td><td>施放光耀伤害法术时，伤害+1d4。常驻效果。</td></tr>
-            <tr><td>殉道圣徽</td><td>稀有</td><td>5级+</td><td>3,500gp</td><td>8</td><td>5 / 1d4</td><td>当你使一个盟友恢复HP时，消耗一发充能（提前宣告）自己也可恢复同等量（每日上限30点）。</td></tr>
-            <tr><td>至高圣徽</td><td>极珍稀</td><td>11级+</td><td>15,000gp</td><td>10</td><td>3 / 1d2</td><td>需同调。法术攻击+1；消耗1发施展一次神圣干预（如同法术，DC15）。</td></tr>
+            <tr><td>标准圣徽</td><td>普通</td><td>1级+</td><td>50gp</td><td>6</td><td>—</td><td>施法法器。</td></tr>
+            <tr><td>驱散圣徽</td><td>非常见</td><td>1级+</td><td>300gp</td><td>8</td><td>—</td><td>驱散不死生物DC+2。</td></tr>
+            <tr><td>治愈圣徽</td><td>非常见</td><td>1级+</td><td>350gp</td><td>8</td><td>—</td><td>治疗额外+1d4+1。</td></tr>
+            <tr><td>战争圣徽</td><td>非常见</td><td>1级+</td><td>300gp</td><td>8</td><td>3 / 1d2</td><td>消耗1发祝福术。</td></tr>
+            <tr><td>守护圣徽</td><td>稀有</td><td>5级+</td><td>3,000gp</td><td>8</td><td>4 / 1d3</td><td>AC+1，消耗1发防护善恶。</td></tr>
+            <tr><td>光耀圣徽</td><td>稀有</td><td>5级+</td><td>3,000gp</td><td>8</td><td>—</td><td>光耀伤害+1d4。</td></tr>
+            <tr><td>殉道圣徽</td><td>稀有</td><td>5级+</td><td>3,500gp</td><td>8</td><td>5 / 1d4</td><td>治疗他人时自愈。</td></tr>
+            <tr><td>至高圣徽</td><td>极珍稀</td><td>11级+</td><td>15,000gp</td><td>10</td><td>3 / 1d2</td><td>法术攻击+1；消耗1发神圣干预。</td></tr>
         </tbody>
     </table>
 
-    <h3>🌿 德鲁伊法器类（Druidic Focus，共6种）</h3>
-    <p style="color: #aaa; font-style: italic;">说明：德鲁伊与游侠专用，通常为槲寄生、冬青枝或特殊木杖。</p>
+    <!-- 7. 德鲁伊法器 -->
+    <h3>🌿 7. 德鲁伊法器（Druidic Focus，共6种）</h3>
     <table>
         <thead>
-            <tr>
-                <th style="width: 15%;">武器名</th>
-                <th style="width: 10%;">稀有度</th>
-                <th style="width: 8%;">等级</th>
-                <th style="width: 10%;">价格</th>
-                <th style="width: 8%;">耐久</th>
-                <th style="width: 12%;">上限/每日恢复</th>
-                <th>效果与消耗</th>
-            </tr>
+            <tr><th>武器名</th><th>稀有度</th><th>等级</th><th>价格</th><th>耐久</th><th>上限/恢复</th><th>效果与消耗</th></tr>
         </thead>
         <tbody>
-            <tr><td>标准德鲁伊法器</td><td>普通</td><td>1级+</td><td>50gp</td><td>10</td><td>—</td><td>可作为施法法器使用。</td></tr>
-            <tr><td>自然法器</td><td>非常见</td><td>1级+</td><td>300gp</td><td>12</td><td>—</td><td>施放德鲁伊法术时，法术攻击检定+1。常驻效果。</td></tr>
-            <tr><td>野兽法器</td><td>非常见</td><td>1级+</td><td>300gp</td><td>12</td><td>3 / 1d2</td><td>消耗1发施展野兽感知或动物交谈。</td></tr>
-            <tr><td>元素法器</td><td>稀有</td><td>5级+</td><td>3,000gp</td><td>13</td><td>—</td><td>施放召唤元素类法术时，召唤物获得临时HP+10。常驻效果。</td></tr>
-            <tr><td>林地法器</td><td>稀有</td><td>5级+</td><td>3,000gp</td><td>13</td><td>4 / 1d4</td><td>在森林或植被茂盛区域，法术攻击检定+1；消耗1发施展植物交谈。</td></tr>
-            <tr><td>远古法器</td><td>极珍稀</td><td>11级+</td><td>15,000gp</td><td>15</td><td>4 / 1d4</td><td>需同调。法术攻击+1；消耗4发施展一次召唤林地之友（如同5环法术）。</td></tr>
+            <tr><td>标准法器</td><td>普通</td><td>1级+</td><td>50gp</td><td>10</td><td>—</td><td>施法法器。</td></tr>
+            <tr><td>自然法器</td><td>非常见</td><td>1级+</td><td>300gp</td><td>12</td><td>—</td><td>德鲁伊法术攻击+1。</td></tr>
+            <tr><td>野兽法器</td><td>非常见</td><td>1级+</td><td>300gp</td><td>12</td><td>3 / 1d2</td><td>消耗1发野兽感知/交谈。</td></tr>
+            <tr><td>元素法器</td><td>稀有</td><td>5级+</td><td>3,000gp</td><td>13</td><td>—</td><td>召唤物临时HP+10。</td></tr>
+            <tr><td>林地法器</td><td>稀有</td><td>5级+</td><td>3,000gp</td><td>13</td><td>4 / 1d4</td><td>森林法术攻击+1；消耗1发植物交谈。</td></tr>
+            <tr><td>远古法器</td><td>极珍稀</td><td>11级+</td><td>15,000gp</td><td>15</td><td>4 / 1d4</td><td>法术攻击+1；消耗4发召唤林地之友。</td></tr>
         </tbody>
     </table>
 
-    <h3>📖 法典/法术书类（Tome/Spellbook，共4种）</h3>
-    <p style="color: #aaa; font-style: italic;">说明：记载法术的书籍，可作为施法法器使用。</p>
+    <!-- 8. 法典/法术书 -->
+    <h3>📖 8. 法典/法术书类（共4种）</h3>
     <table>
         <thead>
-            <tr>
-                <th style="width: 15%;">武器名</th>
-                <th style="width: 10%;">稀有度</th>
-                <th style="width: 8%;">等级</th>
-                <th style="width: 10%;">价格</th>
-                <th style="width: 8%;">耐久</th>
-                <th style="width: 12%;">上限/每日恢复</th>
-                <th>效果与消耗</th>
-            </tr>
+            <tr><th>武器名</th><th>稀有度</th><th>等级</th><th>价格</th><th>耐久</th><th>上限/恢复</th><th>效果与消耗</th></tr>
         </thead>
         <tbody>
-            <tr><td>标准法术书</td><td>普通</td><td>1级+</td><td>50gp</td><td>12</td><td>—</td><td>可作为施法法器使用；记载基础法术。</td></tr>
-            <tr><td>耐久法术书</td><td>普通</td><td>1级+</td><td>100gp</td><td>18</td><td>—</td><td>不易燃、不惧水、不易损坏。常驻效果。</td></tr>
-            <tr><td>奥术法典</td><td>非常见</td><td>1级+</td><td>350gp</td><td>12</td><td>3 / 1d2</td><td>消耗1发改变一个已准备的法术（短休时）。</td></tr>
-            <tr><td>古代法典</td><td>稀有</td><td>5级+</td><td>4,000gp</td><td>12</td><td>—</td><td>记载了额外法术（KP决定具体内容）；研究后可学习一个新法术。无充能，研究型效果。</td></tr>
+            <tr><td>标准法术书</td><td>普通</td><td>1级+</td><td>50gp</td><td>12</td><td>—</td><td>施法法器。</td></tr>
+            <tr><td>耐久法术书</td><td>普通</td><td>1级+</td><td>100gp</td><td>18</td><td>—</td><td>耐用性提升。</td></tr>
+            <tr><td>奥术法典</td><td>非常见</td><td>1级+</td><td>350gp</td><td>12</td><td>3 / 1d2</td><td>消耗1发改变已准备法术。</td></tr>
+            <tr><td>古代法典</td><td>稀有</td><td>5级+</td><td>4,000gp</td><td>12</td><td>—</td><td>研究后学习新法术。</td></tr>
         </tbody>
     </table>
 
-    <h3>✨ 秘法珠宝类（主武器级，共6种）</h3>
+    <!-- 9. 秘法珠宝 -->
+    <h3>✨ 9. 秘法珠宝（共6种）</h3>
     <table>
         <thead>
-            <tr>
-                <th style="width: 15%;">武器名</th>
-                <th style="width: 10%;">稀有度</th>
-                <th style="width: 8%;">等级</th>
-                <th style="width: 10%;">价格</th>
-                <th style="width: 8%;">耐久</th>
-                <th style="width: 12%;">上限/每日恢复</th>
-                <th>效果与消耗</th>
-            </tr>
+            <tr><th>武器名</th><th>稀有度</th><th>等级</th><th>价格</th><th>耐久</th><th>上限/恢复</th><th>效果与消耗</th></tr>
         </thead>
         <tbody>
-            <tr><td>统御之戒</td><td>极珍稀</td><td>11级+</td><td>16,000gp</td><td>13</td><td>5 / 1d4</td><td>需同调。消耗2发施放支配怪物（DC16感知豁免，持续1轮）。消耗1发可使下一次魅惑/控制类法术DC+2。</td></tr>
-            <tr><td>元素王冠</td><td>极珍稀</td><td>11级+</td><td>18,000gp</td><td>12</td><td>6 / 1d4</td><td>需同调。消耗2发开启元素形态（获得一种元素抗性+对应元素伤害+2，持续1小时）。消耗1发切换当前元素类型。</td></tr>
-            <tr><td>奥术之眼项链</td><td>稀有</td><td>5级+</td><td>3,200gp</td><td>10</td><td>4 / 1d4</td><td>消耗1发获得真视术效果（60尺，持续10分钟）。消耗1发可看到隐形生物。</td></tr>
-            <tr><td>命石护符</td><td>稀有</td><td>5级+</td><td>3,500gp</td><td>10</td><td>4 / 1d4</td><td>消耗1发（提前宣告）将一次致命伤害转化为1点HP（每日最多1次）。消耗2发恢复2d6+2 HP。</td></tr>
-            <tr><td>星辰冠冕</td><td>传说</td><td>17级+</td><td>50,000gp</td><td>15</td><td>6 / 无</td><td>需同调。法术攻击+2。消耗2发施放流星爆（如同6环法术，DC17）。消耗3发施放祈愿术（有限制版本，由KP裁定）。无恢复：耗尽后需长休恢复全部。</td></tr>
-            <tr><td>深渊之心</td><td>极珍稀</td><td>11级+</td><td>20,000gp</td><td>12</td><td>5 / 1d4</td><td>需同调。消耗2发施放深渊裂隙（60英尺半径DC15感知豁免，失败受5d8暗蚀并恐慌1轮）。消耗1发使自身获得暗蚀伤害免疫（持续1轮）。</td></tr>
+            <tr><td>统御之戒</td><td>极珍稀</td><td>11级+</td><td>16,000gp</td><td>13</td><td>5 / 1d4</td><td>消耗2发支配怪物；消耗1发魅惑DC+2。</td></tr>
+            <tr><td>元素王冠</td><td>极珍稀</td><td>11级+</td><td>18,000gp</td><td>12</td><td>6 / 1d4</td><td>消耗2发开启元素形态。</td></tr>
+            <tr><td>奥术之眼项链</td><td>稀有</td><td>5级+</td><td>3,200gp</td><td>10</td><td>4 / 1d4</td><td>消耗1发真视/看破隐形。</td></tr>
+            <tr><td>命石护符</td><td>稀有</td><td>5级+</td><td>3,500gp</td><td>10</td><td>4 / 1d4</td><td>消耗1发化致命伤为1HP；2发回复。</td></tr>
+            <tr><td>星辰冠冕</td><td>传说</td><td>17级+</td><td>50,000gp</td><td>15</td><td>6 / 无</td><td>法术攻击+2，消耗充能施放流星爆/祈愿。</td></tr>
+            <tr><td>深渊之心</td><td>极珍稀</td><td>11级+</td><td>20,000gp</td><td>12</td><td>5 / 1d4</td><td>消耗2发深渊裂隙；1发暗蚀免疫。</td></tr>
         </tbody>
     </table>
 
-    <h3>⚡ 咒术触发类（主武器级，共4种）</h3>
+    <!-- 10. 咒术触发 -->
+    <h3>⚡ 10. 咒术触发（共4种）</h3>
     <table>
         <thead>
-            <tr>
-                <th style="width: 15%;">武器名</th>
-                <th style="width: 10%;">稀有度</th>
-                <th style="width: 8%;">等级</th>
-                <th style="width: 10%;">价格</th>
-                <th style="width: 8%;">耐久</th>
-                <th style="width: 12%;">上限/每日恢复</th>
-                <th>效果与消耗</th>
-            </tr>
+            <tr><th>武器名</th><th>稀有度</th><th>等级</th><th>价格</th><th>耐久</th><th>上限/恢复</th><th>效果与消耗</th></tr>
         </thead>
         <tbody>
-            <tr><td>咒术法杖</td><td>稀有</td><td>5级+</td><td>4,000gp</td><td>14</td><td>6 / 1d4+2</td><td>消耗2发预设触发术（设下条件，自动触发一个3环或以下法术）。消耗1发可使下一次法术瞬发（如同超魔）。</td></tr>
-            <tr><td>连锁刻印法杖</td><td>极珍稀</td><td>11级+</td><td>17,000gp</td><td>15</td><td>5 / 1d4</td><td>消耗2发连锁触发（在三个位置设置符文，任一点触发则全部触发，造成3d8对应伤害）。消耗1发可为武器附加1d6力场伤害（持续1轮）。</td></tr>
-            <tr><td>缚魔权杖</td><td>极珍稀</td><td>11级+</td><td>16,000gp</td><td>15</td><td>5 / 1d4</td><td>消耗2发缚魔（30尺内敌人施法时需额外消耗2环位，否则失败，DC16）。消耗3发可反制一个5环或以下法术。</td></tr>
-            <tr><td>时计权杖</td><td>传说</td><td>17级+</td><td>45,000gp</td><td>17</td><td>5 / 无</td><td>需同调。消耗2发时间延迟（预设一个法术在1-10轮后触发）。消耗3发时间回流（重骰一次已发生的攻击/豁免/检定，取较好结果）。无恢复：耗尽后需长休恢复全部。</td></tr>
+            <tr><td>咒术法杖</td><td>稀有</td><td>5级+</td><td>4,000gp</td><td>14</td><td>6 / 1d4+2</td><td>消耗2发触发术；1发瞬发法术。</td></tr>
+            <tr><td>连锁刻印法杖</td><td>极珍稀</td><td>11级+</td><td>17,000gp</td><td>15</td><td>5 / 1d4</td><td>消耗2发连锁触发；1发附加力场伤。</td></tr>
+            <tr><td>缚魔权杖</td><td>极珍稀</td><td>11级+</td><td>16,000gp</td><td>15</td><td>5 / 1d4</td><td>消耗2发缚魔；3发反制法术。</td></tr>
+            <tr><td>时计权杖</td><td>传说</td><td>17级+</td><td>45,000gp</td><td>17</td><td>5 / 无</td><td>消耗2发时间延迟；3发时间回流。</td></tr>
         </tbody>
     </table>
 
-    <h3>🌌 以太/异界奇物类（主武器级，共4种）</h3>
+    <!-- 11. 异界奇物 -->
+    <h3>🌌 11. 异界/以太奇物（共4种）</h3>
     <table>
         <thead>
-            <tr>
-                <th style="width: 15%;">武器名</th>
-                <th style="width: 10%;">稀有度</th>
-                <th style="width: 8%;">等级</th>
-                <th style="width: 10%;">价格</th>
-                <th style="width: 8%;">耐久</th>
-                <th style="width: 12%;">上限/每日恢复</th>
-                <th>效果与消耗</th>
-            </tr>
+            <tr><th>武器名</th><th>稀有度</th><th>等级</th><th>价格</th><th>耐久</th><th>上限/恢复</th><th>效果与消耗</th></tr>
         </thead>
         <tbody>
-            <tr><td>虚空法杖</td><td>极珍稀</td><td>11级+</td><td>22,000gp</td><td>14</td><td>6 / 1d4</td><td>消耗4发施放虚空裂隙（30英尺内一名敌人DC15力量豁免失败则被放逐1轮并受5d10力场）。消耗2发近战命中额外2d8力场。</td></tr>
-            <tr><td>星门法杖</td><td>传说</td><td>17级+</td><td>55,000gp</td><td>15</td><td>4 / 无</td><td>需同调. 消耗2发星门开启（60尺内开启传送门，持续1轮，可至曾到地点）。消耗3发异界呼唤（召唤一个CR5-8的异界生物战斗1小时）。无恢复：耗尽后需长休恢复全部。</td></tr>
-            <tr><td>灵界法杖</td><td>稀有</td><td>5级+</td><td>4,500gp</td><td>14</td><td>5 / 1d4+1</td><td>消耗1发获得灵界视（看到灵体/隐形，10分钟）。消耗2发可将自身转入灵界（如同法术，持续1轮）。</td></tr>
-            <tr><td>深渊凝视法杖</td><td>极珍稀</td><td>11级+</td><td>19,000gp</td><td>12</td><td>5 / 1d4</td><td>消耗2发深渊凝视（30英尺内一名敌人DC16感知豁免失败则震慑1轮并受4d8精神）。消耗1发使下一次精神法术DC+2。</td></tr>
-            <tr style="background: rgba(255,215,0,0.02); font-style: italic;">
-                <td>【待补充】</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>魔法主武器预留位（此处可后续增补更多类别：如更多元素法杖、更多职业专属变体等）。</td>
-            </tr>
+            <tr><td>虚空法杖</td><td>极珍稀</td><td>11级+</td><td>22,000gp</td><td>14</td><td>6 / 1d4</td><td>消耗4发虚空裂隙；2发近战额外力场伤。</td></tr>
+            <tr><td>星门法杖</td><td>传说</td><td>17级+</td><td>55,000gp</td><td>15</td><td>4 / 无</td><td>消耗2发星门开启；3发异界呼唤。</td></tr>
+            <tr><td>灵界法杖</td><td>稀有</td><td>5级+</td><td>4,500gp</td><td>14</td><td>5 / 1d4+1</td><td>消耗1发灵界视；2发转入灵界。</td></tr>
+            <tr><td>深渊凝视法杖</td><td>极珍稀</td><td>11级+</td><td>19,000gp</td><td>12</td><td>5 / 1d4</td><td>消耗2发深渊凝视；1发精神法术DC+2。</td></tr>
         </tbody>
     </table>
 
@@ -982,11 +891,7 @@
     <h3>⚖️ 魔法主武器领取规则</h3>
     <table>
         <thead>
-            <tr>
-                <th style="width: 30%;">角色等级</th>
-                <th style="width: 30%;">可领取数量</th>
-                <th>允许稀有度</th>
-            </tr>
+            <tr><th style="width: 30%;">角色等级</th><th style="width: 30%;">可领取数量</th><th>允许稀有度</th></tr>
         </thead>
         <tbody>
             <tr><td><b>1-4级</b></td><td>1 把</td><td>普通或非常见</td></tr>
