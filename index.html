@@ -105,62 +105,7 @@
     </div>
 </div>
 
-<div class="main-content">
-    <div id="home" class="content-section active"><h2>🏠 首页与据点生成规则</h2></div>
-    <div id="wpn-main-hub" class="content-section"><h2>⚔️ 主武器仓库</h2></div>
-    <div id="wpn-light" class="content-section"><h2>轻型主武器</h2></div>
-    <div id="wpn-medium" class="content-section"><h2>中型主武器</h2></div>
-    <div id="wpn-heavy" class="content-section"><h2>重型主武器</h2></div>
-    <div id="wpn-special" class="content-section"><h2>特殊主武器</h2></div>
-    <div id="wpn-custom" class="content-section"><h2>罕见/自制武器</h2></div>
-    <div id="wpn-sub-hub" class="content-section"><h2>副武器仓库</h2></div>
-    <div id="sub-wpn-light" class="content-section"><h2>常规轻型副武</h2></div>
-    <div id="sub-wpn-tool" class="content-section"><h2>工具与隐蔽副武</h2></div>
-    <div id="sub-wpn-special" class="content-section"><h2>特殊与异国副武</h2></div>
-    <div id="sub-wpn-hidden" class="content-section"><h2>极隐秘暗杀副武</h2></div>
-    <div id="mag-main-hub" class="content-section"><h2>魔法主武器总览</h2></div>
-    <div id="mag-staff" class="content-section"><h2>法杖类</h2></div>
-    <div id="mag-wand" class="content-section"><h2>魔杖类</h2></div>
-    <div id="mag-rod" class="content-section"><h2>权杖类</h2></div>
-    <div id="mag-orb" class="content-section"><h2>法球类</h2></div>
-    <div id="mag-crystal" class="content-section"><h2>水晶类</h2></div>
-    <div id="mag-holy" class="content-section"><h2>圣徽类</h2></div>
-    <div id="mag-druid" class="content-section"><h2>德鲁伊法器</h2></div>
-    <div id="mag-book" class="content-section"><h2>法典/法术书</h2></div>
-    <div id="mag-jewelry" class="content-section"><h2>秘法珠宝</h2></div>
-    <div id="mag-trigger" class="content-section"><h2>咒术触发</h2></div>
-    <div id="mag-artifact" class="content-section"><h2>异界奇物</h2></div>
-    <div id="mag-sub-main" class="content-section"><h2>魔法副武器总览</h2></div>
-    <div id="sub-dagger" class="content-section"><h2>奥术匕首/短刃类</h2></div>
-    <div id="sub-wand" class="content-section"><h2>小型权杖/魔杖类</h2></div>
-    <div id="sub-talisman" class="content-section"><h2>秘法护符/圣徽类</h2></div>
-    <div id="sub-book" class="content-section"><h2>法术书/卷轴匣类</h2></div>
-    <div id="sub-jewelry" class="content-section"><h2>秘法珠宝类</h2></div>
-    <div id="sub-trigger" class="content-section"><h2>咒术触发类</h2></div>
-    <div id="sub-curio" class="content-section"><h2>以太/异界奇物类</h2></div>
-    <div id="sub-misc" class="content-section"><h2>其他奇物类</h2></div>
-    <div id="wpn-ranged" class="content-section"><h2>远程武器库</h2></div>
-    <div id="armor-shop" class="content-section"><h2>防具库</h2></div>
-    <div id="item-shop" class="content-section"><h2>炼金与道具药品</h2></div>
-    <div id="sys-durability" class="content-section"><h2>耐久度与修理系统</h2></div>
-    <div id="world-lore" class="content-section"><h2>战役世界线</h2></div>
-</div>
 
-<script>
-    document.querySelectorAll('.nav-btn').forEach(button => {
-        button.addEventListener('click', () => {
-            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-            button.classList.add('active');
-            document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
-            const targetId = button.getAttribute('data-target');
-            const target = document.getElementById(targetId);
-            if (target) target.classList.add('active');
-        });
-    });
-</script>
-
-</body>
-</html>
         
         
         <!-- ==================== 右侧主要内容区 ==================== -->
