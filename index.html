@@ -30,6 +30,17 @@
         table { width: 100%; border-collapse: collapse; margin: 25px 0; background-color: #161616; border: 1px solid #2a2215; font-size: 13.5px; }
         th { background-color: #1e1e1e; color: #cca43b; text-align: left; padding: 12px; font-weight: 600; border-bottom: 2px solid #3a3225; }
         td { padding: 12px; border-bottom: 1px solid #222; color: #c8beaa; }
+
+        /* Shared utility classes (extracted from repeated inline styles) */
+        .formula-box { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 6px; margin: 10px 0; font-family: monospace; font-size: 15px; font-weight: bold; text-align: center; }
+        .formula-box.gold { color: #cca43b; }
+        .formula-box.green { color: #70e28c; }
+        .brass-box--green { border-left-color: #70e28c; background: rgba(112, 226, 140, 0.05); }
+        .info-blockquote { background: rgba(255,255,255,0.02); padding: 10px; border-left: 4px solid #ffb000; margin: 10px 0; }
+        .placeholder-text { color: #999; font-style: italic; }
+        .gold-highlight { color: #ffca28; font-weight: bold; }
+        .section-desc { color: #b5ad99; }
+        .reserved-row { background: rgba(255,215,0,0.02); font-style: italic; }
     </style>
 </head>
 <body>
@@ -145,17 +156,7 @@
             </div>
 
             <h4>2. 武器总件数计算公式（据点库存随机生成）</h4>
-            <div class="brass-box" style="border-left-color: var(--accent-gold);">
-                <p style="font-size: 15px; font-weight: bold; text-align: center; color: var(--accent-gold); margin-bottom: 10px;">
-                    总件数 T = (团队总槽位数 × 2d4) + (玩家数量 × 1d6) + (2d8 - 1d4) + 基础库存值
-                </p>
-                <p><b>基础库存值调节系数：</b></p>
-                <ul>
-                    <li><b>新手阶段（5级以下）</b>：基础库存值 = 8</li>
-                    <li><b>标准阶段（5~15级内）</b>：基础库存值 = 5</li>
-                    <li><b>硬核阶段（15级以上）</b>：基础库存值 = 2</li>
-                </ul>
-            </div>
+            <div class="brass-box" data-formula="main-weapon"></div>
             <p><b>示例说明：</b>4人团队，槽位分别为2,2,3,1，总槽位=8。若 2d4=7 → 8×7=56；玩家数4，1d6=4 → 4×4=16；2d8=12，1d4=1 → 12-1=11；标准基础库存=5。<b>总件数 T = 56 + 16 + 11 + 5 = 88件。</b></p>
 
             <h4>3. 生成与分配流程</h4>
@@ -194,16 +195,7 @@
             <h2>二、近战主武器列表 - 🗡️ 轻型武器</h2>
             <p>单手，灵活，具防御性，适合敏捷流或副手武器。</p>
             <table>
-                <thead>
-                    <tr>
-                        <th style="width: 15%;">武器名称</th>
-                        <th style="width: 15%;">基础伤害骰</th>
-                        <th style="width: 15%;">攻击距离</th>
-                        <th style="width: 40%;">特殊战术特效与限制</th>
-                        <th style="width: 7%;">重量</th>
-                        <th style="width: 8%;">最大耐久</th>
-                    </tr>
-                </thead>
+                <thead data-header="melee-main"></thead>
                 <tbody>
                     <tr><td><b>步兵刺刀</b></td><td class="dmg-dice">1d4 穿刺</td><td>近(5尺)</td><td>可安装在弩或步枪上作为刺刀使用；精准刺击时攻击检定+1（若你未移动）。</td><td>轻</td><td class="durability">10</td></tr>
                     <tr><td><b>海军弯刀</b></td><td class="dmg-dice">1d6 挥砍</td><td>近(5尺)</td><td>对绳索、木质障碍破坏时伤害骰取优势。</td><td>轻</td><td class="durability">8</td></tr>
@@ -245,16 +237,7 @@
             <h2>二、近战主武器列表 - ⚔️ 中型武器</h2>
             <p>单手主力/双手灵活，属性均衡，是大多数干员的核心列装选择。</p>
             <table>
-                <thead>
-                    <tr>
-                        <th style="width: 15%;">武器名称</th>
-                        <th style="width: 15%;">基础伤害骰</th>
-                        <th style="width: 15%;">攻击距离</th>
-                        <th style="width: 40%;">特殊战术特效与限制</th>
-                        <th style="width: 7%;">重量</th>
-                        <th style="width: 8%;">最大耐久</th>
-                    </tr>
-                </thead>
+                <thead data-header="melee-main"></thead>
                 <tbody>
                     <tr><td><b>阔身砍刀</b></td><td class="dmg-dice">1d8+2 挥砍</td><td>近(5尺)</td><td>对未穿护甲或仅穿轻甲的目标额外造成2点伤害；大失败时武器可能卡住（需动作拔出）。</td><td>中</td><td class="durability">14</td></tr>
                     <tr><td><b>重型佩剑</b></td><td class="dmg-dice">1d8+2 挥砍</td><td>中(5-10尺)</td><td>若用此武器成功格挡，可用反应进行一次攻击（具有劣势）。</td><td>中</td><td class="durability">16</td></tr>
@@ -296,16 +279,7 @@
             <h2>二、近战主武器列表 - 🛡️ 重型武器</h2>
             <p>双手持有，威力巨大，使用有严格的力量属性(STR)限制门槛。</p>
             <table>
-                <thead>
-                    <tr>
-                        <th style="width: 15%;">武器名称</th>
-                        <th style="width: 15%;">基础伤害骰</th>
-                        <th style="width: 15%;">属性限制</th>
-                        <th style="width: 40%;">特殊战术特效与限制</th>
-                        <th style="width: 7%;">重量</th>
-                        <th style="width: 8%;">最大耐久</th>
-                    </tr>
-                </thead>
+                <thead data-header="melee-special"></thead>
                 <tbody>
                     <tr><td><b>双手巨剑</b></td><td class="dmg-dice">2d6 挥砍</td><td>STR ≥ 15</td><td>攻击5尺内所有敌人（每个目标独立检定，第二次起具有劣势）。</td><td>重</td><td class="durability">16</td></tr>
                     <tr><td><b>苏格兰斩剑</b></td><td class="dmg-dice">2d6 挥砍</td><td>STR ≥ 15</td><td>巨大的双手剑。对抗长柄武器（触及10尺）时无距离劣势。</td><td>重</td><td class="durability">18</td></tr>
@@ -331,16 +305,7 @@
             <h2>二、近战主武器列表 - ✨ 特殊武器</h2>
             <p>需特别许可或战役奖励，自带超自然威能或主题武器特质。</p>
             <table>
-                <thead>
-                    <tr>
-                        <th style="width: 15%;">武器名称</th>
-                        <th style="width: 15%;">基础伤害骰</th>
-                        <th style="width: 15%;">攻击距离</th>
-                        <th style="width: 40%;">特殊战术特效与限制</th>
-                        <th style="width: 7%;">重量</th>
-                        <th style="width: 8%;">最大耐久</th>
-                    </tr>
-                </thead>
+                <thead data-header="melee-main"></thead>
                 <tbody>
                     <tr><td><b>镀银长剑</b></td><td class="dmg-dice">1d8 挥砍</td><td>中(5-10尺)</td><td>对畏银生物（狼人、吸血鬼）视作魔法武器，额外+1d4光耀；对抗恐惧豁免优势。</td><td>中</td><td class="durability">16</td></tr>
                     <tr><td><b>灵体剥离器</b></td><td class="dmg-dice">1d4物理 / 1d10力场</td><td>远(10尺触及)</td><td>对灵体造成1d10力场伤害；每日1次，使灵体DC 14感知豁免，失败束缚1轮。</td><td>中</td><td class="durability">10</td></tr>
@@ -361,16 +326,7 @@
             <h2>二、近战主武器列表 - 🔧 罕见/自制武器</h2>
             <p>特殊工艺或民间非制式改装改装，机制独特。</p>
             <table>
-                <thead>
-                    <tr>
-                        <th style="width: 15%;">武器名称</th>
-                        <th style="width: 15%;">基础伤害骰</th>
-                        <th style="width: 15%;">攻击距离</th>
-                        <th style="width: 40%;">特殊战术特效与限制</th>
-                        <th style="width: 7%;">重量</th>
-                        <th style="width: 8%;">最大耐久</th>
-                    </tr>
-                </thead>
+                <thead data-header="melee-main"></thead>
                 <tbody>
                     <tr><td><b>硬化藤杖</b></td><td class="dmg-dice">1d6+1 钝击</td><td>中(5-10尺)</td><td>持用时对抗近战AC+1；可作为标准普通手杖不引人注意。</td><td>轻</td><td class="durability">22</td></tr>
                     <tr><td><b>铁路道钉锤</b></td><td class="dmg-dice">1d6+2 钝击</td><td>近(5尺)</td><td>对金属、机械额外+2伤害；对构装体伤害+1d4。</td><td>中</td><td class="durability">14</td></tr>
@@ -398,17 +354,7 @@
             
             <h3>一、据点随机生成规则</h3>
             <h4>副武器总件数计算公式</h4>
-            <div class="brass-box" style="border-left-color: #70e28c; background: rgba(112, 226, 140, 0.05); padding: 15px; border-left: 4px solid #70e28c; margin-bottom: 15px;">
-                <p style="font-size: 15px; font-weight: bold; text-align: center; color: #70e28c; margin-bottom: 10px;">
-                    总件数 S = (团队总槽位数 + 3d4) + (玩家数量 + 2d4) + (3d6 + 1d4) + 基础库存值
-                </p>
-                <p><b>基础库存值调节系数：</b></p>
-                <ul>
-                    <li><b>新手阶段</b>：基础库存值 = 10</li>
-                    <li><b>标准阶段</b>：基础库存值 = 7</li>
-                    <li><b>硬核阶段</b>：基础库存值 = 4</li>
-                </ul>
-            </div>
+            <div class="brass-box brass-box--green" data-formula="sub-weapon"></div>
 
             <h3>二、副武器领取规则（等级制限制）</h3>
             <table>
@@ -420,10 +366,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td><b>1 - 4 级</b></td><td><span class="highlight" style="color: #ffca28; font-weight: bold;">2 件</span></td><td>仅限轻型</td></tr>
-                    <tr><td><b>5 - 10 级</b></td><td><span class="highlight" style="color: #ffca28; font-weight: bold;">3 件</span></td><td>可包括 1 件特殊（如镀银/仪式）</td></tr>
-                    <tr><td><b>11 - 16 级</b></td><td><span class="highlight" style="color: #ffca28; font-weight: bold;">4 件</span></td><td>无限制</td></tr>
-                    <tr><td><b>17 - 20 级</b></td><td><span class="highlight" style="color: #ffca28; font-weight: bold;">5 件</span></td><td>无限制，可包含魔法武器</td></tr>
+                    <tr><td><b>1 - 4 级</b></td><td><span class="gold-highlight">2 件</span></td><td>仅限轻型</td></tr>
+                    <tr><td><b>5 - 10 级</b></td><td><span class="gold-highlight">3 件</span></td><td>可包括 1 件特殊（如镀银/仪式）</td></tr>
+                    <tr><td><b>11 - 16 级</b></td><td><span class="gold-highlight">4 件</span></td><td>无限制</td></tr>
+                    <tr><td><b>17 - 20 级</b></td><td><span class="gold-highlight">5 件</span></td><td>无限制，可包含魔法武器</td></tr>
                 </tbody>
             </table>
             <p style="margin-top: 20px; color: var(--text-muted); font-style: italic;">💡 请从左侧菜单的分支栏位查看具体类别的副武器详细列表。</p>
@@ -432,9 +378,7 @@
         <div id="sub-wpn-light" class="content-section">
             <h2>🗡️ 副武器库 - 常规轻型副武</h2>
             <table>
-                <thead>
-                    <tr><th style="width: 15%;">武器名称</th><th style="width: 12%;">伤害</th><th style="width: 18%;">属性</th><th style="width: 39%;">特殊效果</th><th style="width: 8%;">重量</th><th style="width: 8%;">最大耐久</th></tr>
-                </thead>
+                <thead data-header="sub-weapon"></thead>
                 <tbody>
                     <tr><td><b>标准匕首</b></td><td class="dmg-dice">1d4 穿刺</td><td>轻型，灵巧，投掷(20/60)</td><td>可投掷；若目标未察觉你，伤害骰取优势</td><td>轻</td><td class="durability">6</td></tr>
                     <tr><td><b>双刃匕首</b></td><td class="dmg-dice">1d4 穿刺</td><td>轻型，灵巧</td><td>快速连刺：可用附赠动作进行第二次攻击（伤害-2）</td><td>轻</td><td class="durability">6</td></tr>
@@ -451,9 +395,7 @@
         <div id="sub-wpn-tool" class="content-section">
             <h2>🗡️ 副武器库 - 工具与隐蔽副武</h2>
             <table>
-                <thead>
-                    <tr><th style="width: 15%;">武器名称</th><th style="width: 12%;">伤害</th><th style="width: 18%;">属性</th><th style="width: 39%;">特殊效果</th><th style="width: 8%;">重量</th><th style="width: 8%;">最大耐久</th></tr>
-                </thead>
+                <thead data-header="sub-weapon"></thead>
                 <tbody>
                     <tr><td><b>猎刀</b></td><td class="dmg-dice">1d4 挥砍</td><td>轻型，灵巧</td><td>对野兽额外+1伤害；可作为工具使用</td><td>轻</td><td class="durability">8</td></tr>
                     <tr><td><b>拆信刀</b></td><td class="dmg-dice">1d3 穿刺</td><td>轻型，灵巧</td><td>极隐蔽，可作为书写工具；社交场合不引人注意</td><td>轻</td><td class="durability">5</td></tr>
@@ -472,9 +414,7 @@
         <div id="sub-wpn-special" class="content-section">
             <h2>🗡️ 副武器库 - 特殊与异国副武</h2>
             <table>
-                <thead>
-                    <tr><th style="width: 15%;">武器名称</th><th style="width: 12%;">伤害</th><th style="width: 18%;">属性</th><th style="width: 39%;">特殊效果</th><th style="width: 8%;">重量</th><th style="width: 8%;">最大耐久</th></tr>
-                </thead>
+                <thead data-header="sub-weapon"></thead>
                 <tbody>
                     <tr><td><b>鞭子</b></td><td class="dmg-dice">1d4 挥砍</td><td>灵巧，触及10尺</td><td>可进行缠绕缴械（附赠动作，力量对抗）或绊足（命中DC11敏捷豁免，失败倒地）</td><td>轻</td><td class="durability">8</td></tr>
                     <tr><td><b>绳镖</b></td><td class="dmg-dice">1d4 穿刺</td><td>灵巧，触及15尺</td><td>可投掷并收回（射程20/60）；可缠绕敌人</td><td>轻</td><td class="durability">5</td></tr>
@@ -495,9 +435,7 @@
         <div id="sub-wpn-hidden" class="content-section">
             <h2>🗡️ 副武器库 - 极隐秘暗杀副武</h2>
             <table>
-                <thead>
-                    <tr><th style="width: 15%;">武器名称</th><th style="width: 12%;">伤害</th><th style="width: 18%;">属性</th><th style="width: 39%;">特殊效果</th><th style="width: 8%;">重量</th><th style="width: 8%;">最大耐久</th></tr>
-                </thead>
+                <thead data-header="sub-weapon"></thead>
                 <tbody>
                     <tr><td><b>弹簧刀</b></td><td class="dmg-dice">1d4 穿刺</td><td>轻型，灵巧</td><td>突袭时先攻+2；极隐蔽，不易被发现</td><td>轻</td><td class="durability">6</td></tr>
                     <tr><td><b>靴刀</b></td><td class="dmg-dice">1d4 穿刺</td><td>轻型，灵巧</td><td>隐蔽携带；倒地时也可使用（无劣势）</td><td>轻</td><td class="durability">6</td></tr>
@@ -518,7 +456,7 @@
                     <tr><td><b>刺环</b></td><td class="dmg-dice">1d3 穿刺</td><td>轻型，灵巧</td><td>套在手指上的尖刺环；极隐蔽；近身接触时自动命中</td><td>轻</td><td class="durability">4</td></tr>
                     <tr><td><b>伸缩棍</b></td><td class="dmg-dice">1d4 钝击</td><td>轻型，灵巧</td><td>可伸缩（展开为自由动作）；隐蔽携带；突袭时攻击具有优势</td><td>轻</td><td class="durability">8</td></tr>
                     <tr><td><b>护腕刃</b></td><td class="dmg-dice">1d4 穿刺</td><td>轻型，灵巧</td><td>绑在护腕下；不占手；擒抱时攻击具有优势；极隐蔽</td><td>轻</td><td class="durability">6</td></tr>
-                    <tr style="background: rgba(255,215,0,0.02); font-style: italic;"><td><b>【待补充】</b></td><td>—</td><td>—</td><td>副武器预留位</td><td>—</td><td>—</td></tr>
+                    <tr class="reserved-row"><td><b>【待补充】</b></td><td>—</td><td>—</td><td>副武器预留位</td><td>—</td><td>—</td></tr>
                 </tbody>
             </table>
         </div>
@@ -595,27 +533,18 @@
 <div id="mag-main-hub" class="content-section active">  
     <h2>📜 魔法主武器库</h2>  
     <p>说明：此列表收录专为施法者设计的魔法主武器。所有武器均可重复使用，充能数据以 “上限 / 每日恢复” 格式标注。稀有度越高，上限与恢复越苛刻，但效果也越强。</p>  
-    <blockquote style="background: rgba(255,255,255,0.02); padding: 10px; border-left: 4px solid #ffb000; margin: 10px 0;">  
+    <blockquote class="info-blockquote">  
         <b>💡 适配职业：</b>法师、术士、邪术师、牧师、圣武士、德鲁伊、游侠、吟游诗人。  
     </blockquote>  
   
     <hr>  
   
     <h3>🎲 魔法主武器总件数计算公式</h3>  
-    <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 6px; margin: 10px 0; font-family: monospace;">  
-        T = (团队总槽位数 × 2d4) + (玩家数量 × 1d6) + (2d8 - 1d4) + 基础库存值  
-    </div>  
-    <ul>  
-        <li><b>基础库存值：</b>新手 8 | 标准 5 | 硬核 2</li>  
-    </ul>  
+    <div class="formula-box gold" data-formula="main-weapon-compact"></div>  
   
     <h3>📋 生成与分配流程</h3>  
     <ol>  
-        <li>KP 计算总件数 X</li>  
-        <li>准备武器池</li>  
-        <li>进行 X 次抽取，每次掷骰决定武器种类</li>  
-        <li>统计每种武器获得数量</li>  
-        <li>玩家按槽位从清单中选取</li>  
+        <li data-template="distribution-flow"></li>  
     </ol>  
   
     <hr>  
@@ -623,9 +552,7 @@
     <!-- 1. 法杖类 -->  
     <h3 id="staff-section">🔱 1. 法杖类（Staff，共16种）</h3>  
     <table>  
-        <thead>  
-            <tr><th style="width: 15%;">武器名</th><th style="width: 10%;">稀有度</th><th style="width: 8%;">等级</th><th style="width: 10%;">价格</th><th style="width: 8%;">耐久</th><th style="width: 12%;">上限/恢复</th><th>效果与消耗</th></tr>  
-        </thead>  
+        <thead data-header="magic-main-hub"></thead>  
         <tbody>  
             <tr><td>饰品类法杖</td><td>普通</td><td>1级+</td><td>75gp</td><td>15</td><td>—</td><td>可作为施法法器使用。无充能。</td></tr>  
             <tr><td>学徒法杖</td><td>非常见</td><td>1级+</td><td>300gp</td><td>15</td><td>—</td><td>持握时法术攻击检定+1。需同调。</td></tr>  
@@ -649,9 +576,7 @@
     <!-- 2. 魔杖类 -->  
     <h3 id="wand-section">🔱 2. 魔杖类（Wand，共16种）</h3>  
     <table>  
-        <thead>  
-            <tr><th>武器名</th><th>稀有度</th><th>等级</th><th>价格</th><th>耐久</th><th>上限/恢复</th><th>效果与消耗</th></tr>  
-        </thead>  
+        <thead data-header="magic-main-hub"></thead>  
         <tbody>  
             <tr><td>魔法飞弹魔杖</td><td>非常见</td><td>1级+</td><td>400gp</td><td>10</td><td>6 / 1d4+2</td><td>1发=1环魔法飞弹。</td></tr>  
             <tr><td>火球魔杖</td><td>稀有</td><td>5级+</td><td>3,500gp</td><td>12</td><td>6 / 1d4+2</td><td>1发=火球术。</td></tr>  
@@ -675,9 +600,7 @@
     <!-- 3. 权杖类 -->  
     <h3 id="rod-section">🔱 3. 权杖类（Rod，共12种）</h3>  
     <table>  
-        <thead>  
-            <tr><th>武器名</th><th>稀有度</th><th>等级</th><th>价格</th><th>耐久</th><th>上限/恢复</th><th>效果与消耗</th></tr>  
-        </thead>  
+        <thead data-header="magic-main-hub"></thead>  
         <tbody>  
             <tr><td>警戒权杖</td><td>非常见</td><td>1级+</td><td>350gp</td><td>12</td><td>—</td><td>先攻+1，不会被突袭。</td></tr>  
             <tr><td>恐惧权杖</td><td>非常见</td><td>1级+</td><td>350gp</td><td>12</td><td>—</td><td>每日1次释放恐惧锥。</td></tr>  
@@ -697,9 +620,7 @@
     <!-- 4. 法球类 -->  
     <h3 id="orb-section">🔮 4. 法球类（Orb，共10种）</h3>  
     <table>  
-        <thead>  
-            <tr><th>武器名</th><th>稀有度</th><th>等级</th><th>价格</th><th>耐久</th><th>上限/恢复</th><th>效果与消耗</th></tr>  
-        </thead>  
+        <thead data-header="magic-main-hub"></thead>  
         <tbody>  
             <tr><td>标准法球</td><td>普通</td><td>1级+</td><td>75gp</td><td>12</td><td>—</td><td>施法法器。</td></tr>  
             <tr><td>防护法球(火/光/酸毒)</td><td>普通</td><td>1级+</td><td>100gp</td><td>12</td><td>—</td><td>反应将特定伤害减半。</td></tr>  
@@ -715,9 +636,7 @@
     <!-- 5. 水晶类 -->  
     <h3 id="crystal-section">💎 5. 水晶类（Crystal，共8种）</h3>  
     <table>  
-        <thead>  
-            <tr><th>武器名</th><th>稀有度</th><th>等级</th><th>价格</th><th>耐久</th><th>上限/恢复</th><th>效果与消耗</th></tr>  
-        </thead>  
+        <thead data-header="magic-main-hub"></thead>  
         <tbody>  
             <tr><td>标准水晶</td><td>普通</td><td>1级+</td><td>60gp</td><td>8</td><td>—</td><td>施法法器。</td></tr>  
             <tr><td>专注水晶</td><td>非常见</td><td>1级+</td><td>300gp</td><td>8</td><td>—</td><td>专注豁免+1。</td></tr>  
@@ -733,9 +652,7 @@
     <!-- 6. 圣徽类 -->  
     <h3 id="holy-section">🛡️ 6. 圣徽类（Holy Symbol，共8种）</h3>  
     <table>  
-        <thead>  
-            <tr><th>武器名</th><th>稀有度</th><th>等级</th><th>价格</th><th>耐久</th><th>上限/恢复</th><th>效果与消耗</th></tr>  
-        </thead>  
+        <thead data-header="magic-main-hub"></thead>  
         <tbody>  
             <tr><td>标准圣徽</td><td>普通</td><td>1级+</td><td>50gp</td><td>6</td><td>—</td><td>施法法器。</td></tr>  
             <tr><td>驱散圣徽</td><td>非常见</td><td>1级+</td><td>300gp</td><td>8</td><td>—</td><td>驱散不死生物DC+2。</td></tr>  
@@ -751,9 +668,7 @@
     <!-- 7. 德鲁伊法器 -->  
     <h3 id="druid-section">🌿 7. 德鲁伊法器（Druidic Focus，共6种）</h3>  
     <table>  
-        <thead>  
-            <tr><th>武器名</th><th>稀有度</th><th>等级</th><th>价格</th><th>耐久</th><th>上限/恢复</th><th>效果与消耗</th></tr>  
-        </thead>  
+        <thead data-header="magic-main-hub"></thead>  
         <tbody>  
             <tr><td>标准法器</td><td>普通</td><td>1级+</td><td>50gp</td><td>10</td><td>—</td><td>施法法器。</td></tr>  
             <tr><td>自然法器</td><td>非常见</td><td>1级+</td><td>300gp</td><td>12</td><td>—</td><td>德鲁伊法术攻击+1。</td></tr>  
@@ -767,9 +682,7 @@
     <!-- 8. 法典/法术书 -->  
     <h3 id="book-section">📖 8. 法典/法术书类（共4种）</h3>  
     <table>  
-        <thead>  
-            <tr><th>武器名</th><th>稀有度</th><th>等级</th><th>价格</th><th>耐久</th><th>上限/恢复</th><th>效果与消耗</th></tr>  
-        </thead>  
+        <thead data-header="magic-main-hub"></thead>  
         <tbody>  
             <tr><td>标准法术书</td><td>普通</td><td>1级+</td><td>50gp</td><td>12</td><td>—</td><td>施法法器。</td></tr>  
             <tr><td>耐久法术书</td><td>普通</td><td>1级+</td><td>100gp</td><td>18</td><td>—</td><td>耐用性提升。</td></tr>  
@@ -781,9 +694,7 @@
     <!-- 9. 秘法珠宝 -->  
     <h3 id="jewelry-section">✨ 9. 秘法珠宝（共6种）</h3>  
     <table>  
-        <thead>  
-            <tr><th>武器名</th><th>稀有度</th><th>等级</th><th>价格</th><th>耐久</th><th>上限/恢复</th><th>效果与消耗</th></tr>  
-        </thead>  
+        <thead data-header="magic-main-hub"></thead>  
         <tbody>  
             <tr><td>统御之戒</td><td>极珍稀</td><td>11级+</td><td>16,000gp</td><td>13</td><td>5 / 1d4</td><td>消耗2发支配怪物；消耗1发魅惑DC+2。</td></tr>  
             <tr><td>元素王冠</td><td>极珍稀</td><td>11级+</td><td>18,000gp</td><td>12</td><td>6 / 1d4</td><td>消耗2发开启元素形态。</td></tr>  
@@ -797,9 +708,7 @@
     <!-- 10. 咒术触发 -->  
     <h3 id="trigger-section">⚡ 10. 咒术触发（共4种）</h3>  
     <table>  
-        <thead>  
-            <tr><th>武器名</th><th>稀有度</th><th>等级</th><th>价格</th><th>耐久</th><th>上限/恢复</th><th>效果与消耗</th></tr>  
-        </thead>  
+        <thead data-header="magic-main-hub"></thead>  
         <tbody>  
             <tr><td>咒术法杖</td><td>稀有</td><td>5级+</td><td>4,000gp</td><td>14</td><td>6 / 1d4+2</td><td>消耗2发触发术；1发瞬发法术。</td></tr>  
             <tr><td>连锁刻印法杖</td><td>极珍稀</td><td>11级+</td><td>17,000gp</td><td>15</td><td>5 / 1d4</td><td>消耗2发连锁触发；1发附加力场伤。</td></tr>  
@@ -811,9 +720,7 @@
     <!-- 11. 异界奇物 -->  
     <h3 id="artifact-section">🌌 11. 异界/以太奇物（共4种）</h3>  
     <table>  
-        <thead>  
-            <tr><th>武器名</th><th>稀有度</th><th>等级</th><th>价格</th><th>耐久</th><th>上限/恢复</th><th>效果与消耗</th></tr>  
-        </thead>  
+        <thead data-header="magic-main-hub"></thead>  
         <tbody>  
             <tr><td>虚空法杖</td><td>极珍稀</td><td>11级+</td><td>22,000gp</td><td>14</td><td>6 / 1d4</td><td>虚空裂隙；近战力场伤。</td></tr>  
             <tr><td>星门法杖</td><td>传说</td><td>17级+</td><td>55,000gp</td><td>15</td><td>4 / 无</td><td>星门开启；异界呼唤。</td></tr>  
@@ -836,12 +743,7 @@
             <hr>
 
             <h3>🎲 魔法副武器总件数计算公式</h3>
-            <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 6px; margin: 10px 0; font-family: monospace;">
-                S = (团队总槽位数 + 3d4) + (玩家数量 + 2d4) + (3d6 + 1d4) + 基础库存值
-            </div>
-            <ul>
-                <li><b>基础库存值：</b>新手 8 | 标准 5 | 硬核 2</li>
-            </ul>
+            <div class="formula-box green" data-formula="sub-weapon-compact"></div>
 
             <h3>📋 生成与分配流程</h3>
             <ol>
@@ -893,9 +795,7 @@
             <h2>🗡️ 奥术匕首/短刃类</h2>
             <p class="section-desc">说明：专为施法者设计的魔法副武器，带有独特的战技或法术效果。所有施法职业均可使用，部分有职业限制或同调要求。</p>
             <table>
-                <thead>
-                    <tr><th style="width: 15%;">武器名</th><th style="width: 10%;">稀有度</th><th style="width: 8%;">等级</th><th style="width: 10%;">价格</th><th style="width: 8%;">耐久</th><th style="width: 15%;">上限 / 每日恢复</th><th>效果与消耗</th></tr>
-                </thead>
+                <thead data-header="magic-sub"></thead>
                 <tbody>
                     <tr><td><b>符文刻刃</b></td><td>非常见</td><td>1级+</td><td>300gp</td><td>12</td><td>5 / 1d4+1</td><td>法术攻击+1。附赠消耗1发使下次攻击/法术额外+1d4力场。战技·铭文斩：消耗1发，目标DC12智力豁免失败则法术干扰（下个法术额外消耗1环位）。</td></tr>
                     <tr><td><b>灵质短刃</b></td><td>稀有</td><td>5级+</td><td>2,800gp</td><td>13</td><td>6 / 1d4+1</td><td>伤害1d4精神（穿甲），对灵体双倍。附赠消耗1发进入灵质形态（穿墙至本回合结束）。战技·精神撕扯：消耗1发，DC13感知豁免失败则恐慌1轮。</td></tr>
@@ -919,9 +819,7 @@
         <div id="sub-wand" class="content-section">
             <h2>🪄 小型权杖/魔杖类</h2>
             <table>
-                <thead>
-                    <tr><th style="width: 15%;">武器名</th><th style="width: 10%;">稀有度</th><th style="width: 8%;">等级</th><th style="width: 10%;">价格</th><th style="width: 8%;">耐久</th><th style="width: 15%;">上限 / 每日恢复</th><th>效果与消耗</th></tr>
-                </thead>
+                <thead data-header="magic-sub"></thead>
                 <tbody>
                     <tr><td><b>回响短杖</b></td><td>非常见</td><td>1级+</td><td>320gp</td><td>10</td><td>5 / 1d4+1</td><td>反应消耗1发回响反制（30尺内施法者DC13专注豁免失败则法术中断）。</td></tr>
                     <tr><td><b>脉动短杖</b></td><td>非常见</td><td>1级+</td><td>300gp</td><td>10</td><td>5 / 1d4+1</td><td>附赠消耗1发使下次法术DC+1或伤害+1d6。</td></tr>
@@ -947,9 +845,7 @@
         <div id="sub-talisman" class="content-section">
             <h2>🔮 秘法护符/圣徽类</h2>
             <table>
-                <thead>
-                    <tr><th style="width: 15%;">武器名</th><th style="width: 10%;">稀有度</th><th style="width: 8%;">等级</th><th style="width: 10%;">价格</th><th style="width: 8%;">耐久</th><th style="width: 15%;">上限 / 每日恢复</th><th>效果与消耗</th></tr>
-                </thead>
+                <thead data-header="magic-sub"></thead>
                 <tbody>
                     <tr><td><b>垂泪圣徽</b></td><td>非常见</td><td>1级+</td><td>250gp</td><td>12</td><td>5 / 1d4+1</td><td>附赠消耗1发泪滴祝福（30尺内盟友恢复1d6 HP）。</td></tr>
                     <tr><td><b>鹰羽护符</b></td><td>非常见</td><td>1级+</td><td>260gp</td><td>12</td><td>5 / 1d4</td><td>附赠消耗1发鹰之视（60尺黑暗视觉+侦查优势，1小时）。</td></tr>
@@ -971,9 +867,7 @@
         <div id="sub-book" class="content-section">
             <h2>📖 法术书/卷轴匣类</h2>
             <table>
-                <thead>
-                    <tr><th style="width: 15%;">武器名</th><th style="width: 10%;">稀有度</th><th style="width: 8%;">等级</th><th style="width: 10%;">价格</th><th style="width: 8%;">耐久</th><th style="width: 15%;">上限 / 每日恢复</th><th>效果与消耗</th></tr>
-                </thead>
+                <thead data-header="magic-sub"></thead>
                 <tbody>
                     <tr><td><b>袖珍法术书</b></td><td>非常见</td><td>1级+</td><td>300gp</td><td>12</td><td>4 / 1d4</td><td>消耗1发速查术（改变一个已准备法术为同环另一个）。</td></tr>
                     <tr><td><b>防水卷轴匣</b></td><td>非常见</td><td>1级+</td><td>260gp</td><td>14</td><td>4 / 1d4</td><td>附赠消耗1发速展卷轴（无需动作展开并使用一个卷轴，内部最多存放4幅卷轴）。</td></tr>
@@ -991,9 +885,7 @@
         <div id="sub-jewelry" class="content-section">
             <h2>💎 秘法珠宝类</h2>
             <table>
-                <thead>
-                    <tr><th style="width: 15%;">武器名</th><th style="width: 10%;">稀有度</th><th style="width: 8%;">等级</th><th style="width: 10%;">价格</th><th style="width: 8%;">耐久</th><th style="width: 15%;">上限 / 每日恢复</th><th>效果与消耗</th></tr>
-                </thead>
+                <thead data-header="magic-sub"></thead>
                 <tbody>
                     <tr><td><b>虹吸戒指</b></td><td>稀有</td><td>5级+</td><td>2,500gp</td><td>12</td><td>6 / 1d4</td><td>反应消耗1发虹吸术（吸收30尺内敌人一个增益，转移给自身/盟友，1轮）。</td></tr>
                     <tr><td><b>共鸣石</b></td><td>稀有</td><td>5级+</td><td>2,600gp</td><td>12</td><td>6 / 1d4</td><td>附赠消耗1发共鸣连接（与30尺内盟友建立精神链接，传递感官1轮）。</td></tr>
@@ -1011,9 +903,7 @@
         <div id="sub-trigger" class="content-section">
             <h2>⚡ 咒术触发类</h2>
             <table>
-                <thead>
-                    <tr><th style="width: 15%;">武器名</th><th style="width: 10%;">稀有度</th><th style="width: 8%;">等级</th><th style="width: 10%;">价格</th><th style="width: 8%;">耐久</th><th style="width: 15%;">上限 / 每日恢复</th><th>效果与消耗</th></tr>
-                </thead>
+                <thead data-header="magic-sub"></thead>
                 <tbody>
                     <tr><td><b>触发术石板</b></td><td>稀有</td><td>5级+</td><td>2,600gp</td><td>13</td><td>4 / 1d4</td><td>消耗1发预设触发（设下条件，满足时自动触发1环法术）。</td></tr>
                     <tr><td><b>咒术刻印</b></td><td>非常见</td><td>1级+</td><td>300gp</td><td>12</td><td>5 / 1d4</td><td>附赠消耗1发刻印术（在物体/生物上留下不可见咒术标记，24小时可追踪）。</td></tr>
@@ -1031,9 +921,7 @@
         <div id="sub-curio" class="content-section">
             <h2>🌌 以太/异界奇物类</h2>
             <table>
-                <thead>
-                    <tr><th style="width: 15%;">武器名</th><th style="width: 10%;">稀有度</th><th style="width: 8%;">等级</th><th style="width: 10%;">价格</th><th style="width: 8%;">耐久</th><th style="width: 15%;">上限 / 每日恢复</th><th>效果与消耗</th></tr>
-                </thead>
+                <thead data-header="magic-sub"></thead>
                 <tbody>
                     <tr><td><b>虚空碎片</b></td><td>极珍稀</td><td>11级+</td><td>15,000gp</td><td>12</td><td>7 / 1d4</td><td>消耗2发虚空裂隙（15尺半径DC15力量豁免失败则被拉向中心5尺并受2d8力场）。战技·湮灭触：消耗3发，5d10力场（DC16体质半伤）。</td></tr>
                     <tr><td><b>灵界透镜</b></td><td>稀有</td><td>5级+</td><td>3,000gp</td><td>10</td><td>5 / 1d4</td><td>消耗1发灵界视（看到灵体/隐形/以太痕迹，10分钟）。</td></tr>
@@ -1051,9 +939,7 @@
         <div id="sub-misc" class="content-section">
             <h2>🕯️ 其他奇物类</h2>
             <table>
-                <thead>
-                    <tr><th style="width: 15%;">武器名</th><th style="width: 10%;">稀有度</th><th style="width: 8%;">等级</th><th style="width: 10%;">价格</th><th style="width: 8%;">耐久</th><th style="width: 15%;">上限 / 每日恢复</th><th>效果与消耗</th></tr>
-                </thead>
+                <thead data-header="magic-sub"></thead>
                 <tbody>
                     <tr><td><b>共鸣铃</b></td><td>非常见</td><td>1级+</td><td>200gp</td><td>10</td><td>5 / 1d4+1</td><td>消耗1发破音（30尺内施法者DC13专注豁免失败则法术中断）。</td></tr>
                     <tr><td><b>雾灯</b></td><td>非常见</td><td>1级+</td><td>220gp</td><td>12</td><td>5 / 1d4+1</td><td>消耗1发造雾术（10尺半径浓雾，持续1分钟）。</td></tr>
@@ -1087,28 +973,167 @@
         <!-- 📜 战役世界线 -->
         <div id="world-lore" class="content-section">
             <h2>四、伦敦世界观与剧情NPC</h2>
-            <p style="color: var(--text-muted); font-style: italic;">（当前战役迷雾笼罩，随着剧情推进，世界线线索将在此更新...）</p>
+            <p class="placeholder-text">（当前战役迷雾笼罩，随着剧情推进，世界线线索将在此更新...）</p>
         </div>
 
     </div>
-    </div>
 
     <script>
-        document.querySelectorAll('.nav-btn').forEach(button => {
-            button.addEventListener('click', () => {
-                // 1. 切换导航高亮
-                document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-                button.classList.add('active');
-                
-                // 2. 切换右侧内容房间的显隐
-                document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
-                const targetId = button.getAttribute('data-target');
-                document.getElementById(targetId).classList.add('active');
-                
-                // 3. 自动平滑滚回顶部
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+        // ===== Shared Utility Functions =====
+        // Centralized formula data to avoid repeating the same formulas/values across sections
+        const FormulaTemplates = {
+            'main-weapon': {
+                formula: '总件数 T = (团队总槽位数 × 2d4) + (玩家数量 × 1d6) + (2d8 - 1d4) + 基础库存值',
+                color: '#cca43b',
+                inventory: [
+                    { label: '新手阶段（5级以下）', value: 8 },
+                    { label: '标准阶段（5~15级内）', value: 5 },
+                    { label: '硬核阶段（15级以上）', value: 2 }
+                ]
+            },
+            'main-weapon-compact': {
+                formula: 'T = (团队总槽位数 × 2d4) + (玩家数量 × 1d6) + (2d8 - 1d4) + 基础库存值',
+                color: '#cca43b',
+                inventoryCompact: '新手 8 | 标准 5 | 硬核 2'
+            },
+            'sub-weapon': {
+                formula: '总件数 S = (团队总槽位数 + 3d4) + (玩家数量 + 2d4) + (3d6 + 1d4) + 基础库存值',
+                color: '#70e28c',
+                inventory: [
+                    { label: '新手阶段', value: 10 },
+                    { label: '标准阶段', value: 7 },
+                    { label: '硬核阶段', value: 4 }
+                ]
+            },
+            'sub-weapon-compact': {
+                formula: 'S = (团队总槽位数 + 3d4) + (玩家数量 + 2d4) + (3d6 + 1d4) + 基础库存值',
+                color: '#70e28c',
+                inventoryCompact: '新手 8 | 标准 5 | 硬核 2'
+            }
+        };
+
+        // Shared table header definitions (consolidated from repeated headers)
+        const TABLE_HEADERS = {
+            'melee-main': [
+                { label: '武器名称', width: '15%' },
+                { label: '基础伤害骰', width: '15%' },
+                { label: '攻击距离', width: '15%' },
+                { label: '特殊战术特效与限制', width: '40%' },
+                { label: '重量', width: '7%' },
+                { label: '最大耐久', width: '8%' }
+            ],
+            'melee-special': [
+                { label: '武器名称', width: '15%' },
+                { label: '基础伤害骰', width: '15%' },
+                { label: '属性限制', width: '15%' },
+                { label: '特殊战术特效与限制', width: '40%' },
+                { label: '重量', width: '7%' },
+                { label: '最大耐久', width: '8%' }
+            ],
+            'sub-weapon': [
+                { label: '武器名称', width: '15%' },
+                { label: '伤害', width: '12%' },
+                { label: '属性', width: '18%' },
+                { label: '特殊效果', width: '39%' },
+                { label: '重量', width: '8%' },
+                { label: '最大耐久', width: '8%' }
+            ],
+            'magic-main-hub': [
+                { label: '武器名', width: '15%' },
+                { label: '稀有度', width: '10%' },
+                { label: '等级', width: '8%' },
+                { label: '价格', width: '10%' },
+                { label: '耐久', width: '8%' },
+                { label: '上限/恢复', width: '12%' },
+                { label: '效果与消耗' }
+            ],
+            'magic-sub': [
+                { label: '武器名', width: '15%' },
+                { label: '稀有度', width: '10%' },
+                { label: '等级', width: '8%' },
+                { label: '价格', width: '10%' },
+                { label: '耐久', width: '8%' },
+                { label: '上限 / 每日恢复', width: '15%' },
+                { label: '效果与消耗' }
+            ]
+        };
+
+        // Shared distribution flow steps (reused in main weapons and magic sub-weapons)
+        const DISTRIBUTION_STEPS = [
+            'KP 计算总件数 X',
+            '准备武器池',
+            '进行 X 次抽取，每次掷骰决定武器种类',
+            '统计每种武器获得数量',
+            '玩家按槽位从清单中选取'
+        ];
+
+        // Render table headers from data-header attributes
+        function renderTableHeaders() {
+            document.querySelectorAll('[data-header]').forEach(thead => {
+                const key = thead.getAttribute('data-header');
+                const cols = TABLE_HEADERS[key];
+                if (!cols) return;
+
+                const ths = cols.map(col => {
+                    const style = col.width ? ` style="width: ${col.width};"` : '';
+                    return `<th${style}>${col.label}</th>`;
+                }).join('');
+                thead.innerHTML = `<tr>${ths}</tr>`;
             });
-        });
+        }
+
+        // Render formula boxes from data attributes
+        function renderFormulaBoxes() {
+            document.querySelectorAll('[data-formula]').forEach(el => {
+                const key = el.getAttribute('data-formula');
+                const tmpl = FormulaTemplates[key];
+                if (!tmpl) return;
+
+                let html = `<p style="color: ${tmpl.color}; margin-bottom: 10px;">${tmpl.formula}</p>`;
+
+                if (tmpl.inventory) {
+                    html += '<p><b>基础库存值调节系数：</b></p><ul>';
+                    tmpl.inventory.forEach(item => {
+                        html += `<li><b>${item.label}</b>：基础库存值 = ${item.value}</li>`;
+                    });
+                    html += '</ul>';
+                } else if (tmpl.inventoryCompact) {
+                    html += `<p><b>基础库存值：</b>${tmpl.inventoryCompact}</p>`;
+                }
+
+                el.innerHTML = html;
+            });
+        }
+
+        // Render distribution flow lists from template attribute
+        function renderDistributionFlows() {
+            document.querySelectorAll('[data-template="distribution-flow"]').forEach(el => {
+                const parent = el.parentElement;
+                parent.innerHTML = DISTRIBUTION_STEPS.map(step => `<li>${step}</li>`).join('');
+            });
+        }
+
+        // ===== Navigation Logic =====
+        function initNavigation() {
+            document.querySelectorAll('.nav-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+                    button.classList.add('active');
+
+                    document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
+                    const targetId = button.getAttribute('data-target');
+                    document.getElementById(targetId).classList.add('active');
+
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            });
+        }
+
+        // ===== Initialize =====
+        renderTableHeaders();
+        renderFormulaBoxes();
+        renderDistributionFlows();
+        initNavigation();
     </script>
 </body>
 </html>
