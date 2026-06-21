@@ -78,106 +78,102 @@
     </style>
 </head>
 <body>
-    <!-- ==================== 左侧导航（精准替换这部分即可） ==================== -->
 <div class="sidebar">
-        <h2>📜 七钟残响</h2>
-        
-        <div class="menu-group">
-            <div class="menu-title">🏠 导览</div>
-            <ul class="menu-items">
-                <li class="nav-btn active" data-target="home">🏠 首页与据点生成规则</li>
-            </ul>
-        </div>
-        
-        <div class="menu-group">
-            <div class="menu-title">⚔️ 近战军械</div>
-            <ul class="menu-items">
-                <li class="nav-btn" data-target="wpn-main-hub">⚔️ 主武器仓库</li>
-            </ul>
-            <ul class="sub-menu-items">
-                <li class="nav-btn" data-target="wpn-light">└─ 轻型主武器</li>
-                <li class="nav-btn" data-target="wpn-medium">└─ 中型主武器</li>
-                <li class="nav-btn" data-target="wpn-heavy">└─ 重型主武器</li>
-                <li class="nav-btn" data-target="wpn-special">└─ 特殊主武器</li>
-                <li class="nav-btn" data-target="wpn-custom">└─ 罕见/自制武器</li>
-            </ul>
-            
-            <ul class="menu-items" style="margin-top: 10px;">
-                <li class="nav-btn" data-target="wpn-sub-hub">🗡️ 副武器仓库</li>
-            </ul>
-            <ul class="sub-menu-items">
-                <li class="nav-btn" data-target="sub-wpn-light">└─ 常规轻型副武</li>
-                <li class="nav-btn" data-target="sub-wpn-tool">└─ 工具与隐蔽副武</li>
-                <li class="nav-btn" data-target="sub-wpn-special">└─ 特殊与异国副武</li>
-                <li class="nav-btn" data-target="sub-wpn-hidden">└─ 极隐秘暗杀副武</li>
-            </ul>
+    <h2>📜 七钟残响</h2>
 
-<!-- ==================== 🔮 魔法军械（通用大类完全体） ==================== -->
- <div class="menu-group">
-    <div class="menu-title">🔮 魔法军械</div>
-    <ul class="menu-items">
-        <li class="nav-btn" data-target="mag-main-hub">📜 魔法主武器仓库</li>
-    </ul>
-    <ul class="sub-menu-items">
-        <li class="nav-btn" data-target="mag-staff">└─ 法杖类</li>
-        <li class="nav-btn" data-target="mag-wand">└─ 魔杖类</li>
-        <li class="nav-btn" data-target="mag-rod">└─ 权杖类</li>
-        <li class="nav-btn" data-target="mag-orb">└─ 法球类</li>
-        <li class="nav-btn" data-target="mag-crystal">└─ 水晶类</li>
-        <li class="nav-btn" data-target="mag-holy">└─ 圣徽类</li>
-        <li class="nav-btn" data-target="mag-druid">└─ 德鲁伊法器</li>
-        <li class="nav-btn" data-target="mag-book">└─ 法典/法术书</li>
-        <li class="nav-btn" data-target="mag-jewelry">└─ 秘法珠宝</li>
-        <li class="nav-btn" data-target="mag-trigger">└─ 咒术触发</li>
-        <li class="nav-btn" data-target="mag-artifact">└─ 异界奇物</li>
-    </ul>
-</div>
-
-            <!-- 侧边栏：魔法副武器库及其子分支 -->
-<div class="menu-group">
-    <button class="nav-btn" data-target="mag-sub-main">📜 魔法副武器库</button>
-    <ul>
-        <li><a href="#" class="nav-btn" data-target="sub-dagger">📋 奥术匕首/短刃类</a></li>
-        <li><a href="#" class="nav-btn" data-target="sub-wand">📋 小型权杖/魔杖类</a></li>
-        <li><a href="#" class="nav-btn" data-target="sub-talisman">📋 秘法护符/圣徽类</a></li>
-        <li><a href="#" class="nav-btn" data-target="sub-book">📋 法术书/卷轴匣类</a></li>
-        <li><a href="#" class="nav-btn" data-target="sub-jewelry">📋 秘法珠宝类</a></li>
-        <li><a href="#" class="nav-btn" data-target="sub-trigger">📋 咒术触发类</a></li>
-        <li><a href="#" class="nav-btn" data-target="sub-curio">📋 以太/异界奇物类</a></li>
-        <li><a href="#" class="nav-btn" data-target="sub-misc">📋 其他奇物类</a></li>
-        <li><a href="#" class="nav-btn" data-target="sub-reserved">📋 【待补充】副武器预留位</a></li>
-    </ul>
-</div>
-
-            
-            <ul class="menu-items" style="margin-top: 10px;">
-                <li class="nav-btn" data-target="wpn-ranged">🏹 远程武器库</li>
-            </ul>
-        </div>
-        
-        <div class="menu-group">
-            <div class="menu-title">🛡️ 防具与后勤</div>
-            <ul class="menu-items">
-                <li class="nav-btn" data-target="armor-shop">🛡️ 防具库</li>
-                <li class="nav-btn" data-target="item-shop">🧪 炼金与道具药品</li>
-            </ul>
-        </div>
-
-        <div class="menu-group">
-            <div class="menu-title">⚙️ 规则核心速查</div>
-            <ul class="menu-items">
-                <li class="nav-btn" data-target="sys-durability">🔧 耐久度与修理系统</li>
-            </ul>
-        </div>
+    <!-- 1. 导览 -->
+    <div class="menu-group">
+        <div class="menu-title">🏠 导览</div>
+        <ul class="menu-items">
+            <li class="nav-btn" data-target="home">🏠 首页与据点生成规则</li>
+        </ul>
+    </div>
+    
+    <!-- 2. 近战军械 -->
+    <div class="menu-group">
+        <div class="menu-title">⚔️ 近战军械</div>
+        <ul class="menu-items">
+            <li class="nav-btn" data-target="wpn-main-hub">⚔️ 主武器仓库</li>
+            <li class="nav-btn" data-target="wpn-light">└─ 轻型主武器</li>
+            <li class="nav-btn" data-target="wpn-medium">└─ 中型主武器</li>
+            <li class="nav-btn" data-target="wpn-heavy">└─ 重型主武器</li>
+            <li class="nav-btn" data-target="wpn-special">└─ 特殊主武器</li>
+            <li class="nav-btn" data-target="wpn-custom">└─ 罕见/自制武器</li>
+        </ul>
+        <ul class="menu-items" style="margin-top: 5px;">
+            <li class="nav-btn" data-target="wpn-sub-hub">🗡️ 副武器仓库</li>
+            <li class="nav-btn" data-target="sub-wpn-light">└─ 常规轻型副武</li>
+            <li class="nav-btn" data-target="sub-wpn-tool">└─ 工具与隐蔽副武</li>
+            <li class="nav-btn" data-target="sub-wpn-special">└─ 特殊与异国副武</li>
+            <li class="nav-btn" data-target="sub-wpn-hidden">└─ 极隐秘暗杀副武</li>
+        </ul>
     </div>
 
-            <div class="menu-group">
-                <div class="menu-title">🕵️ 战役世界线</div>
-                <ul class="menu-items">
-                    <li class="nav-btn" data-target="world-lore">📜 伦敦世界观与剧情NPC</li>
-                </ul>
-            </div>
-        </div>
+    <!-- 3. 魔法军械（主） -->
+    <div class="menu-group">
+        <div class="menu-title">🔮 魔法主武器库</div>
+        <ul class="menu-items">
+            <li class="nav-btn" data-target="mag-main-hub">📜 魔法主武器总览</li>
+            <li class="nav-btn" data-target="mag-staff">└─ 法杖类</li>
+            <li class="nav-btn" data-target="mag-wand">└─ 魔杖类</li>
+            <li class="nav-btn" data-target="mag-rod">└─ 权杖类</li>
+            <li class="nav-btn" data-target="mag-orb">└─ 法球类</li>
+            <li class="nav-btn" data-target="mag-crystal">└─ 水晶类</li>
+            <li class="nav-btn" data-target="mag-holy">└─ 圣徽类</li>
+            <li class="nav-btn" data-target="mag-druid">└─ 德鲁伊法器</li>
+            <li class="nav-btn" data-target="mag-book">└─ 法典/法术书</li>
+            <li class="nav-btn" data-target="mag-jewelry">└─ 秘法珠宝</li>
+            <li class="nav-btn" data-target="mag-trigger">└─ 咒术触发</li>
+            <li class="nav-btn" data-target="mag-artifact">└─ 异界奇物</li>
+        </ul>
+    </div>
+
+    <!-- 4. 魔法军械（副） -->
+    <div class="menu-group">
+        <div class="menu-title">🔮 魔法副武器库</div>
+        <ul class="menu-items">
+            <li class="nav-btn" data-target="mag-sub-main">🔮 魔法副武器总览</li>
+            <li class="nav-btn" data-target="sub-dagger">└─ 奥术匕首/短刃类</li>
+            <li class="nav-btn" data-target="sub-wand">└─ 小型权杖/魔杖类</li>
+            <li class="nav-btn" data-target="sub-talisman">└─ 秘法护符/圣徽类</li>
+            <li class="nav-btn" data-target="sub-book">└─ 法术书/卷轴匣类</li>
+            <li class="nav-btn" data-target="sub-jewelry">└─ 秘法珠宝类</li>
+            <li class="nav-btn" data-target="sub-trigger">└─ 咒术触发类</li>
+            <li class="nav-btn" data-target="sub-curio">└─ 以太/异界奇物类</li>
+            <li class="nav-btn" data-target="sub-misc">└─ 其他奇物类</li>
+        </ul>
+    </div>
+
+    <!-- 5. 独立的大类别 -->
+    <div class="menu-group">
+        <div class="menu-title">🏹 远程武器</div>
+        <ul class="menu-items">
+            <li class="nav-btn" data-target="wpn-ranged">🏹 远程武器库</li>
+        </ul>
+    </div>
+
+    <div class="menu-group">
+        <div class="menu-title">🛡️ 防具</div>
+        <ul class="menu-items">
+            <li class="nav-btn" data-target="armor-shop">🛡️ 防具库</li>
+        </ul>
+    </div>
+
+    <div class="menu-group">
+        <div class="menu-title">🧪 炼金与后勤</div>
+        <ul class="menu-items">
+            <li class="nav-btn" data-target="item-shop">🧪 炼金与道具药品</li>
+        </ul>
+    </div>
+
+    <div class="menu-group">
+        <div class="menu-title">⚙️ 规则与世界观</div>
+        <ul class="menu-items">
+            <li class="nav-btn" data-target="sys-durability">🔧 耐久度与修理系统</li>
+            <li class="nav-btn" data-target="world-lore">🕵️ 战役世界线</li>
+        </ul>
+    </div>
+</div>
         
         <!-- ==================== 右侧主要内容区 ==================== -->
     <div class="main-content">
