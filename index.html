@@ -130,18 +130,21 @@
             </ul>
         </div>
 
-            <!-- 侧边栏固定导航：魔法副武器库子菜单 -->
+            <!-- 侧边栏：魔法副武器库及其子分支 -->
 <div class="menu-group">
-    <div class="menu-title">📜 魔法副武器库</div>
-    <button class="nav-btn" data-target="sub-dagger">🗡️ 奥术匕首/短刃类</button>
-    <button class="nav-btn" data-target="sub-wand">🪄 小型权杖/魔杖类</button>
-    <button class="nav-btn" data-target="sub-talisman">🔮 秘法护符/圣徽类</button>
-    <button class="nav-btn" data-target="sub-book">📖 法术书/卷轴匣类</button>
-    <button class="nav-btn" data-target="sub-jewelry">💎 秘法珠宝类</button>
-    <button class="nav-btn" data-target="sub-trigger">⚡ 咒术触发类</button>
-    <button class="nav-btn" data-target="sub-curio">🌌 以太/异界奇物类</button>
-    <button class="nav-btn" data-target="sub-misc">🕯️ 其他奇物类</button>
-    <button class="nav-btn" data-target="sub-reserved">【待补充】副武器预留位</button>
+    <!-- 1. 副武器库主页按钮（点击看公式、规则） -->
+    <button class="nav-btn" data-target="mag-sub-main">📜 魔法副武器库</button>
+    
+    <!-- 2. 下属子分类按钮，严格继承你原本的缩进样式 -->
+    <button class="nav-btn" data-target="sub-dagger">└─ 奥术匕首/短刃类</button>
+    <button class="nav-btn" data-target="sub-wand">└─ 小型权杖/魔杖类</button>
+    <button class="nav-btn" data-target="sub-talisman">└─ 秘法护符/圣徽类</button>
+    <button class="nav-btn" data-target="sub-book">└─ 法术书/卷轴匣类</button>
+    <button class="nav-btn" data-target="sub-jewelry">└─ 秘法珠宝类</button>
+    <button class="nav-btn" data-target="sub-trigger">└─ 咒术触发类</button>
+    <button class="nav-btn" data-target="sub-curio">└─ 以太/异界奇物类</button>
+    <button class="nav-btn" data-target="sub-misc">└─ 其他奇物类</button>
+    <button class="nav-btn" data-target="sub-reserved">└─ 【待补充】副武器预留位</button>
 </div>
 
             
@@ -877,7 +880,68 @@
         <!-- ========================================== -->
         <!--             📜 魔法副武器库大分类            -->
         <!-- ========================================== -->
+<div id="mag-sub-main" class="content-section">
+            <h2>📜 魔法副武器库</h2>
+            <p class="section-desc">说明：此列表收录专为施法者设计的魔法副武器。且带有独特的战技或法术效果。稀有度越高，效果越接近“改变战局”级别。</p>
+            <blockquote>
+                <b>💡 适配职业：</b>所有施法职业均可使用，部分有职业限制或同调要求。
+            </blockquote>
 
+            <hr>
+
+            <h3>🎲 魔法副武器总件数计算公式</h3>
+            <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 6px; margin: 10px 0; font-family: monospace;">
+                S = (团队总槽位数 + 3d4) + (玩家数量 + 2d4) + (3d6 + 1d4) + 基础库存值
+            </div>
+            <ul>
+                <li><b>基础库存值：</b>新手 8 | 标准 5 | 硬核 2</li>
+            </ul>
+
+            <h3>📋 生成与分配流程</h3>
+            <ol>
+                <li>KP 计算总件数 X</li>
+                <li>准备武器池（见下文各分类列表）</li>
+                <li>进行 X 次抽取，每次掷骰决定武器种类</li>
+                <li>统计每种武器获得数量</li>
+                <li>玩家按槽位从清单中选取</li>
+            </ol>
+
+            <hr>
+
+            <h3>🎁 魔法副武器领取规则</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 30%;">角色等级</th>
+                        <th style="width: 30%;">可领取数量</th>
+                        <th>允许稀有度</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>1-4级</b></td>
+                        <td>2 件</td>
+                        <td>普通或非常见</td>
+                    </tr>
+                    <tr>
+                        <td><b>5-10级</b></td>
+                        <td>3 件</td>
+                        <td>可包含 1 把 <span style="color: #1eff00;">稀有</span></td>
+                    </tr>
+                    <tr>
+                        <td><b>11-16级</b></td>
+                        <td>3 件</td>
+                        <td>可包含 1 把 <span style="color: #0070dd;">极珍稀</span></td>
+                    </tr>
+                    <tr>
+                        <td><b>17-20级</b></td>
+                        <td>4 件</td>
+                        <td>可包含 1 把 <span style="color: #ff8000;">传说</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
         <!-- └─ 1. 奥术匕首/短刃类 -->
         <div id="sub-dagger" class="content-section">
             <h2>🗡️ 奥术匕首/短刃类</h2>
