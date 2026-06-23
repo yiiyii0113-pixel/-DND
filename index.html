@@ -31,7 +31,7 @@
         th { background-color: #1e1e1e; color: #cca43b; text-align: left; padding: 12px; font-weight: 600; border-bottom: 2px solid #3a3225; }
         td { padding: 12px; border-bottom: 1px solid #222; color: #c8beaa; }
     </style>
-    /* ============================================
+   /* ============================================
    模組化主題配色 - 各武器部門專屬視覺
    ============================================ */
 
@@ -326,12 +326,6 @@ tbody tr:hover {
     pointer-events: none;
 }
 
-/* 稀有度文字動態閃爍（用在表格內的傳說/極珍稀） */
-td:contains('傳說'), td:contains('極珍稀') {
-    /* 單純範例，建議手動加 class 較精準，這裡純視覺提示 */
-}
-/* 更精確的做法：在表格內手動加 <span class="rarity-legendary">，但先略過 */
-
 /* 左側導覽選單懸浮光暈 */
 .nav-btn {
     transition: all 0.25s;
@@ -361,6 +355,7 @@ td:contains('傳說'), td:contains('極珍稀') {
 #mag-artifact .brass-box {
     background: rgba(255, 255, 255, 0.02);
 }
+    
 </head>
 <body>
 
