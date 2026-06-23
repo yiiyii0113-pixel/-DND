@@ -31,6 +31,336 @@
         th { background-color: #1e1e1e; color: #cca43b; text-align: left; padding: 12px; font-weight: 600; border-bottom: 2px solid #3a3225; }
         td { padding: 12px; border-bottom: 1px solid #222; color: #c8beaa; }
     </style>
+    /* ============================================
+   模組化主題配色 - 各武器部門專屬視覺
+   ============================================ */
+
+/* --- 1. 近戰輕型（敏捷/靈巧）--- */
+#wpn-light th {
+    background: #1a2a1a;
+    border-bottom: 3px solid #5cb85c;
+    color: #8bc34a;
+}
+#wpn-light tr:hover {
+    background: rgba(92, 184, 92, 0.06);
+    box-shadow: inset 0 0 30px rgba(92, 184, 92, 0.04);
+}
+#wpn-light .brass-box {
+    border-left-color: #5cb85c;
+}
+
+/* --- 2. 近戰中型（均衡/鋼鐵）--- */
+#wpn-medium th {
+    background: #1a1e2a;
+    border-bottom: 3px solid #5b9bd5;
+    color: #5b9bd5;
+}
+#wpn-medium tr:hover {
+    background: rgba(91, 155, 213, 0.06);
+    box-shadow: inset 0 0 30px rgba(91, 155, 213, 0.04);
+}
+#wpn-medium .brass-box {
+    border-left-color: #5b9bd5;
+}
+
+/* --- 3. 近戰重型（力量/破壞）--- */
+#wpn-heavy th {
+    background: #2a1a1a;
+    border-bottom: 3px solid #d9534f;
+    color: #ef5350;
+}
+#wpn-heavy tr:hover {
+    background: rgba(217, 83, 79, 0.07);
+    box-shadow: inset 0 0 30px rgba(217, 83, 79, 0.05);
+}
+#wpn-heavy .brass-box {
+    border-left-color: #d9534f;
+}
+#wpn-heavy table {
+    border-width: 2px;
+    border-style: double;
+}
+
+/* --- 4. 特殊主武器（秘銀/神聖）--- */
+#wpn-special th {
+    background: #1a1a2a;
+    border-bottom: 3px solid #e6b422;
+    color: #ffd54f;
+}
+#wpn-special tr:hover {
+    background: rgba(230, 180, 34, 0.07);
+    box-shadow: inset 0 0 30px rgba(230, 180, 34, 0.05);
+}
+#wpn-special .brass-box {
+    border-left-color: #e6b422;
+}
+
+/* --- 5. 罕見/自製（異質/工藝）--- */
+#wpn-custom th {
+    background: #1f1a16;
+    border-bottom: 3px solid #bcaaa4;
+    color: #d7ccc8;
+}
+#wpn-custom tr:hover {
+    background: rgba(188, 170, 164, 0.06);
+}
+#wpn-custom .brass-box {
+    border-left-color: #bcaaa4;
+}
+
+/* ===== 魔法主武器專屬 ===== */
+
+/* --- 6. 法杖類（奧術/紫晶）--- */
+#mag-staff th {
+    background: #1a102a;
+    border-bottom: 3px solid #ab47bc;
+    color: #ce93d8;
+}
+#mag-staff tr:hover {
+    background: rgba(171, 71, 188, 0.08);
+    box-shadow: inset 0 0 30px rgba(171, 71, 188, 0.06);
+}
+#mag-staff .brass-box {
+    border-left-color: #ab47bc;
+}
+#mag-staff table {
+    border: 1px solid rgba(171, 71, 188, 0.25);
+}
+
+/* --- 7. 魔杖類（火焰/金黃）--- */
+#mag-wand th {
+    background: #2a1a10;
+    border-bottom: 3px solid #f1c40f;
+    color: #f9a825;
+}
+#mag-wand tr:hover {
+    background: rgba(241, 196, 15, 0.07);
+}
+#mag-wand .brass-box {
+    border-left-color: #f1c40f;
+}
+
+/* --- 8. 權杖類（皇權/深藍）--- */
+#mag-rod th {
+    background: #101a2a;
+    border-bottom: 3px solid #42a5f5;
+    color: #64b5f6;
+}
+#mag-rod tr:hover {
+    background: rgba(66, 165, 245, 0.06);
+}
+#mag-rod .brass-box {
+    border-left-color: #42a5f5;
+}
+#mag-rod table {
+    border: 1px solid rgba(66, 165, 245, 0.2);
+}
+
+/* --- 9. 法球類（元素/翡翠）--- */
+#mag-orb th {
+    background: #102018;
+    border-bottom: 3px solid #26a69a;
+    color: #4db6ac;
+}
+#mag-orb tr:hover {
+    background: rgba(38, 166, 154, 0.06);
+}
+#mag-orb .brass-box {
+    border-left-color: #26a69a;
+}
+
+/* --- 10. 水晶類（靈能/冰藍）--- */
+#mag-crystal th {
+    background: #0f1a1f;
+    border-bottom: 3px solid #4dd0e1;
+    color: #4dd0e1;
+}
+#mag-crystal tr:hover {
+    background: rgba(77, 208, 225, 0.06);
+}
+#mag-crystal .brass-box {
+    border-left-color: #4dd0e1;
+}
+
+/* --- 11. 聖徽類（光耀/暖金）--- */
+#mag-holy th {
+    background: #1f1a10;
+    border-bottom: 3px solid #ffb300;
+    color: #ffca28;
+}
+#mag-holy tr:hover {
+    background: rgba(255, 179, 0, 0.07);
+}
+#mag-holy .brass-box {
+    border-left-color: #ffb300;
+}
+
+/* --- 12. 德魯伊法器（自然/草綠）--- */
+#mag-druid th {
+    background: #101f10;
+    border-bottom: 3px solid #66bb6a;
+    color: #81c784;
+}
+#mag-druid tr:hover {
+    background: rgba(102, 187, 106, 0.06);
+}
+#mag-druid .brass-box {
+    border-left-color: #66bb6a;
+}
+
+/* --- 13. 法典/法術書（知識/暗金）--- */
+#mag-book th {
+    background: #1a1410;
+    border-bottom: 3px solid #a1887f;
+    color: #bcaaa4;
+}
+#mag-book tr:hover {
+    background: rgba(161, 136, 127, 0.06);
+}
+#mag-book .brass-box {
+    border-left-color: #a1887f;
+}
+
+/* --- 14. 秘法珠寶（奢華/紫紅）--- */
+#mag-jewelry th {
+    background: #1a101a;
+    border-bottom: 3px solid #e91e63;
+    color: #f06292;
+}
+#mag-jewelry tr:hover {
+    background: rgba(233, 30, 99, 0.06);
+}
+#mag-jewelry .brass-box {
+    border-left-color: #e91e63;
+}
+
+/* --- 15. 咒術觸發（時計/青銅）--- */
+#mag-trigger th {
+    background: #1a1710;
+    border-bottom: 3px solid #bcaaa4;
+    color: #d7ccc8;
+}
+#mag-trigger tr:hover {
+    background: rgba(188, 170, 164, 0.05);
+}
+#mag-trigger .brass-box {
+    border-left-color: #bcaaa4;
+}
+
+/* --- 16. 異界奇物（虛空/暗紫）--- */
+#mag-artifact th {
+    background: #100a18;
+    border-bottom: 3px solid #7b1fa2;
+    color: #ab47bc;
+}
+#mag-artifact tr:hover {
+    background: rgba(123, 31, 162, 0.08);
+}
+#mag-artifact .brass-box {
+    border-left-color: #7b1fa2;
+}
+#mag-artifact table {
+    border: 1px solid rgba(123, 31, 162, 0.3);
+    box-shadow: 0 0 20px rgba(123, 31, 162, 0.1);
+}
+
+/* ===== 魔法副武器專屬（精簡版，維持一致性） ===== */
+#sub-dagger th { background: #1a141a; border-bottom: 3px solid #78909c; color: #b0bec5; }
+#sub-dagger tr:hover { background: rgba(120, 144, 156, 0.06); }
+
+#sub-wand th { background: #1a1a14; border-bottom: 3px solid #ffb74d; color: #ffb74d; }
+#sub-wand tr:hover { background: rgba(255, 183, 77, 0.06); }
+
+#sub-talisman th { background: #141a1a; border-bottom: 3px solid #4db6ac; color: #4db6ac; }
+#sub-talisman tr:hover { background: rgba(77, 182, 172, 0.06); }
+
+#sub-book th { background: #1a1410; border-bottom: 3px solid #a1887f; color: #bcaaa4; }
+#sub-book tr:hover { background: rgba(161, 136, 127, 0.06); }
+
+#sub-jewelry th { background: #1a101a; border-bottom: 3px solid #e91e63; color: #f06292; }
+#sub-jewelry tr:hover { background: rgba(233, 30, 99, 0.06); }
+
+#sub-trigger th { background: #1a1710; border-bottom: 3px solid #bcaaa4; color: #d7ccc8; }
+#sub-trigger tr:hover { background: rgba(188, 170, 164, 0.05); }
+
+#sub-curio th { background: #100a18; border-bottom: 3px solid #7b1fa2; color: #ab47bc; }
+#sub-curio tr:hover { background: rgba(123, 31, 162, 0.08); }
+
+#sub-misc th { background: #1a1616; border-bottom: 3px solid #8d6e63; color: #a1887f; }
+#sub-misc tr:hover { background: rgba(141, 110, 99, 0.05); }
+
+/* ============================================
+   2. 全局炫酷微特效（符合維多利亞風格）
+   ============================================ */
+
+/* 切換頁面時的滑入動畫（加強版） */
+.content-section.active {
+    animation: fadeSlideIn 0.4s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+@keyframes fadeSlideIn {
+    0% { opacity: 0; transform: translateY(18px) scale(0.98); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* 表格行懸浮光暈 & 微立體感 */
+tbody tr {
+    transition: background 0.25s, box-shadow 0.25s, transform 0.15s;
+}
+tbody tr:hover {
+    transform: scale(1.002);
+}
+
+/* 黃銅邊框盒（brass-box）進化：帶微光 */
+.brass-box {
+    position: relative;
+    overflow: hidden;
+}
+.brass-box::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 30%, rgba(204, 164, 59, 0.03), transparent 60%);
+    pointer-events: none;
+}
+
+/* 稀有度文字動態閃爍（用在表格內的傳說/極珍稀） */
+td:contains('傳說'), td:contains('極珍稀') {
+    /* 單純範例，建議手動加 class 較精準，這裡純視覺提示 */
+}
+/* 更精確的做法：在表格內手動加 <span class="rarity-legendary">，但先略過 */
+
+/* 左側導覽選單懸浮光暈 */
+.nav-btn {
+    transition: all 0.25s;
+    border-left: 2px solid transparent;
+    padding-left: 6px;
+}
+.nav-btn:hover {
+    border-left-color: #cca43b;
+    padding-left: 10px;
+    color: #e6d5a8;
+    text-shadow: 0 0 8px rgba(204, 164, 59, 0.15);
+}
+.nav-btn.active {
+    border-left-color: #cca43b;
+    color: #cca43b;
+    text-shadow: 0 0 12px rgba(204, 164, 59, 0.2);
+}
+
+/* 為重型武器加上「沉重」視覺提示（邊框雙線） */
+#wpn-heavy table {
+    border: 2px double #5a2a2a;
+}
+
+/* 為法杖類加上「奧術微光」背景 */
+#mag-staff .brass-box,
+#mag-wand .brass-box,
+#mag-artifact .brass-box {
+    background: rgba(255, 255, 255, 0.02);
+}
 </head>
 <body>
 
