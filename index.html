@@ -2035,7 +2035,50 @@
         </tbody>
     </table>
 
-    <hr>
+        <hr>
+
+    <h3>⚠️ 故障率系統（DND化）</h3>
+    <p>遠程武器在攻擊檢定擲出自然 1 時，可能發生故障。擲 1d10 決定故障類型：</p>
+    <table>
+        <thead><tr><th style="width: 10%;">1d10</th><th style="width: 15%;">故障類型</th><th style="width: 75%;">效果</th></tr></thead>
+        <tbody>
+            <tr><td><b>1-4</b></td><td>啞火</td><td>本次攻擊失敗，彈藥浪費，需 1 個動作重新裝填或清理</td></tr>
+            <tr><td><b>5-7</b></td><td>卡殼</td><td>本次攻擊失敗，需 1 個動作排除（DC12 敏捷或機械維修）</td></tr>
+            <tr><td><b>8-9</b></td><td>走火</td><td>本次攻擊改為攻擊 5 尺內隨機目標（包括自己或隊友），傷害正常</td></tr>
+            <tr><td><b>10</b></td><td>炸膛</td><td>武器損壞（耐久歸零），使用者受 2d6 火焰/穿刺傷害</td></tr>
+        </tbody>
+    </table>
+
+    <h4>📊 故障率修正因素</h4>
+    <table>
+        <thead><tr><th style="width: 40%;">因素</th><th style="width: 60%;">對自然 1 閾值的影響</th></tr></thead>
+        <tbody>
+            <tr><td>雨天/潮濕</td><td>自然 1-2 觸發故障</td></tr>
+            <tr><td>缺乏保養</td><td>自然 1-3 觸發故障</td></tr>
+            <tr><td>連續射擊（第 4 發起）</td><td>每多發 1 發，閾值 +1（最高自然 1-6）</td></tr>
+            <tr><td>精良保養</td><td>僅自然 1 觸發（正常）</td></tr>
+            <tr><td>精良/魔法武器</td><td>僅自然 1 觸發，且走火/炸膛概率減半</td></tr>
+        </tbody>
+    </table>
+
+    <h4>🔧 武器維護與耐久度</h4>
+    <table>
+        <thead><tr><th style="width: 30%;">耐久百分比</th><th style="width: 20%;">狀態</th><th style="width: 50%;">效果</th></tr></thead>
+        <tbody>
+            <tr><td><b>75% - 100%</b></td><td><span style="color: #70e28c; font-weight: bold;">完好</span></td><td>正常</td></tr>
+            <tr><td><b>25% - 74%</b></td><td><span style="color: #e5c158; font-weight: bold;">磨損</span></td><td>攻擊檢定具有劣勢</td></tr>
+            <tr><td><b>0% - 24%</b></td><td><span class="highlight">損壞</span></td><td>無法使用，需修理（DC15 工匠工具，1 小時）</td></tr>
+        </tbody>
+    </table>
+
+    <h4>⚙️ 耐久消耗規則</h4>
+    <ul>
+        <li><b>每次射擊後：</b>1 點（正常磨損）</li>
+        <li><b>故障（自然 1）：</b>額外 1d4 點</li>
+        <li><b>炸膛：</b>立即歸零</li>
+        <li><b>未保養（每場戰鬥後未清潔）：</b>額外 1 點</li>
+    </ul>
+    <p style="color: #b5ad99; font-size: 13px;">💡 完整維修規則請參見 <b>「耐久度與修理系統」</b> 頁面。</p>
 
     <h3>🎲 槍械總件數計算公式</h3>
     <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 6px; margin: 10px 0; font-family: monospace;">
