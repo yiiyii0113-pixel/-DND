@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src 'self'; font-src 'self';">
     <title>📜 七钟残响 - 玩家资料站</title>
     <style>
         * { box-sizing: border-box; }
@@ -2355,7 +2356,8 @@
                 // 2. 切换右侧内容房间的显隐
                 document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
                 const targetId = button.getAttribute('data-target');
-                document.getElementById(targetId).classList.add('active');
+                const targetEl = document.getElementById(targetId);
+                if (targetEl) { targetEl.classList.add('active'); }
                 
                 // 3. 自动平滑滚回顶部
                 window.scrollTo({ top: 0, behavior: 'smooth' });
