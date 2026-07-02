@@ -781,10 +781,31 @@
             <li class="nav-btn" data-target="gun-sub-magic">└─ 🪄 魔法手槍</li>
         </ul>
     
-    <div class="menu-group">
-        <div class="menu-title">🛡️ 防具</div>
-        <ul class="menu-items"><li class="nav-btn" data-target="armor-shop">🛡️ 防具库</li></ul>
+        <div class="menu-group">
+        <div class="menu-title">🛡️ 主防具庫</div>
+        <ul class="menu-items">
+            <li class="nav-btn" data-target="armor-hub">🛡️ 防具總覽與規則</li>
+            <li class="nav-btn" data-target="armor-light">└─ 輕型護甲（共20種）</li>
+            <li class="nav-btn" data-target="armor-medium">└─ 中型護甲（共25種）</li>
+            <li class="nav-btn" data-target="armor-heavy">└─ 重型護甲（共22種）</li>
+            <li class="nav-btn" data-target="armor-magical">└─ 魔法護甲（共18種）</li>
+        </ul>
     </div>
+    <div class="menu-group">
+        <div class="menu-title">🛡️ 職業專屬防具</div>
+        <ul class="menu-items">
+            <li class="nav-btn" data-target="armor-class-hub">└─ 職業專屬防具總覽</li>
+            <li class="nav-btn" data-target="armor-bard">└─ 🎵 吟遊詩人</li>
+            <li class="nav-btn" data-target="armor-cleric">└─ ✝️ 牧師</li>
+            <li class="nav-btn" data-target="armor-druid">└─ 🌿 德魯伊</li>
+            <li class="nav-btn" data-target="armor-paladin">└─ ⚔️ 聖武士</li>
+            <li class="nav-btn" data-target="armor-ranger">└─ 🏹 遊俠</li>
+            <li class="nav-btn" data-target="armor-sorcerer">└─ 🔮 術士</li>
+            <li class="nav-btn" data-target="armor-warlock">└─ 🕯️ 邪術師</li>
+            <li class="nav-btn" data-target="armor-wizard">└─ 📖 法師</li>
+        </ul>
+    </div>
+    
     <div class="menu-group">
         <div class="menu-title">🧪 炼金与后勤</div>
         <ul class="menu-items"><li class="nav-btn" data-target="item-shop">🧪 炼金与道具药品</li></ul>
@@ -2552,6 +2573,454 @@
         </tbody>
     </table>
     <p style="color: #b5ad99; font-size: 12px; margin-top: 10px;">📌 魔法手槍統一規則：充能每長休恢復，故障僅自然1。專用彈藥獲取方式詳見各武器描述。</p>
+</div>
+
+                <!-- ========================================== -->
+<!--          🛡️ 主防具庫                      -->
+<!-- ========================================== -->
+
+<div id="armor-hub" class="content-section">
+    <h2>🛡️ 主防具庫</h2>
+    <p>說明：此列表收錄各類護甲與防具，從基礎皮甲到傳奇板甲，涵蓋各類防護需求。</p>
+    
+    <blockquote style="background: rgba(255,255,255,0.02); padding: 10px; border-left: 4px solid #4fc3f7; margin: 10px 0;">
+        <b>📌 護甲核心規則：</b>
+        <ul style="margin: 5px 0 0 20px;">
+            <li>AC（護甲等級）= 基礎AC + 敏捷調整值（上限依護甲類型而定）</li>
+            <li>穿戴需對應 <b>力量需求</b>，不足則移動懲罰</li>
+            <li>重型護甲不添加敏捷調整值</li>
+            <li>所有護甲均有 <b>耐久度</b>，戰鬥中會磨損</li>
+        </ul>
+    </blockquote>
+
+    <h3>📦 護甲稀有度與強度對應（DND標準）</h3>
+    <table>
+        <thead><tr><th style="width: 15%;">稀有度</th><th style="width: 20%;">典型AC範圍</th><th style="width: 30%;">額外效果</th><th style="width: 20%;">獲取等級</th><th style="width: 15%;">價格範圍</th></tr></thead>
+        <tbody>
+            <tr><td>普通</td><td>11-13</td><td>無或基礎</td><td>1-4級</td><td>30-120 gp</td></tr>
+            <tr><td>非常見</td><td>13-15</td><td>1項輕微</td><td>3-8級</td><td>140-400 gp</td></tr>
+            <tr><td>稀有</td><td>15-17</td><td>1-2項中等</td><td>5-12級</td><td>450-1,200 gp</td></tr>
+            <tr><td>極珍稀</td><td>17-19</td><td>2-3項強力</td><td>11-16級</td><td>1,500-4,500 gp</td></tr>
+            <tr><td>傳說</td><td>19-22</td><td>3項+傳奇能力</td><td>17-20級</td><td>6,000-15,000 gp</td></tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h3>⚙️ 護甲耐久度系統</h3>
+    <h4>📊 耐久度狀態分級</h4>
+    <table>
+        <thead><tr><th style="width: 20%;">耐久百分比</th><th style="width: 15%;">狀態</th><th style="width: 65%;">效果</th></tr></thead>
+        <tbody>
+            <tr><td><b>100%-76%</b></td><td style="color: #70e28c;">完好</td><td>正常使用，無懲罰</td></tr>
+            <tr><td><b>75%-51%</b></td><td style="color: #e5c158;">輕微磨損</td><td>無懲罰，外觀已有損傷</td></tr>
+            <tr><td><b>50%-26%</b></td><td style="color: #ffa726;">顯著損傷</td><td>護甲AC-1（最低不低於基礎AC-2），隱匿劣勢</td></tr>
+            <tr><td><b>25%-11%</b></td><td style="color: #ef5350;">嚴重破損</td><td>護甲AC-2，隱匿劣勢，速度-5尺</td></tr>
+            <tr><td><b>10%-1%</b></td><td style="color: #d32f2f;">瀕臨碎裂</td><td>護甲AC-3，隱匿劣勢，速度-10尺，每次受攻擊後擲d20，1-5則碎裂</td></tr>
+            <tr><td><b>0%</b></td><td style="color: #b71c1c;">完全損壞</td><td>護甲失效，僅剩基礎10+敏捷AC</td></tr>
+        </tbody>
+    </table>
+
+    <h4>🔧 耐久消耗規則</h4>
+    <ul>
+        <li><b>每場戰鬥後：</b>輕型1d2、中型1d3、重型1d2+1、魔法1d2-1</li>
+        <li><b>被命中時：</b>揮砍1d3、穿刺1d2、鈍擊1d3+1、槍彈1d4、暴擊額外1d4</li>
+        <li><b>特殊：</b>元素傷害1d6、盾牌格擋1d4、被拖拽/碾壓1d4</li>
+    </ul>
+
+    <h4>🛠️ 修理規則</h4>
+    <table>
+        <thead><tr><th style="width: 20%;">損壞程度</th><th style="width: 15%;">所需時間</th><th style="width: 20%;">技能檢定</th><th style="width: 15%;">DC</th><th style="width: 30%;">材料需求</th></tr></thead>
+        <tbody>
+            <tr><td>輕度（耐久≥51%）</td><td>1小時</td><td>智力（工匠工具）</td><td>DC 12</td><td>基礎材料</td></tr>
+            <tr><td>中度（耐久26-50%）</td><td>4小時</td><td>智力（工匠工具）</td><td>DC 15</td><td>專業材料</td></tr>
+            <tr><td>重度（耐久11-25%）</td><td>8小時</td><td>智力（工匠工具）</td><td>DC 18</td><td>大量專業+稀有材料</td></tr>
+            <tr><td>瀕臨碎裂（耐久1-10%）</td><td>16小時</td><td>智力（工匠工具）</td><td>DC 22</td><td>大師級材料</td></tr>
+            <tr><td>完全損壞（0%）</td><td>—</td><td>—</td><td>—</td><td>不可修理（傳奇工匠除外）</td></tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h3>🎲 護甲總件數計算公式</h3>
+    <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 6px; margin: 10px 0; font-family: monospace;">
+        A = (團隊總「防護適宜值」 × 1d4) + (玩家數量 + 2d4) + (3d6 + 1d8) + 基礎庫存值
+    </div>
+    <ul>
+        <li><b>基礎庫存值：</b>新手 6 | 標準 4 | 硬核 2</li>
+        <li><b>「防護適宜值」</b>：依體型（SIZ）決定（見詳細規則）</li>
+        <li><b>主/副防具拆分：</b>主防具 40% | 副防具 60%</li>
+    </ul>
+
+    <h3>📋 護甲領取規則</h3>
+    <table>
+        <thead><tr><th style="width: 25%;">角色等級</th><th style="width: 30%;">可領取數量</th><th style="width: 45%;">允許類型</th></tr></thead>
+        <tbody>
+            <tr><td><b>1-4級</b></td><td>1 套</td><td>輕型或普通中型</td></tr>
+            <tr><td><b>5-8級</b></td><td>1 套</td><td>可包含 1 套非常見</td></tr>
+            <tr><td><b>9-12級</b></td><td>2 套</td><td>可包含 1 套稀有</td></tr>
+            <tr><td><b>13-16級</b></td><td>2 套</td><td>可包含 1 套極珍稀</td></tr>
+            <tr><td><b>17-20級</b></td><td>3 套</td><td>可包含 1 套傳說</td></tr>
+        </tbody>
+    </table>
+</div>
+
+                <!-- ========================================== -->
+<!--         輕型護甲（共20種）                  -->
+<!-- ========================================== -->
+
+<div id="armor-light" class="content-section">
+    <h3>🛡️ 輕型護甲（共20種）</h3>
+    <p style="color: #b5ad99; font-size: 13px; margin-bottom: 15px;">靈活輕便，適合遊蕩者、吟遊詩人、施法者。AC = 基礎值 + 敏捷調整值（無上限）。</p>
+    <table>
+        <thead><tr><th style="width: 10%;">護甲名</th><th style="width: 6%;">稀有度</th><th style="width: 5%;">等級</th><th style="width: 7%;">價格</th><th style="width: 5%;">耐久</th><th style="width: 8%;">AC</th><th style="width: 8%;">力量需求</th><th style="width: 25%;">效果</th><th style="width: 6%;">重量</th></tr></thead>
+        <tbody>
+            <tr><td><b>厚呢警長大衣</b></td><td>普通</td><td>1級+</td><td>60gp</td><td>16</td><td>11 + 敏捷</td><td>無</td><td>社交魅力+1，可隱蔽攜帶小型物品（隱匿+1）</td><td>8 lb</td></tr>
+            <tr><td><b>帆布武裝衣</b></td><td>普通</td><td>1級+</td><td>30gp</td><td>14</td><td>11 + 敏捷</td><td>無</td><td>廉價易修補，潮濕環境易發霉</td><td>5 lb</td></tr>
+            <tr><td><b>街頭夾棉襖</b></td><td>普通</td><td>1級+</td><td>25gp</td><td>12</td><td>11 + 敏捷</td><td>無</td><td>寒冷環境抗寒+2，隱匿-1</td><td>4 lb</td></tr>
+            <tr><td><b>郵差皮革背心</b></td><td>普通</td><td>1級+</td><td>50gp</td><td>14</td><td>11 + 敏捷</td><td>無</td><td>多口袋，可攜帶小物品+2件</td><td>5 lb</td></tr>
+            <tr><td><b>獵戶皮襖</b></td><td>普通</td><td>1級+</td><td>80gp</td><td>16</td><td>12 + 敏捷</td><td>無</td><td>寒冷環境抗寒+3，炎熱環境需DC12體質否則中暑，隱匿-1</td><td>8 lb</td></tr>
+            <tr><td><b>鑲釘皮甲</b></td><td>普通</td><td>1級+</td><td>90gp</td><td>16</td><td>12 + 敏捷</td><td>無</td><td>對穿刺攻擊額外+1AC</td><td>7 lb</td></tr>
+            <tr><td><b>水手油布雨披</b></td><td>普通</td><td>1級+</td><td>70gp</td><td>14</td><td>11 + 敏捷</td><td>無</td><td>防水，不受潮濕懲罰；易燃（受火焰額外1d4），隱匿-2</td><td>7 lb</td></tr>
+            <tr><td><b>精製皮甲</b></td><td>非常見</td><td>1級+</td><td>160gp</td><td>18</td><td>12 + 敏捷</td><td>無</td><td>手工精製，靈活耐用，無懲罰</td><td>6 lb</td></tr>
+            <tr><td><b>防彈絲絨背心（實驗）</b></td><td>非常見</td><td>3級+</td><td>240gp</td><td>14</td><td>11 + 敏捷，對遠程穿刺額外+2AC</td><td>無</td><td>對早期火槍彈有效，極稀有</td><td>5 lb</td></tr>
+            <tr><td><b>硬化革甲（精良）</b></td><td>非常見</td><td>3級+</td><td>180gp</td><td>18</td><td>13 + 敏捷（最大+2）</td><td>無</td><td>特殊硬化皮革，兼顧防護與靈活</td><td>7 lb</td></tr>
+            <tr><td><b>黑檀木片甲</b></td><td>稀有</td><td>5級+</td><td>500gp</td><td>18</td><td>13 + 敏捷（最大+3）</td><td>無</td><td>對鈍擊傷害獲得抗性</td><td>7 lb</td></tr>
+            <tr><td><b>影舞者皮甲</b></td><td>稀有</td><td>7級+</td><td>700gp</td><td>18</td><td>13 + 敏捷（最大+3）</td><td>無</td><td>昏暗/黑暗中隱匿優勢</td><td>5 lb</td></tr>
+            <tr><td><b>龍鱗皮甲（幼龍）</b></td><td>極珍稀</td><td>11級+</td><td>2,200gp</td><td>22</td><td>14 + 敏捷（最大+3）</td><td>無</td><td>獲得對應龍族元素抗性</td><td>8 lb</td></tr>
+            <tr><td><b>影龍皮甲</b></td><td>極珍稀</td><td>13級+</td><td>3,000gp</td><td>22</td><td>14 + 敏捷（最大+3）</td><td>無</td><td>陰影中隱形（移動解除），暗蝕抗性</td><td>6 lb</td></tr>
+            <tr><td><b>精靈編織甲</b></td><td>傳說</td><td>17級+</td><td>8,000gp</td><td>28</td><td>15 + 敏捷（最大+4）</td><td>無</td><td>攻擊+1，先攻+2，不會被突襲</td><td>4 lb</td></tr>
+            <tr><td><b>梟獸皮甲</b></td><td>非常見</td><td>3級+</td><td>220gp</td><td>18</td><td>13 + 敏捷（最大+2）</td><td>無</td><td>感知（偵查）+1</td><td>8 lb</td></tr>
+            <tr><td><b>蛇鱗軟甲</b></td><td>稀有</td><td>5級+</td><td>550gp</td><td>18</td><td>13 + 敏捷（最大+3）</td><td>無</td><td>敏捷（特技）優勢，毒素抗性</td><td>6 lb</td></tr>
+            <tr><td><b>鴉羽斗篷甲</b></td><td>稀有</td><td>5級+</td><td>600gp</td><td>18</td><td>12 + 敏捷</td><td>無</td><td>每日1次羽落術</td><td>5 lb</td></tr>
+            <tr><td><b>月影鏈衫</b></td><td>極珍稀</td><td>11級+</td><td>2,500gp</td><td>22</td><td>14 + 敏捷（最大+3）</td><td>無</td><td>月光下自行修復（每長休1d6），滿月夜隱匿優勢</td><td>6 lb</td></tr>
+            <tr><td><b>風行者皮甲</b></td><td>傳說</td><td>17級+</td><td>9,000gp</td><td>28</td><td>15 + 敏捷（最大+4）</td><td>無</td><td>速度+10尺，先攻+3，每日1次大步奔行</td><td>4 lb</td></tr>
+        </tbody>
+    </table>
+</div>
+
+                <!-- ========================================== -->
+<!--         中型護甲（共25種）                  -->
+<!-- ========================================== -->
+
+<div id="armor-medium" class="content-section">
+    <h3>🛡️ 中型護甲（共25種）</h3>
+    <p style="color: #b5ad99; font-size: 13px; margin-bottom: 15px;">平衡防護與機動，適合戰士、遊俠、牧師。AC = 基礎值 + 敏捷調整值（最大+2）。</p>
+    <table>
+        <thead><tr><th style="width: 10%;">護甲名</th><th style="width: 6%;">稀有度</th><th style="width: 5%;">等級</th><th style="width: 7%;">價格</th><th style="width: 5%;">耐久</th><th style="width: 8%;">AC</th><th style="width: 8%;">力量需求</th><th style="width: 25%;">效果</th><th style="width: 6%;">重量</th></tr></thead>
+        <tbody>
+            <tr><td><b>鎖子甲襯衫</b></td><td>普通</td><td>1級+</td><td>100gp</td><td>18</td><td>13 + 敏捷（最大+2）</td><td>STR≥11</td><td>對揮砍優秀但鈍擊穿透（鈍擊忽略2點AC）</td><td>10 lb</td></tr>
+            <tr><td><b>巡警冬季執勤服（加重）</b></td><td>普通</td><td>1級+</td><td>120gp</td><td>20</td><td>13 + 敏捷（最大+2）</td><td>無</td><td>外觀與普通大衣無異，社交魅力+1，隱匿-1</td><td>10 lb</td></tr>
+            <tr><td><b>加強皮甲（鑲板）</b></td><td>非常見</td><td>3級+</td><td>200gp</td><td>18</td><td>14 + 敏捷（最大+2）</td><td>STR≥11</td><td>厚皮鑲嵌硬化鋼片，隱匿-1</td><td>10 lb</td></tr>
+            <tr><td><b>胸甲（單件）</b></td><td>非常見</td><td>3級+</td><td>300gp</td><td>20</td><td>14 + 敏捷（最大+2）</td><td>STR≥11</td><td>僅護前胸，對正面攻擊額外+1AC</td><td>9 lb</td></tr>
+            <tr><td><b>工業帆布防護套裝</b></td><td>非常見</td><td>3級+</td><td>240gp</td><td>18</td><td>13 + 敏捷（最大+2）</td><td>STR≥11</td><td>防火防酸，對火焰/酸蝕抗性，隱匿-2</td><td>10 lb</td></tr>
+            <tr><td><b>板甲衣</b></td><td>非常見</td><td>5級+</td><td>400gp</td><td>20</td><td>15 + 敏捷（最大+2）</td><td>STR≥13</td><td>布料內襯鑲嵌小型鋼板，隱匿-2</td><td>12 lb</td></tr>
+            <tr><td><b>騎兵半身板甲</b></td><td>稀有</td><td>5級+</td><td>800gp</td><td>22</td><td>15 + 敏捷（最大+2）</td><td>STR≥13</td><td>胸背鋼板，其餘鎖甲/皮，馬上移動懲罰減半，隱匿-2，速度-5尺</td><td>14 lb</td></tr>
+            <tr><td><b>鏈板複合甲</b></td><td>稀有</td><td>7級+</td><td>1,000gp</td><td>22</td><td>16 + 敏捷（最大+2）</td><td>STR≥13</td><td>鎖甲基底+胸腹背鋼板，隱匿-3，速度-5尺</td><td>14 lb</td></tr>
+            <tr><td><b>角鬥士護甲（風格化）</b></td><td>非常見</td><td>3級+</td><td>300gp</td><td>20</td><td>13 + 敏捷（最大+2）；護肩/臂+1AC</td><td>無</td><td>單側護肩護臂，恐嚇+1，隱匿-1</td><td>10 lb</td></tr>
+            <tr><td><b>符文皮甲（奧術）</b></td><td>稀有</td><td>7級+</td><td>1,100gp</td><td>20</td><td>14 + 敏捷（最大+2）</td><td>無</td><td>可作施法法器，法術攻擊+1</td><td>9 lb</td></tr>
+            <tr><td><b>秘銀鏈甲衫</b></td><td>稀有</td><td>7級+</td><td>1,200gp</td><td>22</td><td>15 + 敏捷（最大+2）</td><td>無</td><td>秘銀鍛造，重量僅60%，無力量需求，無隱匿懲罰</td><td>8 lb</td></tr>
+            <tr><td><b>龍鱗甲（成年龍）</b></td><td>極珍稀</td><td>13級+</td><td>3,800gp</td><td>26</td><td>16 + 敏捷（最大+2）</td><td>STR≥13</td><td>對應龍族元素免疫，對龍類威嚇+2，隱匿-2，速度-5尺</td><td>15 lb</td></tr>
+            <tr><td><b>活體藤甲（精類）</b></td><td>極珍稀</td><td>11級+</td><td>3,200gp</td><td>24（每日恢復1d6）</td><td>15 + 敏捷（最大+2）</td><td>無</td><td>精類藤蔓編織，每日黎明恢復1d6耐久，需見光</td><td>10 lb</td></tr>
+            <tr><td><b>星辰甲（觀測者）</b></td><td>極珍稀</td><td>13級+</td><td>4,500gp</td><td>24</td><td>16 + 敏捷（最大+2）</td><td>無</td><td>隕鐵與星辰銀鍛造，夜晚/星空下真視術（60尺），可作施法法器</td><td>10 lb</td></tr>
+            <tr><td><b>永恆守衛胸甲</b></td><td>傳說</td><td>17級+</td><td>10,000gp</td><td>28</td><td>17 + 敏捷（最大+2）</td><td>STR≥13</td><td>聖銀與精金合金，對邪魔/不死AC+2，每日1次致命傷轉為1HP</td><td>10 lb</td></tr>
+            <tr><td><b>矮人鏈甲</b></td><td>非常見</td><td>3級+</td><td>360gp</td><td>22</td><td>14 + 敏捷（最大+2）</td><td>STR≥12</td><td>矮人鍛造，結構更密，對鈍擊額外+1AC，隱匿-1</td><td>12 lb</td></tr>
+            <tr><td><b>林地守衛甲</b></td><td>非常見</td><td>3級+</td><td>280gp</td><td>18</td><td>13 + 敏捷（最大+2）</td><td>STR≥11</td><td>樹皮纖維與皮革複合，森林中隱匿優勢，植物類敵人攻擊劣勢</td><td>10 lb</td></tr>
+            <tr><td><b>霜鐵鎖甲</b></td><td>稀有</td><td>5級+</td><td>750gp</td><td>20</td><td>15 + 敏捷（最大+2）</td><td>STR≥12</td><td>北地霜鐵鍛造，寒冷抗性，炎熱環境需DC13體質否則速度-5尺，隱匿-1</td><td>12 lb</td></tr>
+            <tr><td><b>沙漠行者甲</b></td><td>稀有</td><td>5級+</td><td>650gp</td><td>20</td><td>14 + 敏捷（最大+2）</td><td>STR≥11</td><td>輕質合金與絲綢，炎熱環境無懲罰，火焰抗性</td><td>10 lb</td></tr>
+            <tr><td><b>鱗甲（精製）</b></td><td>非常見</td><td>3級+</td><td>320gp</td><td>20</td><td>14 + 敏捷（最大+2）</td><td>STR≥11</td><td>精製金屬鱗甲，比標準更輕便，隱匿-1</td><td>12 lb</td></tr>
+            <tr><td><b>暗影鏈甲</b></td><td>稀有</td><td>7級+</td><td>1,150gp</td><td>20</td><td>15 + 敏捷（最大+2）</td><td>無（秘銀）</td><td>暗色秘銀編織，昏暗/黑暗中隱匿優勢</td><td>10 lb</td></tr>
+            <tr><td><b>守護者板甲衣</b></td><td>極珍稀</td><td>11級+</td><td>3,500gp</td><td>24</td><td>16 + 敏捷（最大+2），基礎AC+1</td><td>STR≥13</td><td>加厚板甲衣，AC+1，每日1次守護之盾（反應，30尺內盟友+2AC 1輪），隱匿-3，速度-5尺</td><td>14 lb</td></tr>
+            <tr><td><b>精靈鱗甲</b></td><td>極珍稀</td><td>13級+</td><td>4,000gp</td><td>24</td><td>16 + 敏捷（最大+2）</td><td>無</td><td>精靈工藝，秘銀與精金合金，先攻+1，魅惑豁免優勢</td><td>10 lb</td></tr>
+            <tr><td><b>龍鱗甲（遠古龍）</b></td><td>傳說</td><td>17級+</td><td>12,000gp</td><td>30</td><td>18 + 敏捷（最大+2）</td><td>STR≥15</td><td>遠古龍鱗，對應元素免疫，對龍類+1d6傷害，每日1次龍威（60尺錐形，DC17感知），隱匿-3，速度-5尺</td><td>16 lb</td></tr>
+            <tr><td><b>虛無行者胸甲</b></td><td>傳說</td><td>17級+</td><td>11,000gp</td><td>28</td><td>17 + 敏捷（最大+2）</td><td>STR≥13</td><td>虛空物質鍛造，力場/暗蝕抗性，每日1次虛空形態（免疫傷害，持續1輪）</td><td>10 lb</td></tr>
+        </tbody>
+    </table>
+</div>
+
+                <!-- ========================================== -->
+<!--         重型護甲（共22種）                  -->
+<!-- ========================================== -->
+
+<div id="armor-heavy" class="content-section">
+    <h3>🛡️ 重型護甲（共22種）</h3>
+    <p style="color: #b5ad99; font-size: 13px; margin-bottom: 15px;">最高防護，高力量需求，顯著移動懲罰。適合戰士、聖武士。AC固定值（不添加敏捷）。</p>
+    <table>
+        <thead><tr><th style="width: 10%;">護甲名</th><th style="width: 6%;">稀有度</th><th style="width: 5%;">等級</th><th style="width: 7%;">價格</th><th style="width: 5%;">耐久</th><th style="width: 8%;">AC</th><th style="width: 8%;">力量需求</th><th style="width: 25%;">效果</th><th style="width: 6%;">重量</th></tr></thead>
+        <tbody>
+            <tr><td><b>全身鎖子甲</b></td><td>普通</td><td>1級+</td><td>160gp</td><td>22</td><td>16</td><td>STR≥13</td><td>對揮砍優秀，鈍擊忽略2點AC，隱匿-2，速度-5尺</td><td>18 lb</td></tr>
+            <tr><td><b>重型鎖帷子</b></td><td>非常見</td><td>3級+</td><td>280gp</td><td>24</td><td>17</td><td>STR≥15</td><td>極粗鐵環，鈍擊忽略1點AC，隱匿-3，速度-10尺</td><td>20 lb</td></tr>
+            <tr><td><b>三鏡甲（中式）</b></td><td>非常見</td><td>3級+</td><td>420gp</td><td>22</td><td>16（鏡片處17）</td><td>STR≥13</td><td>護心/背/腹三鏡，核心要害+1AC，隱匿-2，速度-5尺</td><td>16 lb</td></tr>
+            <tr><td><b>塔盾兵胸背甲</b></td><td>非常見</td><td>3級+</td><td>380gp</td><td>24</td><td>16</td><td>STR≥13</td><td>厚木板外包鐵皮，對正面攻擊+1AC，隱匿-3，速度-5尺</td><td>16 lb</td></tr>
+            <tr><td><b>米蘭式全身甲</b></td><td>稀有</td><td>5級+</td><td>1,200gp</td><td>26</td><td>18</td><td>STR≥15</td><td>光滑弧形板甲，在板甲中相對靈活，隱匿-3，速度-10尺</td><td>20 lb</td></tr>
+            <tr><td><b>馬克西米利安式板甲（簡化）</b></td><td>稀有</td><td>7級+</td><td>1,600gp</td><td>28</td><td>18</td><td>STR≥15</td><td>放射狀肋條，對穿刺額外+1AC，隱匿-4，速度-10尺</td><td>22 lb</td></tr>
+            <tr><td><b>板鏈複合全身甲</b></td><td>稀有</td><td>7級+</td><td>1,500gp</td><td>26</td><td>18（軀幹）/17（四肢）</td><td>STR≥15</td><td>軀幹板甲四肢鎖甲，隱匿-3，速度-10尺</td><td>22 lb</td></tr>
+            <tr><td><b>哥特式全身板甲</b></td><td>極珍稀</td><td>11級+</td><td>4,000gp</td><td>30</td><td>19</td><td>STR≥17</td><td>精工鍛造，近乎無敵物理防護，炎熱環境需DC13體質，隱匿-4，速度-15尺</td><td>24 lb</td></tr>
+            <tr><td><b>鍋爐工加固套裝</b></td><td>非常見</td><td>5級+</td><td>600gp</td><td>24</td><td>15（火焰/高溫17）</td><td>STR≥13</td><td>石棉與皮革+鋼板，對火焰/高溫抗性，隱匿-4，速度-10尺</td><td>20 lb</td></tr>
+            <tr><td><b>實驗性「防彈」重甲</b></td><td>極珍稀</td><td>13級+</td><td>4,800gp</td><td>22</td><td>17（對遠程穿刺19）</td><td>STR≥17</td><td>多層鋼板夾沙土/毛髮，對火器有抗性，承受重擊需DC12體質否則耐久-1d3，隱匿-5，速度-15尺</td><td>26 lb</td></tr>
+            <tr><td><b>儀式性全身甲（鍍銀）</b></td><td>極珍稀</td><td>13級+</td><td>5,500gp</td><td>30</td><td>19</td><td>STR≥15</td><td>華麗鍍銀板甲，畏銀生物接觸受1d4光耀反傷，其攻擊劣勢，隱匿-4，速度-10尺</td><td>24 lb</td></tr>
+            <tr><td><b>精金板甲</b></td><td>極珍稀</td><td>15級+</td><td>6,500gp</td><td>34</td><td>19</td><td>STR≥17</td><td>精金鍛造，硬度極高，暴擊傷害轉為普通（每日1次），隱匿-4，速度-10尺</td><td>24 lb</td></tr>
+            <tr><td><b>聖騎士誓約甲</b></td><td>傳說</td><td>17級+</td><td>12,000gp</td><td>32</td><td>20</td><td>STR≥17</td><td>傳奇聖騎士甲，對邪魔/不死+2AC，每日1次聖光護盾（30尺內盟友+10臨時HP），隱匿-4，速度-10尺</td><td>26 lb</td></tr>
+            <tr><td><b>深淵征服者板甲</b></td><td>傳說</td><td>17級+</td><td>14,000gp</td><td>34</td><td>21</td><td>STR≥19</td><td>深淵戰爭板甲，暗蝕/火焰抗性，每日1次深淵怒視（30尺內DC16感知，失敗恐慌1輪），隱匿-5，速度-15尺</td><td>28 lb</td></tr>
+            <tr><td><b>龍神之鱗甲</b></td><td>傳說</td><td>17級+</td><td>15,000gp</td><td>36</td><td>20（無敏捷上限）</td><td>無</td><td>遠古龍神逆鱗，龍族元素免疫，飛行速度30尺，每日1次龍威（60尺錐形，DC18感知），無隱匿懲罰</td><td>18 lb</td></tr>
+            <tr><td><b>矮人王板甲</b></td><td>極珍稀</td><td>15級+</td><td>5,800gp</td><td>32</td><td>19</td><td>STR≥17</td><td>矮人王鍛造，對構裝體AC+2，地底速度不減，隱匿-4，速度-10尺</td><td>26 lb</td></tr>
+            <tr><td><b>北地霜甲</b></td><td>稀有</td><td>7級+</td><td>1,600gp</td><td>26</td><td>17</td><td>STR≥15</td><td>北地板甲，永不融化的冰霜，寒冷免疫，炎熱環境需DC14體質否則中暑，隱匿-3，速度-10尺</td><td>20 lb</td></tr>
+            <tr><td><b>炎獄鐵甲</b></td><td>極珍稀</td><td>13級+</td><td>4,500gp</td><td>28</td><td>18</td><td>STR≥16</td><td>炎獄鐵鍛造，火焰免疫，近戰命中額外1d4火焰（每日3次），隱匿-4，速度-10尺</td><td>24 lb</td></tr>
+            <tr><td><b>聖銀修會審判甲</b></td><td>稀有</td><td>7級+</td><td>1,800gp</td><td>24</td><td>17</td><td>STR≥15</td><td>聖銀修會制式，對不死/邪魔其攻擊劣勢，驅散不死DC+1，隱匿-3，速度-10尺</td><td>20 lb</td></tr>
+            <tr><td><b>角鬥士重甲</b></td><td>非常見</td><td>3級+</td><td>500gp</td><td>22</td><td>16</td><td>STR≥13</td><td>單側加厚，恐嚇+2，對正面攻擊+1AC，隱匿-2，速度-5尺</td><td>18 lb</td></tr>
+            <tr><td><b>騎兵重甲（馬上）</b></td><td>非常見</td><td>5級+</td><td>700gp</td><td>24</td><td>17</td><td>STR≥14</td><td>馬上作戰移動懲罰減半，下馬後恢復，隱匿-3，速度-10尺</td><td>20 lb</td></tr>
+            <tr><td><b>鐵處女甲（刑具改）</b></td><td>稀有</td><td>7級+</td><td>1,300gp</td><td>24</td><td>18</td><td>STR≥16</td><td>內襯尖刺，被擒抱時攻擊者受1d4穿刺，穿戴者每日需DC12體質否則睡眠不佳，隱匿-4，速度-10尺</td><td>22 lb</td></tr>
+            <tr><td><b>無畏者板甲</b></td><td>傳說</td><td>17級+</td><td>11,000gp</td><td>32</td><td>20</td><td>STR≥17</td><td>免疫恐懼，每場戰鬥第一次攻擊自動未命中，每日1次無畏怒吼（30尺內盟友恐懼免疫1輪），隱匿-4，速度-10尺</td><td>26 lb</td></tr>
+        </tbody>
+    </table>
+</div>
+
+                <!-- ========================================== -->
+<!--         魔法護甲（共18種）                  -->
+<!-- ========================================== -->
+
+<div id="armor-magical" class="content-section">
+    <h3>🪄 魔法護甲（共18種）</h3>
+    <p style="color: #b5ad99; font-size: 13px; margin-bottom: 15px;">為施法者設計的特殊護甲，附帶法術相關能力。自非常見到傳說均有分布。</p>
+    <table>
+        <thead><tr><th style="width: 10%;">護甲名</th><th style="width: 6%;">稀有度</th><th style="width: 5%;">等級</th><th style="width: 7%;">價格</th><th style="width: 5%;">耐久</th><th style="width: 8%;">AC</th><th style="width: 8%;">力量需求</th><th style="width: 25%;">效果</th><th style="width: 6%;">重量</th></tr></thead>
+        <tbody>
+            <tr><td><b>學徒法袍</b></td><td>普通</td><td>1級+</td><td>50gp</td><td>14</td><td>10 + 敏捷</td><td>無</td><td>基礎施法者長袍，可作施法法器</td><td>3 lb</td></tr>
+            <tr><td><b>防護法袍（標準）</b></td><td>非常見</td><td>3級+</td><td>400gp</td><td>18</td><td>11 + 敏捷</td><td>無</td><td>微弱防護符文，法術攻擊+1，可作施法法器</td><td>4 lb</td></tr>
+            <tr><td><b>奧術絲袍</b></td><td>非常見</td><td>3級+</td><td>500gp</td><td>18</td><td>11 + 敏捷</td><td>無</td><td>奧術絲編織，維持專注豁免優勢</td><td>3 lb</td></tr>
+            <tr><td><b>高等防護法袍</b></td><td>稀有</td><td>7級+</td><td>1,400gp</td><td>22</td><td>12 + 敏捷</td><td>無</td><td>強力防護符文，法術攻擊+1，法術DC+1，每日1次護盾術（反應）</td><td>4 lb</td></tr>
+            <tr><td><b>靈界法袍</b></td><td>稀有</td><td>7級+</td><td>1,600gp</td><td>22</td><td>12 + 敏捷</td><td>無</td><td>靈界絲綢，每日1次靈體形態（1輪），對靈體抗性</td><td>4 lb</td></tr>
+            <tr><td><b>大法師法袍</b></td><td>極珍稀</td><td>13級+</td><td>5,000gp</td><td>26</td><td>13 + 敏捷</td><td>無</td><td>傳奇大法師殘留奧術能量，法術攻擊+2，法術DC+1，每日1次恢復3環法術位</td><td>4 lb</td></tr>
+            <tr><td><b>虛空編織法袍</b></td><td>極珍稀</td><td>13級+</td><td>5,500gp</td><td>26</td><td>13 + 敏捷</td><td>無</td><td>虛空物質編織，力場/暗蝕抗性，每日1次法術反彈（DC16敏捷）</td><td>4 lb</td></tr>
+            <tr><td><b>星辰法袍</b></td><td>傳說</td><td>17級+</td><td>10,000gp</td><td>30</td><td>14 + 敏捷</td><td>無</td><td>星辰碎片織成，法術攻擊+2，法術DC+2，夜晚/星空下真視術（120尺），每日1次流星爆（6環，DC17）</td><td>3 lb</td></tr>
+            <tr><td><b>元素之鱗法袍</b></td><td>傳說</td><td>17級+</td><td>12,000gp</td><td>32</td><td>14 + 敏捷</td><td>無</td><td>四元素精魄編織，反應切換元素抗性，每日1次元素風暴（15尺半徑，DC17，5d8）</td><td>4 lb</td></tr>
+            <tr><td><b>寂靜法袍</b></td><td>極珍稀</td><td>11級+</td><td>4,000gp</td><td>24</td><td>12 + 敏捷</td><td>無</td><td>吸收聲音，隱匿優勢，施放無聲法術時目標察覺劣勢</td><td>3 lb</td></tr>
+            <tr><td><b>咒術師皮甲</b></td><td>非常見</td><td>3級+</td><td>360gp</td><td>18</td><td>12 + 敏捷</td><td>無</td><td>咒術符文浸染，每日1次重骰專注豁免</td><td>5 lb</td></tr>
+            <tr><td><b>喚魔術士長袍</b></td><td>稀有</td><td>5級+</td><td>1,200gp</td><td>20</td><td>12 + 敏捷</td><td>無</td><td>召喚系專用，召喚生物+3臨時HP，每日1次延長召喚+1輪</td><td>4 lb</td></tr>
+            <tr><td><b>死靈術士裹屍布</b></td><td>稀有</td><td>5級+</td><td>1,300gp</td><td>20</td><td>12 + 敏捷</td><td>無</td><td>裹屍布改造，死靈法術攻擊+1，暗蝕抗性</td><td>4 lb</td></tr>
+            <tr><td><b>幻術師迷彩袍</b></td><td>非常見</td><td>3級+</td><td>440gp</td><td>18</td><td>11 + 敏捷</td><td>無</td><td>幻術布料，顏色隨環境變化，隱匿+1，施放幻術時目標偵查劣勢</td><td>3 lb</td></tr>
+            <tr><td><b>塑能師焦痕袍</b></td><td>稀有</td><td>5級+</td><td>1,150gp</td><td>20</td><td>12 + 敏捷</td><td>無</td><td>塑能師燒焦法袍改造，塑能法術傷害+1，火焰/雷鳴抗性</td><td>4 lb</td></tr>
+            <tr><td><b>變化師彈性甲</b></td><td>非常見</td><td>3級+</td><td>400gp</td><td>18</td><td>11 + 敏捷</td><td>無</td><td>變化系處理柔性材料，敏捷（特技）優勢，每日1次改變顏色/外形</td><td>4 lb</td></tr>
+            <tr><td><b>防護師結界袍</b></td><td>稀有</td><td>7級+</td><td>1,500gp</td><td>22</td><td>13 + 敏捷，AC+1</td><td>無</td><td>防護系編織，AC+1（基礎13+1=14），每日1次防護能量（如同法術）</td><td>4 lb</td></tr>
+            <tr><td><b>預言師星輝袍</b></td><td>極珍稀</td><td>11級+</td><td>4,200gp</td><td>24</td><td>13 + 敏捷</td><td>無</td><td>星輝織成，每日1次重擲先攻，感知（洞察）優勢</td><td>4 lb</td></tr>
+        </tbody>
+    </table>
+</div>
+
+                <!-- ========================================== -->
+<!--       職業專屬防具總覽                      -->
+<!-- ========================================== -->
+
+<div id="armor-class-hub" class="content-section">
+    <h2>🛡️ 職業專屬防具總覽</h2>
+    <p>說明：此列表收錄專為特定職業設計的專屬護甲，每套都與職業能力深度綁定，只有對應職業才能發揮完整力量。</p>
+    
+    <blockquote style="background: rgba(255,255,255,0.02); padding: 10px; border-left: 4px solid #ff6b6b; margin: 10px 0;">
+        <b>⚠️ 職業限制：</b>吟遊詩人、牧師、德魯伊、聖武士、遊俠、術士、邪術師、法師各自專屬，<b>不可跨職業領取</b>。
+    </blockquote>
+
+    <hr>
+
+    <h3>📊 職業專屬防具一覽</h3>
+    <table>
+        <thead><tr><th style="width: 15%;">職業</th><th style="width: 10%;">套數</th><th style="width: 15%;">稀有度分佈</th><th style="width: 30%;">核心主題</th><th style="width: 30%;">代表能力</th></tr></thead>
+        <tbody>
+            <tr><td>🎵 吟遊詩人</td><td>10</td><td>普通～傳說</td><td>表演、激勵、音樂</td><td>激勵骰提升、表演優勢</td></tr>
+            <tr><td>✝️ 牧師</td><td>10</td><td>普通～傳說</td><td>聖光、治療、驅散</td><td>治療加成、驅散強化</td></tr>
+            <tr><td>🌿 德魯伊</td><td>10</td><td>普通～傳說</td><td>自然、變形、元素</td><td>變形強化、森林隱匿</td></tr>
+            <tr><td>⚔️ 聖武士</td><td>10</td><td>普通～傳說</td><td>誓約、聖光、審判</td><td>對邪魔特化、誓約能力</td></tr>
+            <tr><td>🏹 遊俠</td><td>10</td><td>普通～傳說</td><td>追蹤、狩獵、野性</td><td>動物夥伴強化、追蹤優勢</td></tr>
+            <tr><td>🔮 術士</td><td>10</td><td>普通～傳說</td><td>血統、混沌、元素</td><td>血脈能力、混沌賜福</td></tr>
+            <tr><td>🕯️ 邪術師</td><td>10</td><td>普通～傳說</td><td>契約、暗影、異界</td><td>宗主賜福、契約強化</td></tr>
+            <tr><td>📖 法師</td><td>10</td><td>普通～傳說</td><td>奧術、學派、知識</td><td>學派強化、法術恢復</td></tr>
+        </tbody>
+    </table>
+
+    <p style="color: #b5ad99; font-size: 13px; margin-top: 10px;">💡 點擊左側選單對應職業查看完整列表。</p>
+</div>
+
+                <!-- ========================================== -->
+<!--       🎵 吟遊詩人專屬護甲（10套）          -->
+<!-- ========================================== -->
+
+<div id="armor-bard" class="content-section">
+    <h3>🎵 吟遊詩人專屬護甲（共10套）</h3>
+    <table>
+        <thead><tr><th style="width: 10%;">護甲名</th><th style="width: 6%;">稀有度</th><th style="width: 5%;">等級</th><th style="width: 7%;">價格</th><th style="width: 5%;">耐久</th><th style="width: 8%;">AC</th><th style="width: 8%;">力量需求</th><th style="width: 25%;">效果</th><th style="width: 6%;">重量</th></tr></thead>
+        <tbody>
+            <tr><td><b>旅者斗篷甲</b></td><td>普通</td><td>1級+</td><td>60gp</td><td>14</td><td>11 + 敏捷</td><td>無</td><td>表演+1，可攜帶一件小型樂器</td><td>4 lb</td></tr>
+            <tr><td><b>舞台閃光甲</b></td><td>非常見</td><td>3級+</td><td>250gp</td><td>16</td><td>12 + 敏捷</td><td>無</td><td>閃亮金屬片，聚光燈下魅力+1，每日1次閃光術（DC12體質）</td><td>5 lb</td></tr>
+            <tr><td><b>諧律鏈甲</b></td><td>非常見</td><td>3級+</td><td>300gp</td><td>18</td><td>13 + 敏捷（最大+2）</td><td>STR≥11</td><td>諧律金屬編織，激勵骰d6→d8，可作施法法器</td><td>9 lb</td></tr>
+            <tr><td><b>晨歌皮甲</b></td><td>稀有</td><td>5級+</td><td>650gp</td><td>18</td><td>13 + 敏捷（最大+3）</td><td>無</td><td>晨光鞣製，每日1次治癒真言，魅惑豁免優勢</td><td>6 lb</td></tr>
+            <tr><td><b>狂想曲長袍</b></td><td>稀有</td><td>5級+</td><td>750gp</td><td>18</td><td>12 + 敏捷</td><td>無</td><td>色彩隨情緒變化，表演優勢，每日1次狂笑術（DC13感知）</td><td>4 lb</td></tr>
+            <tr><td><b>挽歌黑甲</b></td><td>稀有</td><td>7級+</td><td>1,000gp</td><td>20</td><td>14 + 敏捷（最大+2）</td><td>STR≥11</td><td>黑色啞光，盟友HP歸零時可反應給予1d4臨時HP（每日3次），恐懼豁免優勢，隱匿-1</td><td>10 lb</td></tr>
+            <tr><td><b>即興者夾克</b></td><td>非常見</td><td>3級+</td><td>280gp</td><td>16</td><td>12 + 敏捷</td><td>無</td><td>多口袋，巧手+1，可攜帶小物品+3件</td><td>5 lb</td></tr>
+            <tr><td><b>終幕法袍</b></td><td>極珍稀</td><td>13級+</td><td>3,800gp</td><td>22</td><td>13 + 敏捷</td><td>無</td><td>黑色星辰織成，法術攻擊+1，每日1次死亡護盾（盟友死亡檢定優勢）</td><td>4 lb</td></tr>
+            <tr><td><b>傳說者鱗甲</b></td><td>極珍稀</td><td>11級+</td><td>3,200gp</td><td>22</td><td>15 + 敏捷（最大+2）</td><td>STR≥11</td><td>故事鱗片製成，每知道一個傳說+1AC（最多+2），激勵骰+1，隱匿-1</td><td>10 lb</td></tr>
+            <tr><td><b>創世歌者之袍</b></td><td>傳說</td><td>17級+</td><td>9,000gp</td><td>28</td><td>15 + 敏捷</td><td>無</td><td>傳奇吟遊詩人之袍，法術攻擊+2，法術DC+1，每日1次群體療傷（5環），激勵骰變d10</td><td>3 lb</td></tr>
+        </tbody>
+    </table>
+</div>
+
+                <!-- ========================================== -->
+<!--       ✝️ 牧師專屬護甲（10套）              -->
+<!-- ========================================== -->
+
+<div id="armor-cleric" class="content-section">
+    <h3>✝️ 牧師專屬護甲（共10套）</h3>
+    <table>
+        <thead><tr><th style="width: 10%;">護甲名</th><th style="width: 6%;">稀有度</th><th style="width: 5%;">等級</th><th style="width: 7%;">價格</th><th style="width: 5%;">耐久</th><th style="width: 8%;">AC</th><th style="width: 8%;">力量需求</th><th style="width: 25%;">效果</th><th style="width: 6%;">重量</th></tr></thead>
+        <tbody>
+            <tr><td><b>苦修粗袍</b></td><td>普通</td><td>1級+</td><td>40gp</td><td>12</td><td>10 + 敏捷</td><td>無</td><td>粗袍內襯荊棘，每日1次承受1d4傷害恢復1環法術位，可作施法法器</td><td>3 lb</td></tr>
+            <tr><td><b>晨禱鏈甲</b></td><td>非常見</td><td>3級+</td><td>380gp</td><td>18</td><td>13 + 敏捷（最大+2）</td><td>STR≥11</td><td>銀色鏈甲刻晨禱經文，治療法術額外恢復1d4 HP，可作施法法器</td><td>10 lb</td></tr>
+            <tr><td><b>審判官皮甲</b></td><td>非常見</td><td>3級+</td><td>300gp</td><td>16</td><td>12 + 敏捷</td><td>無</td><td>暗色皮甲，驅散不死DC+1，對不死攻擊優勢</td><td>6 lb</td></tr>
+            <tr><td><b>聖光板甲衣</b></td><td>稀有</td><td>5級+</td><td>850gp</td><td>20</td><td>14 + 敏捷（最大+2）</td><td>STR≥12</td><td>內嵌聖光符文，光耀法術傷害+1d4，可作施法法器，隱匿-1</td><td>12 lb</td></tr>
+            <tr><td><b>救贖者鏈甲</b></td><td>稀有</td><td>5級+</td><td>950gp</td><td>20</td><td>14 + 敏捷（最大+2）</td><td>STR≥11</td><td>銀白鏈甲流動聖水，被邪惡攻擊反傷1d4光耀，每日1次防護善惡</td><td>10 lb</td></tr>
+            <tr><td><b>殉道者板甲</b></td><td>稀有</td><td>7級+</td><td>1,400gp</td><td>22</td><td>16</td><td>STR≥13</td><td>佈滿裂痕板甲，HP<25%時AC+2，每日1次為盟友承受全部傷害，隱匿-2，速度-5尺</td><td>16 lb</td></tr>
+            <tr><td><b>聖言法袍</b></td><td>極珍稀</td><td>11級+</td><td>4,000gp</td><td>22</td><td>12 + 敏捷</td><td>無</td><td>聖言經文織成，法術攻擊+1，法術DC+1，每日1次聖言術（DC15）</td><td>4 lb</td></tr>
+            <tr><td><b>大主教聖袍</b></td><td>極珍稀</td><td>13級+</td><td>4,800gp</td><td>24</td><td>13 + 敏捷</td><td>無</td><td>大主教聖袍，每日3次治療額外1d8 HP，每日1次群體治癒真言（4環）</td><td>4 lb</td></tr>
+            <tr><td><b>聖戰甲胄</b></td><td>傳說</td><td>17級+</td><td>11,000gp</td><td>30</td><td>19</td><td>STR≥15</td><td>傳奇聖戰甲胄，對邪魔/不死+2AC，每日1次聖戰之怒（30尺錐形，DC17，4d8光耀），隱匿-3，速度-10尺</td><td>20 lb</td></tr>
+            <tr><td><b>真神降臨之袍</b></td><td>傳說</td><td>17級+</td><td>13,000gp</td><td>28</td><td>15 + 敏捷</td><td>無</td><td>真神化身之袍，法術攻擊+2，法術DC+2，每日1次神蹟術（有限制），祈禱時恢復1d4 HP（日上限20）</td><td>4 lb</td></tr>
+        </tbody>
+    </table>
+</div>
+
+                <!-- ========================================== -->
+<!--       🌿 德魯伊專屬護甲（10套）            -->
+<!-- ========================================== -->
+
+<div id="armor-druid" class="content-section">
+    <h3>🌿 德魯伊專屬護甲（共10套）</h3>
+    <table>
+        <thead><tr><th style="width: 10%;">護甲名</th><th style="width: 6%;">稀有度</th><th style="width: 5%;">等級</th><th style="width: 7%;">價格</th><th style="width: 5%;">耐久</th><th style="width: 8%;">AC</th><th style="width: 8%;">力量需求</th><th style="width: 25%;">效果</th><th style="width: 6%;">重量</th></tr></thead>
+        <tbody>
+            <tr><td><b>樹皮甲</b></td><td>普通</td><td>1級+</td><td>60gp</td><td>16</td><td>12 + 敏捷（最大+2）</td><td>無</td><td>古樹樹皮製成，森林中隱匿優勢，可作德魯伊法器</td><td>8 lb</td></tr>
+            <tr><td><b>獸皮戰甲</b></td><td>非常見</td><td>3級+</td><td>220gp</td><td>18</td><td>13 + 敏捷（最大+2）</td><td>無</td><td>獸皮鞣製保留獸魂，荒野變形+3臨時HP，馴獸+1</td><td>9 lb</td></tr>
+            <tr><td><b>藤蔓鏈甲</b></td><td>非常見</td><td>3級+</td><td>320gp</td><td>18</td><td>13 + 敏捷（最大+2）</td><td>無</td><td>硬化藤蔓與金屬環編織，每日1次糾纏術，森林隱匿優勢</td><td>10 lb</td></tr>
+            <tr><td><b>月石皮甲</b></td><td>稀有</td><td>5級+</td><td>700gp</td><td>18</td><td>13 + 敏捷（最大+3）</td><td>無</td><td>月光石粉末鞣製，月夜變形持續時間翻倍，每日1次月光術</td><td>6 lb</td></tr>
+            <tr><td><b>荊棘甲</b></td><td>稀有</td><td>5級+</td><td>650gp</td><td>18</td><td>14 + 敏捷（最大+2）</td><td>無</td><td>活體荊棘編織，被近戰命中攻擊者受1d4穿刺，每日1次荊棘護甲，隱匿-1</td><td>10 lb</td></tr>
+            <tr><td><b>元素之皮甲</b></td><td>稀有</td><td>7級+</td><td>1,050gp</td><td>20</td><td>14 + 敏捷（最大+2）</td><td>無</td><td>四元素浸泡，每日1次切換元素抗性，元素法術傷害+1</td><td>8 lb</td></tr>
+            <tr><td><b>林地大君皮甲</b></td><td>極珍稀</td><td>11級+</td><td>3,500gp</td><td>22</td><td>15 + 敏捷（最大+2）</td><td>無</td><td>林地大君毛皮，森林中速度+10尺，隱匿+2，每日1次召喚林地之友（4環）</td><td>9 lb</td></tr>
+            <tr><td><b>霜狼皮甲</b></td><td>極珍稀</td><td>13級+</td><td>4,000gp</td><td>22</td><td>15 + 敏捷（最大+2）</td><td>無</td><td>北地霜狼王毛皮，寒冷免疫，變形可獲霜狼形態（+1d6寒冷），每日1次冰風暴（4環）</td><td>10 lb</td></tr>
+            <tr><td><b>世界樹之皮甲</b></td><td>傳說</td><td>17級+</td><td>10,000gp</td><td>30</td><td>16 + 敏捷（最大+2），AC+1</td><td>無</td><td>世界樹樹皮，對所有傷害（除力場）抗性，每日1次再生術（4d8+4 HP）</td><td>10 lb</td></tr>
+            <tr><td><b>遠古龍鱗皮甲</b></td><td>傳說</td><td>17級+</td><td>12,000gp</td><td>30</td><td>17 + 敏捷（最大+2）</td><td>無</td><td>德魯伊龍形態脫落鱗片，龍族元素免疫，變形可獲龍息（每日1次，15尺錐形，DC17，5d6）</td><td>12 lb</td></tr>
+        </tbody>
+    </table>
+</div>
+
+                <!-- ========================================== -->
+<!--       ⚔️ 聖武士專屬護甲（10套）            -->
+<!-- ========================================== -->
+
+<div id="armor-paladin" class="content-section">
+    <h3>⚔️ 聖武士專屬護甲（共10套）</h3>
+    <table>
+        <thead><tr><th style="width: 10%;">護甲名</th><th style="width: 6%;">稀有度</th><th style="width: 5%;">等級</th><th style="width: 7%;">價格</th><th style="width: 5%;">耐久</th><th style="width: 8%;">AC</th><th style="width: 8%;">力量需求</th><th style="width: 25%;">效果</th><th style="width: 6%;">重量</th></tr></thead>
+        <tbody>
+            <tr><td><b>誓約鏈甲</b></td><td>普通</td><td>1級+</td><td>120gp</td><td>18</td><td>13 + 敏捷（最大+2）</td><td>STR≥11</td><td>刻基礎誓約，聖武士法術攻擊+1，可作法器</td><td>10 lb</td></tr>
+            <tr><td><b>信念板甲衣</b></td><td>非常見</td><td>3級+</td><td>450gp</td><td>20</td><td>14 + 敏捷（最大+2）</td><td>STR≥12</td><td>內嵌信念符文，魅惑/恐懼豁免優勢，每日1次祝福術，隱匿-1</td><td>12 lb</td></tr>
+            <tr><td><b>懲戒者板甲</b></td><td>非常見</td><td>3級+</td><td>420gp</td><td>20</td><td>16</td><td>STR≥13</td><td>帶尖刺黑色板甲，對邪魔/不死傷害+1d4，每日1次獵人印記，隱匿-2，速度-5尺</td><td>16 lb</td></tr>
+            <tr><td><b>榮耀鱗甲</b></td><td>稀有</td><td>5級+</td><td>900gp</td><td>20</td><td>15 + 敏捷（最大+2）</td><td>STR≥12</td><td>金色鱗甲記錄勝利，公開戰鬥魅力優勢，每日1次英雄氣概，隱匿-1</td><td>12 lb</td></tr>
+            <tr><td><b>審判官板甲</b></td><td>稀有</td><td>7級+</td><td>1,500gp</td><td>24</td><td>17</td><td>STR≥14</td><td>刻審判符文，驅散不死DC+2，對邪惡AC+1，每日1次審判凝視（DC14震懾），隱匿-3，速度-10尺</td><td>18 lb</td></tr>
+            <tr><td><b>殉道者鏈甲</b></td><td>稀有</td><td>5級+</td><td>1,100gp</td><td>20</td><td>14 + 敏捷（最大+2）</td><td>STR≥11</td><td>白色鏈甲血紅紋路，為盟友承受傷害（日上限30），每承受10點+1d4光耀</td><td>10 lb</td></tr>
+            <tr><td><b>聖光板甲</b></td><td>極珍稀</td><td>11級+</td><td>4,200gp</td><td>26</td><td>18，AC+1</td><td>STR≥15</td><td>聖光板甲，黑暗中10尺亮光，對不死/邪魔+2AC，每日1次聖光護盾，隱匿-3，速度-10尺</td><td>20 lb</td></tr>
+            <tr><td><b>無畏者全身甲</b></td><td>極珍稀</td><td>13級+</td><td>5,500gp</td><td>28</td><td>19</td><td>STR≥16</td><td>傳奇無畏甲，免疫恐懼，對衝鋒可反應反擊（優勢），每日1次勇氣靈光（恐懼免疫1輪），隱匿-4，速度-10尺</td><td>22 lb</td></tr>
+            <tr><td><b>聖約之甲</b></td><td>傳說</td><td>17級+</td><td>12,000gp</td><td>32</td><td>20</td><td>STR≥15</td><td>聖者之血澆鑄，對邪惡暴擊19-20，每日1次聖約裁決（60尺DC17，6d8光耀），隱匿-3，速度-10尺</td><td>20 lb</td></tr>
+            <tr><td><b>審判日板甲</b></td><td>傳說</td><td>17級+</td><td>14,000gp</td><td>34</td><td>21</td><td>STR≥17</td><td>末日審判浮雕，對邪惡傷害+1d8，每日1次審判日降臨（30尺錐形DC18，6d10光耀），隱匿-4，速度-15尺</td><td>24 lb</td></tr>
+        </tbody>
+    </table>
+</div>
+
+                <!-- ========================================== -->
+<!--       🏹 遊俠專屬護甲（10套）              -->
+<!-- ========================================== -->
+
+<div id="armor-ranger" class="content-section">
+    <h3>🏹 遊俠專屬護甲（共10套）</h3>
+    <table>
+        <thead><tr><th style="width: 10%;">護甲名</th><th style="width: 6%;">稀有度</th><th style="width: 5%;">等級</th><th style="width: 7%;">價格</th><th style="width: 5%;">耐久</th><th style="width: 8%;">AC</th><th style="width: 8%;">力量需求</th><th style="width: 25%;">效果</th><th style="width: 6%;">重量</th></tr></thead>
+        <tbody>
+            <tr><td><b>獵手皮甲</b></td><td>普通</td><td>1級+</td><td>70gp</td><td>16</td><td>12 + 敏捷</td><td>無</td><td>獵手常用，追蹤+1，可作遊俠法器</td><td>6 lb</td></tr>
+            <tr><td><b>林地迷彩甲</b></td><td>非常見</td><td>3級+</td><td>240gp</td><td>16</td><td>12 + 敏捷</td><td>無</td><td>林地迷彩染色，森林隱匿優勢，對野獸攻擊優勢</td><td>6 lb</td></tr>
+            <tr><td><b>獸王鏈甲</b></td><td>非常見</td><td>3級+</td><td>360gp</td><td>18</td><td>13 + 敏捷（最大+2）</td><td>STR≥11</td><td>獸王毛髮編織，動物夥伴+3臨時HP，每日1次野獸感知</td><td>10 lb</td></tr>
+            <tr><td><b>追跡者皮甲</b></td><td>稀有</td><td>5級+</td><td>650gp</td><td>18</td><td>13 + 敏捷（最大+2）</td><td>無</td><td>追跡者工藝，生存/追蹤優勢，對標記獵物傷害+1d4</td><td>6 lb</td></tr>
+            <tr><td><b>風行者鱗甲</b></td><td>稀有</td><td>5級+</td><td>800gp</td><td>20</td><td>14 + 敏捷（最大+2）</td><td>無</td><td>輕量化鱗甲風紋雕刻，速度+5尺，遠程攻擊+1，每日1次風行術</td><td>10 lb</td></tr>
+            <tr><td><b>暗影獵手甲</b></td><td>稀有</td><td>7級+</td><td>950gp</td><td>20</td><td>14 + 敏捷（最大+2）</td><td>無</td><td>暗色獵手甲，昏暗/黑暗中隱匿優勢，每日1次黑暗視覺（1小時）</td><td>6 lb</td></tr>
+            <tr><td><b>深淵獵手皮甲</b></td><td>極珍稀</td><td>11級+</td><td>3,500gp</td><td>22</td><td>15 + 敏捷（最大+2）</td><td>無</td><td>深淵獵物皮製，對異界生物傷害+1d6，每日1次放逐術（DC15）</td><td>7 lb</td></tr>
+            <tr><td><b>龍獵者鱗甲</b></td><td>極珍稀</td><td>13級+</td><td>4,200gp</td><td>24</td><td>15 + 敏捷（最大+2）</td><td>STR≥11</td><td>龍獵者工藝，對龍類傷害+1d8，AC+1，每日1次龍族恐懼（30尺錐形DC15），隱匿-1</td><td>12 lb</td></tr>
+            <tr><td><b>追風者之甲</b></td><td>傳說</td><td>17級+</td><td>9,500gp</td><td>28</td><td>16 + 敏捷（最大+3）</td><td>無</td><td>風元素編織，速度+20尺，遠程攻擊+2，每日1次加速術（自身，1分鐘）</td><td>5 lb</td></tr>
+            <tr><td><b>獸王榮耀甲</b></td><td>傳說</td><td>17級+</td><td>11,000gp</td><td>28</td><td>16 + 敏捷（最大+3）</td><td>無</td><td>鑲七位獸王獠牙，動物夥伴+5臨時HP+1攻擊，每日1次獸王呼喚（CR5野獸，1小時）</td><td>10 lb</td></tr>
+        </tbody>
+    </table>
+</div>
+
+                <!-- ========================================== -->
+<!--       🔮 術士專屬護甲（10套）              -->
+<!-- ========================================== -->
+
+<div id="armor-sorcerer" class="content-section">
+    <h3>🔮 術士專屬護甲（共10套）</h3>
+    <table>
+        <thead><tr><th style="width: 10%;">護甲名</th><th style="width: 6%;">稀有度</th><th style="width: 5%;">等級</th><th style="width: 7%;">價格</th><th style="width: 5%;">耐久</th><th style="width: 8%;">AC</th><th style="width: 8%;">力量需求</th><th style="width: 25%;">效果</th><th style="width: 6%;">重量</th></tr></thead>
+        <tbody>
+            <tr><td><b>血統法袍</b></td><td>普通</td><td>1級+</td><td>60gp</td><td>12</td><td>10 + 敏捷</td><td>無</td><td>繡血統紋章，術士法術攻擊+1，可作施法法器</td><td>3 lb</td></tr>
+            <tr><td><b>龍血皮甲</b></td><td>非常見</td><td>3級+</td><td>350gp</td><td>16</td><td>12 + 敏捷</td><td>無</td><td>龍血浸泡，對應龍族元素抗性，每日1次龍息術</td><td>6 lb</td></tr>
+            <tr><td><b>混沌絲袍</b></td><td>非常見</td><td>3級+</td><td>380gp</td><td>16</td><td>11 + 敏捷</td><td>無</td><td>混沌絲編織，混亂法術目標豁免劣勢，每日1次重擲（混沌賜福）</td><td>3 lb</td></tr>
+            <tr><td><b>深淵法袍</b></td><td>稀有</td><td>5級+</td><td>800gp</td><td>18</td><td>12 + 敏捷</td><td>無</td><td>暗紫色深淵法袍，暗蝕抗性，每日1次深淵之觸（30尺DC13，3d6暗蝕）</td><td>4 lb</td></tr>
+            <tr><td><b>狂野術士長袍</b></td><td>稀有</td><td>5級+</td><td>850gp</td><td>18</td><td>12 + 敏捷</td><td>無</td><td>狂野符文法袍，狂野魔法浪湧可選擇更有利結果（每日1次），每日1次狂野脈衝（30尺DC14，3d6隨機）</td><td>4 lb</td></tr>
+            <tr><td><b>星辰術士長袍</b></td><td>稀有</td><td>7級+</td><td>1,200gp</td><td>20</td><td>13 + 敏捷</td><td>無</td><td>繡星座圖深藍法袍，夜晚施法法術攻擊+1，每日1次星隕術（30尺DC14，4d6光耀）</td><td>4 lb</td></tr>
+            <tr><td><b>元素領主長袍</b></td><td>極珍稀</td><td>11級+</td><td>4,000gp</td><td>22</td><td>13 + 敏捷</td><td>無</td><td>四元素領主編織，每長休可選一種元素免疫，元素法術傷害+2，每日1次元素風暴（15尺半徑DC16，5d8）</td><td>4 lb</td></tr>
+            <tr><td><b>龍族大君長袍</b></td><td>極珍稀</td><td>13級+</td><td>4,800gp</td><td>24</td><td>14 + 敏捷</td><td>無</td><td>龍族大君鱗片磨粉織成，龍族元素免疫（依血脈），法術攻擊+1，每日1次龍威（30尺錐形DC16恐慌）</td><td>4 lb</td></tr>
+            <tr><td><b>虛空血脈長袍</b></td><td>傳說</td><td>17級+</td><td>11,000gp</td><td>28</td><td>15 + 敏捷</td><td>無</td><td>虛空物質織成，力場/暗蝕免疫，每日1次虛空裂隙（60尺DC17，6d8力場+放逐1輪）</td><td>3 lb</td></tr>
+            <tr><td><b>混沌之主長袍</b></td><td>傳說</td><td>17級+</td><td>12,000gp</td><td>28</td><td>15 + 敏捷</td><td>無</td><td>混沌之主長袍，法術攻擊+2，法術DC+1，每日1次混沌風暴（30尺半徑DC17，6d8隨機）</td><td>3 lb</td></tr>
+        </tbody>
+    </table>
+</div>
+
+                <!-- ========================================== -->
+<!--       🕯️ 邪術師專屬護甲（10套）            -->
+<!-- ========================================== -->
+
+<div id="armor-warlock" class="content-section">
+    <h3>🕯️ 邪術師專屬護甲（共10套）</h3>
+    <table>
+        <thead><tr><th style="width: 10%;">護甲名</th><th style="width: 6%;">稀有度</th><th style="width: 5%;">等級</th><th style="width: 7%;">價格</th><th style="width: 5%;">耐久</th><th style="width: 8%;">AC</th><th style="width: 8%;">力量需求</th><th style="width: 25%;">效果</th><th style="width: 6%;">重量</th></tr></thead>
+        <tbody>
+            <tr><td><b>契約長袍</b></td><td>普通</td><td>1級+</td><td>50gp</td><td>12</td><td>10 + 敏捷</td><td>無</td><td>刻基礎契約符文，邪術師法術攻擊+1，可作施法法器</td><td>3 lb</td></tr>
+            <tr><td><b>暗影皮甲</b></td><td>非常見</td><td>3級+</td><td>300gp</td><td>16</td><td>12 + 敏捷</td><td>無</td><td>暗影物質鞣製，昏暗/黑暗中隱匿優勢，每日1次暗影步（傳送30尺至陰影）</td><td>6 lb</td></tr>
+            <tr><td><b>舊神之袍</b></td><td>非常見</td><td>3級+</td><td>360gp</td><td>16</td><td>11 + 敏捷</td><td>無</td><td>繡舊神符文，精神攻擊豁免優勢，每日1次舊神低語（30尺DC13恐慌）</td><td>4 lb</td></tr>
+            <tr><td><b>地獄火鏈甲</b></td><td>稀有</td><td>5級+</td><td>800gp</td><td>18</td><td>13 + 敏捷（最大+2）</td><td>STR≥11</td><td>地獄火鍛造，火焰抗性，每日1次地獄火衝擊（15尺錐形DC13，3d6火焰）</td><td>10 lb</td></tr>
+            <tr><td><b>魔契鎖甲</b></td><td>稀有</td><td>5級+</td><td>900gp</td><td>20</td><td>14 + 敏捷（最大+2）</td><td>STR≥11</td><td>刻十二份魔契，每掌握一項魔契+1AC（最多+2），每日1次召喚契約魔寵</td><td>10 lb</td></tr>
+            <tr><td><b>深淵凝視者長袍</b></td><td>稀有</td><td>7級+</td><td>1,100gp</td><td>20</td><td>12 + 敏捷</td><td>無</td><td>背後繡深淵之眼，暗蝕抗性，每日1次深淵凝視（30尺DC14麻痹）</td><td>4 lb</td></tr>
+            <tr><td><b>宗主賜福之甲</b></td><td>極珍稀</td><td>11級+</td><td>3,800gp</td><td>22</td><td>13 + 敏捷</td><td>無</td><td>宗主賜福護甲，法術攻擊+1，每日1次祈求宗主援助（KP裁定）</td><td>5 lb</td></tr>
+            <tr><td><b>虛空之擁長袍</b></td><td>極珍稀</td><td>13級+</td><td>4,500gp</td><td>24</td><td>14 + 敏捷</td><td>無</td><td>虛空之擁編織，力場免疫，每日1次虛空裂隙（30尺DC15，4d8力場+恐慌）</td><td>4 lb</td></tr>
+            <tr><td><b>惡魔契約之甲</b></td><td>傳說</td><td>17級+</td><td>11,000gp</td><td>30</td><td>19</td><td>STR≥15</td><td>惡魔契約重甲，火焰/暗蝕抗性，每日1次召喚惡魔護衛（CR5，1小時），隱匿-3，速度-10尺</td><td>18 lb</td></tr>
+            <tr><td><b>舊日支配者之袍</b></td><td>傳說</td><td>17級+</td><td>13,000gp</td><td>28</td><td>16 + 敏捷</td><td>無</td><td>舊日支配者殘影織成，法術攻擊+2，法術DC+1，每日1次支配怪物（DC17），每長休受1d6精神傷害</td><td>3 lb</td></tr>
+        </tbody>
+    </table>
+</div>
+
+                <!-- ========================================== -->
+<!--       📖 法師專屬護甲（10套）              -->
+<!-- ========================================== -->
+
+<div id="armor-wizard" class="content-section">
+    <h3>📖 法師專屬護甲（共10套）</h3>
+    <table>
+        <thead><tr><th style="width: 10%;">護甲名</th><th style="width: 6%;">稀有度</th><th style="width: 5%;">等級</th><th style="width: 7%;">價格</th><th style="width: 5%;">耐久</th><th style="width: 8%;">AC</th><th style="width: 8%;">力量需求</th><th style="width: 25%;">效果</th><th style="width: 6%;">重量</th></tr></thead>
+        <tbody>
+            <tr><td><b>抄寫法袍</b></td><td>普通</td><td>1級+</td><td>40gp</td><td>12</td><td>10 + 敏捷</td><td>無</td><td>抄寫員法袍，抄寫法術時間減半，可作施法法器</td><td>3 lb</td></tr>
+            <tr><td><b>元素絲袍</b></td><td>非常見</td><td>3級+</td><td>320gp</td><td>16</td><td>11 + 敏捷</td><td>無</td><td>四元素絲線編織，每日可選一種元素抗性，可作施法法器</td><td>3 lb</td></tr>
+            <tr><td><b>咒術師長袍</b></td><td>非常見</td><td>3級+</td><td>340gp</td><td>16</td><td>11 + 敏捷</td><td>無</td><td>繡咒術符文，咒法系法術攻擊+1，每日1次縮短咒法施法時間1輪</td><td>4 lb</td></tr>
+            <tr><td><b>塑能師長袍</b></td><td>稀有</td><td>5級+</td><td>800gp</td><td>18</td><td>12 + 敏捷</td><td>無</td><td>紅色塑能師長袍，塑能法術傷害+1d4，每日1次火球術（DC14）</td><td>4 lb</td></tr>
+            <tr><td><b>防護師法袍</b></td><td>稀有</td><td>5級+</td><td>850gp</td><td>20</td><td>13 + 敏捷，AC+1</td><td>無</td><td>銀灰色防護法袍，AC+1（基礎13+1=14），每日1次護盾術（無需消耗法術位）</td><td>4 lb</td></tr>
+            <tr><td><b>幻術師迷彩袍</b></td><td>稀有</td><td>7級+</td><td>950gp</td><td>18</td><td>12 + 敏捷</td><td>無</td><td>幻術師變色法袍，隱匿優勢，幻術目標偵查劣勢</td><td>3 lb</td></tr>
+            <tr><td><b>亡靈法師裹屍布</b></td><td>極珍稀</td><td>11級+</td><td>3,500gp</td><td>22</td><td>13 + 敏捷</td><td>無</td><td>裹屍布改造，死靈法術攻擊+1，暗蝕抗性，每日1次吸血鬼之觸</td><td>4 lb</td></tr>
+            <tr><td><b>預言師星輝袍</b></td><td>極珍稀</td><td>13級+</td><td>4,200gp</td><td>24</td><td>14 + 敏捷</td><td>無</td><td>星輝織成，法術攻擊+1，每日1次重擲（擲骰後宣布），預言系法術材料消耗減半</td><td>3 lb</td></tr>
+            <tr><td><b>大法師之袍</b></td><td>傳說</td><td>17級+</td><td>12,000gp</td><td>30</td><td>15 + 敏捷</td><td>無</td><td>傳奇大法師之袍，法術攻擊+2，法術DC+2，每日1次恢復5環法術位，專注豁免優勢</td><td>4 lb</td></tr>
+            <tr><td><b>奧術之魂法袍</b></td><td>傳說</td><td>17級+</td><td>14,000gp</td><td>30</td><td>16 + 敏捷</td><td>無</td><td>奧術之魂編織，法術攻擊+2，法術DC+2，每日1次複製當天施放過的法術（無需法術位），法術抗性</td><td>3 lb</td></tr>
+        </tbody>
+    </table>
 </div>
             
         <!-- 📜 战役世界线 -->
